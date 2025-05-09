@@ -23,94 +23,117 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
 </head>
 <body class="bg-white font-sans">
-    <!-- Header Section - Enhanced Professional Version -->
+        <!-- Header Section - Enhanced Professional Version -->
     <header class="relative bg-gradient-to-r from-yellow-400 via-yellow-300 to-amber-500 sticky top-0 z-50">
         <!-- Top Notification Bar -->
-                <div class="bg-gradient-to-r from-gray-900 via-black to-gray-900 text-center py-3 px-4 relative overflow-hidden">
-          <!-- Animated background elements -->
-          <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-0 left-1/4 w-12 h-12 bg-yellow-300 rounded-full blur-xl animate-pulse-slow"></div>
-            <div class="absolute bottom-0 right-1/4 w-12 h-12 bg-ronghaz-orange rounded-full blur-xl animate-pulse-medium"></div>
-          </div>
-          
-          <!-- Sparkle decorations -->
-          <div class="absolute left-8 top-1/2 transform -translate-y-1/2 text-yellow-300 animate-bounce-slow">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
-          </div>
-          <div class="absolute right-8 top-1/2 transform -translate-y-1/2 text-yellow-300 animate-bounce-slow" style="animation-delay: 0.5s;">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
-          </div>
-          
-          <!-- Enhanced content with flex layout -->
-          <div class="flex items-center justify-center space-x-3 text-white">
-            <span class="inline-flex items-center">
-              <span class="bg-ronghaz-yellow text-black p-1 rounded-full mr-2 animate-pulse">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                </svg>
-              </span>
-              <span class="font-medium">Free Shipping on orders over</span>
-              <span class="font-bold bg-gradient-to-r from-yellow-400 to-yellow-300 text-black px-2 mx-1 rounded">৳2000</span>
-            </span>
+        <div class="bg-gradient-to-r from-gray-900 via-black to-gray-900 text-center py-2 sm:py-3 px-2 sm:px-4 relative overflow-hidden">
+            <!-- Animated background elements -->
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute top-0 left-1/4 w-8 sm:w-12 h-8 sm:h-12 bg-yellow-300 rounded-full blur-xl animate-pulse-slow"></div>
+                <div class="absolute bottom-0 right-1/4 w-8 sm:w-12 h-8 sm:h-12 bg-ronghaz-orange rounded-full blur-xl animate-pulse-medium"></div>
+            </div>
             
-            <span class="hidden md:inline-block text-yellow-300">•</span>
+            <!-- Sparkle decorations - Hidden on very small screens -->
+            <div class="absolute left-8 top-1/2 transform -translate-y-1/2 text-yellow-300 animate-bounce-slow hidden sm:block">
+                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+            </div>
+            <div class="absolute right-8 top-1/2 transform -translate-y-1/2 text-yellow-300 animate-bounce-slow hidden sm:block" style="animation-delay: 0.5s;">
+                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+            </div>
             
-            <span class="inline-flex items-center">
-              <span class="bg-ronghaz-yellow text-black p-1 rounded-full mr-2 animate-pulse" style="animation-delay: 0.3s;">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
-                </svg>
-              </span>
-              <span class="font-medium">Use code</span>
-              <span class="font-bold bg-yellow-300 text-black px-2 mx-1 rounded shadow-sm transform hover:scale-105 transition-transform duration-300 cursor-pointer">রংবাজ10</span>
-              <span class="font-medium">for 10% off your first order</span>
-            </span>
-          </div>
-          
-          <!-- Border decoration -->
-          <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
-          
-          <style>
-            @keyframes bounce-slow {
-              0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
-              50% { transform: translateY(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
-            }
-            @keyframes pulse-slow {
-              0%, 100% { opacity: 0.3; }
-              50% { opacity: 0.6; }
-            }
-            @keyframes pulse-medium {
-              0%, 100% { opacity: 0.2; }
-              50% { opacity: 0.5; }
-            }
-            .animate-bounce-slow {
-              animation: bounce-slow 2s infinite;
-            }
-            .animate-pulse-slow {
-              animation: pulse-slow 4s infinite;
-            }
-            .animate-pulse-medium {
-              animation: pulse-medium 3s infinite;
-            }
-          </style>
+            <!-- Enhanced content with flex layout - Flex column on mobile, row on larger screens -->
+            <div class="flex flex-col xs:flex-row items-center justify-center space-y-2 xs:space-y-0 xs:space-x-3 text-white">
+                <span class="inline-flex items-center text-xs sm:text-sm">
+                    <span class="bg-ronghaz-yellow text-black p-1 rounded-full mr-1.5 sm:mr-2 animate-pulse">
+                        <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </span>
+                    <span class="font-medium">Free Shipping on orders over</span>
+                    <span class="font-bold bg-gradient-to-r from-yellow-400 to-yellow-300 text-black px-2 mx-1 rounded">৳2000</span>
+                </span>
+                
+                <!-- Divider - Hidden on mobile, visible on medium+ screens -->
+                <span class="hidden xs:inline-block text-yellow-300">•</span>
+                
+                <span class="inline-flex items-center text-xs sm:text-sm">
+                    <span class="bg-ronghaz-yellow text-black p-1 rounded-full mr-1.5 sm:mr-2 animate-pulse" style="animation-delay: 0.3s;">
+                        <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                        </svg>
+                    </span>
+                    <span class="font-medium">Use code</span>
+                    <span class="font-bold bg-yellow-300 text-black px-2 mx-1 rounded shadow-sm transform hover:scale-105 transition-transform duration-300 cursor-pointer">রংবাজ10</span>
+                    <span class="font-medium hidden sm:inline">for 10% off your first order</span>
+                </span>
+            </div>
+            
+            <!-- Border decoration -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
+            
+            <style>
+                @keyframes bounce-slow {
+                    0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+                    50% { transform: translateY(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+                }
+                @keyframes pulse-slow {
+                    0%, 100% { opacity: 0.3; }
+                    50% { opacity: 0.6; }
+                }
+                @keyframes pulse-medium {
+                    0%, 100% { opacity: 0.2; }
+                    50% { opacity: 0.5; }
+                }
+                .animate-bounce-slow {
+                    animation: bounce-slow 2s infinite;
+                }
+                .animate-pulse-slow {
+                    animation: pulse-slow 4s infinite;
+                }
+                .animate-pulse-medium {
+                    animation: pulse-medium 3s infinite;
+                }
+                /* Added custom breakpoint for extra small devices */
+                @media (min-width: 475px) {
+                    .xs\:flex-row {
+                        flex-direction: row;
+                    }
+                    .xs\:space-y-0 {
+                        margin-top: 0;
+                    }
+                    .xs\:space-x-3 > * + * {
+                        margin-left: 0.75rem;
+                    }
+                    .xs\:inline-block {
+                        display: inline-block;
+                    }
+                }
+            </style>
         </div>
+        
+        <!-- Decorative bottom borders -->
         <div class="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-amber-400/40 via-yellow-400/60 to-amber-400/40 blur-sm"></div>
         <div class="absolute inset-x-0 bottom-0 h-px bg-black/5"></div>
     
-        <div class="container mx-auto px-4 xl:px-6 relative">
-            <div class="flex justify-between items-center py-3">
-                <div class="flex items-center gap-8">
-                  <a href="index.html" class="flex items-center group" aria-label="Rongbaz Home">
-                    <div class="bg-ronghaz-navy text-ronghaz-yellow px-4 py-2 rounded-lg mr-2 shadow-md group-hover:shadow-xl transition-all duration-300">
-                        <span class="text-2xl font-extrabold tracking-tight">রং</span>
-                    </div>
-                    <span class="text-2xl font-extrabold tracking-tight text-ronghaz-navy group-hover:text-ronghaz-orange transition-colors duration-300">বাজ</span>
-                </a>
+        <!-- Main Navigation Bar -->
+        <div class="container mx-auto px-3 sm:px-4 xl:px-6 relative">
+            <div class="flex justify-between items-center py-2 sm:py-3">
+                <!-- Logo and Desktop Navigation -->
+                <div class="flex items-center gap-4 sm:gap-8">
+                    <!-- Logo - Responsive sizing -->
+                    <a href="index.html" class="flex items-center group" aria-label="Rongbaz Home">
+                        <div class="bg-ronghaz-navy text-ronghaz-yellow px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg mr-1.5 sm:mr-2 shadow-md group-hover:shadow-xl transition-all duration-300">
+                            <span class="text-xl sm:text-2xl font-extrabold tracking-tight">রং</span>
+                        </div>
+                        <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-ronghaz-navy group-hover:text-ronghaz-orange transition-colors duration-300">বাজ</span>
+                    </a>
+                    
+                    <!-- Desktop Navigation - Hidden on mobile -->
                     <nav class="hidden lg:flex gap-1">
-                        <a href="tshirts.html" class="group px-4 py-2 font-medium text-gray-900 hover:text-ronghaz-orange transition-all duration-300 relative overflow-hidden">
+                        <a href="tshirts.html" class="group px-3 sm:px-4 py-2 font-medium text-gray-900 hover:text-ronghaz-orange transition-all duration-300 relative overflow-hidden">
                             <span class="relative z-10 flex items-center">
                                 <span class="bg-yellow-400/20 rounded-full p-1 mr-1.5 transform group-hover:scale-110 transition-transform duration-300">
-                                    <svg class="w-3.5 h-3.5 text-gray-800 group-hover:text-ronghaz-orange transition-colors duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gray-800 group-hover:text-ronghaz-orange transition-colors duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8 4L6 8H18L16 4H8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M6 8V20H18V8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
@@ -119,10 +142,10 @@
                             </span>
                             <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                         </a>
-                        <a href="kids.html" class="group px-4 py-2 font-medium text-gray-900 hover:text-ronghaz-orange transition-all duration-300 relative overflow-hidden">
+                        <a href="kids.html" class="group px-3 sm:px-4 py-2 font-medium text-gray-900 hover:text-ronghaz-orange transition-all duration-300 relative overflow-hidden">
                             <span class="relative z-10 flex items-center">
                                 <span class="bg-yellow-400/20 rounded-full p-1 mr-1.5 transform group-hover:scale-110 transition-transform duration-300">
-                                    <svg class="w-3.5 h-3.5 text-gray-800 group-hover:text-ronghaz-orange transition-colors duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gray-800 group-hover:text-ronghaz-orange transition-colors duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M9 21V18H15V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M6 18C6 15.7909 7.79086 14 10 14H14C16.2091 14 18 15.7909 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                                         <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -132,10 +155,10 @@
                             </span>
                             <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                         </a>
-                        <a href="hoodies.html" class="group px-4 py-2 font-medium text-gray-900 hover:text-ronghaz-orange transition-all duration-300 relative overflow-hidden">
+                        <a href="hoodies.html" class="group px-3 sm:px-4 py-2 font-medium text-gray-900 hover:text-ronghaz-orange transition-all duration-300 relative overflow-hidden">
                             <span class="relative z-10 flex items-center">
                                 <span class="bg-yellow-400/20 rounded-full p-1 mr-1.5 transform group-hover:scale-110 transition-transform duration-300">
-                                    <svg class="w-3.5 h-3.5 text-gray-800 group-hover:text-ronghaz-orange transition-colors duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gray-800 group-hover:text-ronghaz-orange transition-colors duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M6 6L8 14H16L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M7 14V19C7 20.1046 7.89543 21 9 21H15C16.1046 21 17 20.1046 17 19V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <circle cx="12" cy="10" r="2" stroke="currentColor" stroke-width="2"/>
@@ -145,10 +168,10 @@
                             </span>
                             <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                         </a>
-                        <a href="accessories.html" class="group px-4 py-2 font-medium text-gray-900 hover:text-ronghaz-orange transition-all duration-300 relative overflow-hidden">
+                        <a href="accessories.html" class="group px-3 sm:px-4 py-2 font-medium text-gray-900 hover:text-ronghaz-orange transition-all duration-300 relative overflow-hidden">
                             <span class="relative z-10 flex items-center">
                                 <span class="bg-yellow-400/20 rounded-full p-1 mr-1.5 transform group-hover:scale-110 transition-transform duration-300">
-                                    <svg class="w-3.5 h-3.5 text-gray-800 group-hover:text-ronghaz-orange transition-colors duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gray-800 group-hover:text-ronghaz-orange transition-colors duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M21 9L15 3M14 10L12 8M8 14L6 12M3 21L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M10.5 7.5L12.5 9.5C13.7 10.7 14.3 11.3 14.3 12C14.3 12.7 13.7 13.3 12.5 14.5L11.5 15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                                     </svg>
@@ -157,10 +180,10 @@
                             </span>
                             <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                         </a>
-                        <a href="#series" class="group px-4 py-2 font-medium text-gray-900 hover:text-ronghaz-orange transition-all duration-300 relative overflow-hidden">
+                        <a href="#series" class="group px-3 sm:px-4 py-2 font-medium text-gray-900 hover:text-ronghaz-orange transition-all duration-300 relative overflow-hidden">
                             <span class="relative z-10 flex items-center">
                                 <span class="bg-yellow-400/20 rounded-full p-1 mr-1.5 transform group-hover:scale-110 transition-transform duration-300">
-                                    <svg class="w-3.5 h-3.5 text-gray-800 group-hover:text-ronghaz-orange transition-colors duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gray-800 group-hover:text-ronghaz-orange transition-colors duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M19 11H5M19 11C20.1046 11 21 11.8954 21 13V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V13C3 11.8954 3.89543 11 5 11M19 11V9C19 7.89543 18.1046 7 17 7M5 11V9C5 7.89543 5.89543 7 7 7M7 7V5C7 3.89543 7.89543 3 9 3H15C16.1046 3 17 3.89543 17 5V7M7 7H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </span>
@@ -170,41 +193,53 @@
                         </a>
                     </nav>
                 </div>
-                <div class="flex items-center gap-5">
-                  <button class="hidden md:flex items-center justify-center w-10 h-10 text-ronghaz-navy hover:text-ronghaz-orange bg-white/10 rounded-full transition-all duration-300">
-                    <i class="fas fa-search"></i>
-                </button>
-                <button class="hidden md:flex items-center justify-center w-10 h-10 text-ronghaz-navy hover:text-ronghaz-orange bg-white/10 rounded-full transition-all duration-300">
-                    <i class="fas fa-user"></i>
-                </button>
-                    <button id="cart-icon" class="relative group flex items-center bg-white/15 hover:bg-white/30 px-4 py-2 rounded-full border border-white/20 shadow-sm transition-all duration-300">
+                
+                <!-- Right-side buttons -->
+                <div class="flex items-center gap-2 sm:gap-5">
+                    <!-- Search button - Hidden on small screens -->
+                    <button class="hidden md:flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 text-ronghaz-navy hover:text-ronghaz-orange bg-white/10 rounded-full transition-all duration-300">
+                        <i class="fas fa-search text-sm sm:text-base"></i>
+                    </button>
+                    
+                    <!-- User account button - Hidden on small screens -->
+                    <button class="hidden md:flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 text-ronghaz-navy hover:text-ronghaz-orange bg-white/10 rounded-full transition-all duration-300">
+                        <i class="fas fa-user text-sm sm:text-base"></i>
+                    </button>
+                    
+                    <!-- Cart button - Responsive sizing -->
+                    <button id="cart-icon" class="relative group flex items-center bg-white/15 hover:bg-white/30 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/20 shadow-sm transition-all duration-300">
                         <div class="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-amber-500/10 rounded-full -z-10"></div>
                         <div class="flex items-center">
                             <span class="relative">
-                                <svg class="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                                 </svg>
-                                <span id="cart-notification" class="absolute -top-2 -right-2 bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md animate-pulse hidden">0</span>
+                                <span id="cart-notification" class="absolute -top-2 -right-2 bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-bold rounded-full h-4 w-4 sm:h-5 sm:w-5 flex items-center justify-center shadow-md animate-pulse hidden">0</span>
                             </span>
-                            <span class="ml-2 font-medium text-gray-800">Cart</span>
-                            <span id="cart-count" class="ml-1 text-gray-800">(0)</span>
+                            <span class="ml-1.5 sm:ml-2 font-medium text-gray-800 text-sm sm:text-base">Cart</span>
+                            <span id="cart-count" class="ml-0.5 sm:ml-1 text-gray-800 text-sm sm:text-base">(0)</span>
                         </div>
                         <span class="absolute inset-0 rounded-full border border-white/30 group-hover:border-white/50 transition-colors duration-300 pointer-events-none"></span>
                     </button>
-                    <button id="mobileMenuButton" class="lg:hidden focus:outline-none relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/20 transition-colors duration-300 border border-white/10 group">
+                    
+                    <!-- Mobile menu button - Visible only on small screens -->
+                    <button id="mobileMenuButton" class="lg:hidden focus:outline-none relative w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full hover:bg-white/20 transition-colors duration-300 border border-white/10 group">
                         <span class="absolute inset-0 rounded-full border border-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                        <svg class="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
+        
+        <!-- Mobile Menu - Hidden by default, toggled with JavaScript -->
         <div id="mobileMenu" class="hidden lg:hidden bg-white shadow-xl transform origin-top divide-y divide-gray-50">
             <div class="absolute top-0 left-0 right-0 h-4 bg-gradient-to-b from-gray-200/50 to-transparent"></div>
             <div class="container mx-auto px-4 py-3 relative">
                 <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/subtle-white-feathers.png')] opacity-30 pointer-events-none"></div>
                 
+                <!-- Mobile Navigation Menu -->
                 <nav class="flex flex-col divide-y divide-gray-100/70 relative">
                     <a href="tshirts.html" class="flex items-center justify-between py-3.5 px-3 font-medium text-gray-700 hover:text-ronghaz-orange hover:bg-yellow-50/50 rounded-lg my-0.5 transition-all duration-300">
                         <span class="flex items-center">
@@ -223,6 +258,7 @@
                             </svg>
                         </div>
                     </a>
+                    
                     <a href="kids.html" class="flex items-center justify-between py-3.5 px-3 font-medium text-gray-700 hover:text-ronghaz-orange hover:bg-yellow-50/50 rounded-lg my-0.5 transition-all duration-300">
                         <span class="flex items-center">
                             <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 text-green-600">
@@ -241,6 +277,7 @@
                             </svg>
                         </div>
                     </a>
+                    
                     <a href="hoodies.html" class="flex items-center justify-between py-3.5 px-3 font-medium text-gray-700 hover:text-ronghaz-orange hover:bg-yellow-50/50 rounded-lg my-0.5 transition-all duration-300">
                         <span class="flex items-center">
                             <span class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-3 text-indigo-600">
@@ -259,6 +296,7 @@
                             </svg>
                         </div>
                     </a>
+                    
                     <a href="accessories.html" class="flex items-center justify-between py-3.5 px-3 font-medium text-gray-700 hover:text-ronghaz-orange hover:bg-yellow-50/50 rounded-lg my-0.5 transition-all duration-300">
                         <span class="flex items-center">
                             <span class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3 text-purple-600">
@@ -276,6 +314,7 @@
                             </svg>
                         </div>
                     </a>
+                    
                     <a href="#series" class="flex items-center justify-between py-3.5 px-3 font-medium text-gray-700 hover:text-ronghaz-orange hover:bg-yellow-50/50 rounded-lg my-0.5 transition-all duration-300">
                         <span class="flex items-center">
                             <span class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-3 text-pink-600">
@@ -292,6 +331,7 @@
                             </svg>
                         </div>
                     </a>
+                    
                     <a href="mugs.html" class="flex items-center justify-between py-3.5 px-3 font-medium text-gray-700 hover:text-ronghaz-orange hover:bg-yellow-50/50 rounded-lg my-0.5 transition-all duration-300">
                         <span class="flex items-center">
                             <span class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 text-blue-600">
@@ -311,6 +351,8 @@
                         </div>
                     </a>
                 </nav>
+                
+                <!-- Mobile menu footer with account button and social links -->
                 <div class="mt-6 space-y-4 relative">
                     <button class="flex items-center justify-center space-x-2 w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-gray-900 font-semibold py-3 px-4 rounded-xl hover:shadow-md transition-all duration-300 relative overflow-hidden group">
                         <span class="absolute inset-0 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
@@ -321,6 +363,8 @@
                             </svg>
                         </span>
                     </button>
+                    
+                    <!-- Mobile menu social links and help section -->
                     <div class="flex justify-between items-center py-4 text-sm text-gray-500 border-t border-gray-100">
                         <div class="flex items-center space-x-3">
                             <a href="#" class="hover:text-ronghaz-orange transition-colors duration-300 flex items-center">
@@ -338,6 +382,7 @@
                             </a>
                         </div>
                         
+                        <!-- Social media icons -->
                         <div class="flex space-x-3">
                             <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-yellow-100 hover:text-ronghaz-orange transition-all duration-300">
                                 <i class="fab fa-facebook-f text-sm"></i>
@@ -351,7 +396,6 @@
             </div>
         </div>
     </header>
-
 
     
 <!-- Premium Hero Section -->
@@ -586,7 +630,7 @@
 
 
 <!-- T-shirts Showcase Section -->
-<section class="py-16 bg-gradient-to-b from-white to-amber-50">
+<section class="py-8 bg-amber-to-b from-white to-amber-50 mx-auto max-w-6xl">
     <div class="container mx-auto px-4">
         <!-- Section Header with Animation -->
         <div class="flex flex-col md:flex-row items-center justify-between mb-12 relative">
@@ -620,9 +664,9 @@
         </div>
         
         <!-- Products Grid with Enhanced Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4">
             <!-- Product Card 1 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl group">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl group ">
                 <!-- Badge -->
                 <div class="relative">
                     <span class="absolute top-4 left-4 bg-ronghaz-yellow text-xs font-bold py-1 px-2 rounded-md shadow-sm z-10">BESTSELLER</span>
@@ -926,251 +970,624 @@
     </div>
 </section>
 
-    <!-- Kids & Hoodies Section -->
-    <section class="py-12 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center justify-between mb-8">
-                <div>
-                    <h2 class="text-2xl font-bold mb-2">Hoddies</h2>
-                    <div class="flex space-x-2">
-                        <span class="w-4 h-4 bg-black rounded-full"></span>
-                        <span class="w-4 h-4 bg-green-600 rounded-full"></span>
-                        <span class="w-4 h-4 bg-green-800 rounded-full"></span>
-                    </div>
-                    <p class="mt-2">From $23.95 AUD</p>
-                </div>
-                <div>
-                    <a href="hoodies.html" class="bg-ronghaz-yellow text-gray-800 px-6 py-2 rounded-md font-medium hover:bg-yellow-500 inline-flex items-center transition-colors duration-300">
-                        Shop Hoddies
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="grid grid-cols-5 md:grid-cols-5 gap-8">
-                <div>
-                    
-                    <div class="flex flex-col items-start mb-8">
-                        
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="p-4 flex justify-center">
-                            <img src="image/h1.png" alt="Yellow kids t-shirt" class="h-44 object-contain">
-                        </div>
-                        <div class="p-4 flex justify-center">
-                            <a href="#" class="bg-ronghaz-yellow text-gray-800 px-6 py-2 rounded-md font-medium hover:bg-yellowDot-500 inline-flex items-center transition-colors duration-300">
-                                Shop Kids
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="flex flex-col items-start mb-8">
-                        
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="p-4 flex justify-center">
-                            <img src="image/h2.png" alt="Cream hoodie" class="h-44 object-contain">
-                        </div>
-                        <div class="p-4 flex justify-center">
-                            <a href="#" class="bg-ronghaz-yellow text-gray-800 px-6 py-2 rounded-md font-medium hover:bg-yellow-500 inline-flex items-center transition-colors duration-300">
-                                Shop Hoodies
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="flex flex-col items-start mb-8">
-                        
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="p-4 flex justify-center">
-                            <img src="image/h3.png" alt="Cream hoodie" class="h-44 object-contain">
-                        </div>
-                        <div class="p-4 flex justify-center">
-                            <a href="#" class="bg-ronghaz-yellow text-gray-800 px-6 py-2 rounded-md font-medium hover:bg-yellow-500 inline-flex items-center transition-colors duration-300">
-                                Shop Hoodies
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="flex flex-col items-start mb-8">
-                        
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="p-4 flex justify-center">
-                            <img src="image/h4.png" alt="Cream hoodie" class="h-44 object-contain">
-                        </div>
-                        <div class="p-4 flex justify-center">
-                            <a href="#" class="bg-ronghaz-yellow text-gray-800 px-6 py-2 rounded-md font-medium hover:bg-yellow-500 inline-flex items-center transition-colors duration-300">
-                                Shop Hoodies
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="flex flex-col items-start mb-8">
-                        
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="p-4 flex justify-center">
-                            <img src="image/h5.png" alt="Cream hoodie" class="h-44 object-contain">
-                        </div>
-                        <div class="p-4 flex justify-center">
-                            <a href="#" class="bg-ronghaz-yellow text-gray-800 px-6 py-2 rounded-md font-medium hover:bg-yellow-500 inline-flex items-center transition-colors duration-300">
-                                Shop Hoodies
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <!-- Kids & Hoodies Section -->
-        <section class="py-12 bg-gray-50">
+                <!-- Hoodies Section -->
+        <section class="py-12 bg-gradient-to-b from-white to-amber-50 mx-auto max-w-6xl">
             <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row items-center justify-between mb-8">
-                    <div>
-                        <h2 class="text-2xl font-bold mb-2">Kidds</h2>
-                        <div class="flex space-x-2">
-                            <span class="w-4 h-4 bg-black rounded-full"></span>
-                            <span class="w-4 h-4 bg-green-600 rounded-full"></span>
-                            <span class="w-4 h-4 bg-green-800 rounded-full"></span>
+                <!-- Section Header with Animation -->
+                <div class="flex flex-col md:flex-row items-center justify-between mb-12 relative">
+                    <div class="relative z-10 mb-8 md:mb-0">
+                        <span class="inline-block px-3 py-1 text-xs font-medium tracking-wider text-amber-700 bg-amber-100 rounded-full uppercase mb-3">Premium Comfort</span>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-3 text-gray-900 relative inline-block">
+                            Hoodies Collection
+                            <span class="absolute -bottom-2 left-0 w-full h-1 bg-ronghaz-yellow"></span>
+                        </h2>
+                        <div class="flex space-x-3 mb-4">
+                            <span class="w-5 h-5 bg-black rounded-full shadow-md transform transition-transform hover:scale-110 cursor-pointer"></span>
+                            <span class="w-5 h-5 bg-gray-600 rounded-full shadow-md transform transition-transform hover:scale-110 cursor-pointer"></span>
+                            <span class="w-5 h-5 bg-ronghaz-navy rounded-full shadow-md transform transition-transform hover:scale-110 cursor-pointer"></span>
                         </div>
-                        <p class="mt-2">From $23.95 AUD</p>
+                        <p class="text-gray-600 font-medium">From <span class="text-lg font-bold text-ronghaz-orange">$39.95 AUD</span></p>
                     </div>
-                    <div>
-                        <a href="kids.html" class="bg-ronghaz-yellow text-gray-800 px-6 py-2 rounded-md font-medium hover:bg-yellow-500 inline-flex items-center transition-colors duration-300">
-                            Shop Kidds
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                    
+                    <div class="relative z-10">
+                        <a href="hoodies.html" class="group bg-gradient-to-r from-ronghaz-yellow to-amber-400 text-gray-800 px-8 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transform transition-all duration-300 hover:-translate-y-1 inline-flex items-center">
+                            <span>Explore All Hoodies</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:ml-3 transition-all" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </a>
                     </div>
+                    
+                    <!-- Decorative Elements -->
+                    <div class="absolute -top-6 -left-6 w-24 h-24 bg-ronghaz-yellow opacity-10 rounded-full blur-xl"></div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-ronghaz-orange opacity-10 rounded-full blur-xl"></div>
                 </div>
-                <div class="grid grid-cols-5 md:grid-cols-5 gap-8">
-                    <div>
-                        
-                        <div class="flex flex-col items-start mb-8">
-                            
+                
+                <!-- Products Grid with Enhanced Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <!-- Product Card 1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl group">
+                        <div class="relative">
+                            <span class="absolute top-4 left-4 bg-ronghaz-yellow text-xs font-bold py-1 px-2 rounded-md shadow-sm z-10">BESTSELLER</span>
+                            <div class="p-6 flex justify-center bg-gray-50 overflow-hidden">
+                                <img src="image/h5.png" alt="Black Hoodie" class="h-48 object-contain transform transition-transform duration-500 group-hover:scale-110">
+                            </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-                            <div class="p-4 flex justify-center">
-                                <img src="image/k1.png" alt="Yellow kids t-shirt" class="h-44 object-contain">
-                            </div>
-                            <div class="p-4 flex justify-center">
-                                <a href="#" class="bg-ronghaz-yellow text-gray-800 px-6 py-2 rounded-md font-medium hover:bg-yellowDot-500 inline-flex items-center transition-colors duration-300">
-                                    Shop Kids
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold mb-2 text-center text-gray-800">Banglar Hoodie</h3>
+                            <div class="flex justify-center items-center gap-2 mb-4">
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg>
-                                </a>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                </div>
+                                <span class="text-xs text-gray-500">(42)</span>
                             </div>
+                            <div class="flex justify-between items-center mb-4">
+                                <p class="text-gray-700 font-medium">$39.95 <span class="text-xs text-gray-500">AUD</span></p>
+                                <div class="flex space-x-1">
+                                    <span class="w-4 h-4 rounded-full bg-black border-2 border-white"></span>
+                                    <span class="w-4 h-4 rounded-full bg-gray-500 border-2 border-white"></span>
+                                    <span class="w-4 h-4 rounded-full bg-ronghaz-navy border-2 border-white"></span>
+                                </div>
+                            </div>
+                            <button class="add-to-cart w-full bg-gradient-to-r from-amber-500 to-yellow-500 text-black py-3 px-4 rounded-lg font-semibold shadow-md transform transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center" 
+                                    data-id="h1" 
+                                    data-name="Bangladesh Hoodie" 
+                                    data-price="39.95" 
+                                    data-image="image/h5.png">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Add to Cart</span>
+                            </button>
                         </div>
                     </div>
-                    <div>
-                        <div class="flex flex-col items-start mb-8">
-                            
+        
+                    <!-- Product Card 2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl group">
+                        <div class="relative">
+                            <span class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-md shadow-sm z-10">HOT</span>
+                            <div class="p-6 flex justify-center bg-gray-50 overflow-hidden">
+                                <img src="image/h3.png" alt="Gray Hoodie" class="h-48 object-contain transform transition-transform duration-500 group-hover:scale-110">
+                            </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-                            <div class="p-4 flex justify-center">
-                                <img src="image/k2.png" alt="Cream hoodie" class="h-44 object-contain">
-                            </div>
-                            <div class="p-4 flex justify-center">
-                                <a href="#" class="bg-ronghaz-yellow text-gray-800 px-6 py-2 rounded-md font-medium hover:bg-yellow-500 inline-flex items-center transition-colors duration-300">
-                                    Shop kids
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold mb-2 text-center text-gray-800">একুশের Hoodie</h3>
+                            <div class="flex justify-center items-center gap-2 mb-4">
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg>
-                                </a>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                </div>
+                                <span class="text-xs text-gray-500">(36)</span>
                             </div>
+                            <div class="flex justify-between items-center mb-4">
+                                <p class="text-gray-700 font-medium">$39.95 <span class="text-xs text-gray-500">AUD</span></p>
+                                <div class="flex space-x-1">
+                                    <span class="w-4 h-4 rounded-full bg-gray-600 border-2 border-white"></span>
+                                    <span class="w-4 h-4 rounded-full bg-black border-2 border-white"></span>
+                                </div>
+                            </div>
+                            <button class="add-to-cart w-full bg-gradient-to-r from-amber-500 to-yellow-500 text-black py-3 px-4 rounded-lg font-semibold shadow-md transform transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center" 
+                                    data-id="h2" 
+                                    data-name="একুশের Hoodie" 
+                                    data-price="39.95" 
+                                    data-image="image/h3.png">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Add to Cart</span>
+                            </button>
                         </div>
                     </div>
-    
-                    <div>
-                        <div class="flex flex-col items-start mb-8">
-                            
+        
+                    <!-- Product Card 3 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl group">
+                        <div class="relative">
+                            <div class="p-6 flex justify-center bg-gray-50 overflow-hidden">
+                                <img src="image/h2.png" alt="Navy Hoodie" class="h-48 object-contain transform transition-transform duration-500 group-hover:scale-110">
+                            </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-                            <div class="p-4 flex justify-center">
-                                <img src="image/k3.png" alt="Cream hoodie" class="h-44 object-contain">
-                            </div>
-                            <div class="p-4 flex justify-center">
-                                <a href="#" class="bg-ronghaz-yellow text-gray-800 px-6 py-2 rounded-md font-medium hover:bg-yellow-500 inline-flex items-center transition-colors duration-300">
-                                    Shop kids
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold mb-2 text-center text-gray-800">পোংটা Hoodie</h3>
+                            <div class="flex justify-center items-center gap-2 mb-4">
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg>
-                                </a>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                </div>
+                                <span class="text-xs text-gray-500">(28)</span>
                             </div>
+                            <div class="flex justify-between items-center mb-4">
+                                <p class="text-gray-700 font-medium">$39.95 <span class="text-xs text-gray-500">AUD</span></p>
+                                <div class="flex space-x-1">
+                                    <span class="w-4 h-4 rounded-full bg-ronghaz-navy border-2 border-white"></span>
+                                    <span class="w-4 h-4 rounded-full bg-black border-2 border-white"></span>
+                                </div>
+                            </div>
+                            <button class="add-to-cart w-full bg-gradient-to-r from-amber-500 to-yellow-500 text-black py-3 px-4 rounded-lg font-semibold shadow-md transform transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center" 
+                                    data-id="h3" 
+                                    data-name="পোংটা Hoodie" 
+                                    data-price="39.95" 
+                                    data-image="image/h2.png">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Add to Cart</span>
+                            </button>
                         </div>
                     </div>
-    
-                    <div>
-                        <div class="flex flex-col items-start mb-8">
-                            
+        
+                    <!-- Product Card 4 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl group">
+                        <div class="relative">
+                            <span class="absolute top-4 left-4 bg-blue-500 text-white text-xs font-bold py-1 px-2 rounded-md shadow-sm z-10">NEW</span>
+                            <div class="p-6 flex justify-center bg-gray-50 overflow-hidden">
+                                <img src="image/h4.png" alt="Green Hoodie" class="h-48 object-contain transform transition-transform duration-500 group-hover:scale-110">
+                            </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-                            <div class="p-4 flex justify-center">
-                                <img src="image/k4.png" alt="Cream hoodie" class="h-44 object-contain">
-                            </div>
-                            <div class="p-4 flex justify-center">
-                                <a href="#" class="bg-ronghaz-yellow text-gray-800 px-6 py-2 rounded-md font-medium hover:bg-yellow-500 inline-flex items-center transition-colors duration-300">
-                                    Shop kids
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold mb-2 text-center text-gray-800">Fathers Hoodie</h3>
+                            <div class="flex justify-center items-center gap-2 mb-4">
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg>
-                                </a>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                </div>
+                                <span class="text-xs text-gray-500">(18)</span>
                             </div>
+                            <div class="flex justify-between items-center mb-4">
+                                <p class="text-gray-700 font-medium">$39.95 <span class="text-xs text-gray-500">AUD</span></p>
+                                <div class="flex space-x-1">
+                                    <span class="w-4 h-4 rounded-full bg-black border-2 border-white"></span>
+                                    <span class="w-4 h-4 rounded-full bg-gray-500 border-2 border-white"></span>
+                                </div>
+                            </div>
+                            <button class="add-to-cart w-full bg-gradient-to-r from-amber-500 to-yellow-500 text-black py-3 px-4 rounded-lg font-semibold shadow-md transform transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center" 
+                                    data-id="h4" 
+                                    data-name="Fathers Hoodie" 
+                                    data-price="39.95" 
+                                    data-image="image/h4.png">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Add to Cart</span>
+                            </button>
                         </div>
                     </div>
-    
-                    <div>
-                        <div class="flex flex-col items-start mb-8">
-                            
+        
+                    <!-- Product Card 5 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl group">
+                        <div class="relative">
+                            <span class="absolute top-4 left-4 bg-purple-500 text-white text-xs font-bold py-1 px-2 rounded-md shadow-sm z-10">PREMIUM</span>
+                            <div class="p-6 flex justify-center bg-gray-50 overflow-hidden">
+                                <img src="image/h1.png" alt="Premium Hoodie" class="h-48 object-contain transform transition-transform duration-500 group-hover:scale-110">
+                            </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-                            <div class="p-4 flex justify-center">
-                                <img src="image/k5.png" alt="Cream hoodie" class="h-44 object-contain">
-                            </div>
-                            <div class="p-4 flex justify-center">
-                                <a href="#" class="bg-ronghaz-yellow text-gray-800 px-6 py-2 rounded-md font-medium hover:bg-yellow-500 inline-flex items-center transition-colors duration-300">
-                                    Shop kids
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold mb-2 text-center text-gray-800">Warfaze Hoodie</h3>
+                            <div class="flex justify-center items-center gap-2 mb-4">
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg>
-                                </a>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                </div>
+                                <span class="text-xs text-gray-500">(52)</span>
                             </div>
+                            <div class="flex justify-between items-center mb-4">
+                                <p class="text-gray-700 font-medium">$49.95 <span class="text-xs text-gray-500">AUD</span></p>
+                                <div class="flex space-x-1">
+                                    <span class="w-4 h-4 rounded-full bg-black border-2 border-white"></span>
+                                    <span class="w-4 h-4 rounded-full bg-ronghaz-navy border-2 border-white"></span>
+                                </div>
+                            </div>
+                            <button class="add-to-cart w-full bg-gradient-to-r from-amber-500 to-yellow-500 text-black py-3 px-4 rounded-lg font-semibold shadow-md transform transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center" 
+                                    data-id="h5" 
+                                    data-name="Warfaze Hoodie" 
+                                    data-price="49.95" 
+                                    data-image="image/h1.png">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Add to Cart</span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     
+<!-- Kids Section -->
+<section class="py-12 bg-gradient-to-b from-white to-amber-50 mx-auto max-w-6xl">
+    <div class="container mx-auto px-4">
+        <!-- Section Header with Animation -->
+        <div class="flex flex-col md:flex-row items-center justify-between mb-12 relative">
+            <div class="relative z-10 mb-8 md:mb-0">
+                <span class="inline-block px-3 py-1 text-xs font-medium tracking-wider text-amber-700 bg-amber-100 rounded-full uppercase mb-3">For Little Ones</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-3 text-gray-900 relative inline-block">
+                    Kids Collection
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-ronghaz-yellow"></span>
+                </h2>
+                <div class="flex space-x-3 mb-4">
+                    <span class="w-5 h-5 bg-black rounded-full shadow-md transform transition-transform hover:scale-110 cursor-pointer"></span>
+                    <span class="w-5 h-5 bg-yellow-500 rounded-full shadow-md transform transition-transform hover:scale-110 cursor-pointer"></span>
+                    <span class="w-5 h-5 bg-green-600 rounded-full shadow-md transform transition-transform hover:scale-110 cursor-pointer"></span>
+                </div>
+                <p class="text-gray-600 font-medium">From <span class="text-lg font-bold text-ronghaz-orange">$19.95 AUD</span></p>
+            </div>
+            
+            <div class="relative z-10">
+                <a href="kids.html" class="group bg-gradient-to-r from-ronghaz-yellow to-amber-400 text-gray-800 px-8 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transform transition-all duration-300 hover:-translate-y-1 inline-flex items-center">
+                    <span>Explore All Kids Items</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:ml-3 transition-all" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Decorative Elements -->
+            <div class="absolute -top-6 -left-6 w-24 h-24 bg-ronghaz-yellow opacity-10 rounded-full blur-xl"></div>
+            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-ronghaz-orange opacity-10 rounded-full blur-xl"></div>
+        </div>
+        
+        <!-- Products Grid with Enhanced Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <!-- Product Card 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl group">
+                <div class="relative">
+                    <span class="absolute top-4 left-4 bg-ronghaz-yellow text-xs font-bold py-1 px-2 rounded-md shadow-sm z-10">BESTSELLER</span>
+                    <div class="p-6 flex justify-center bg-gray-50 overflow-hidden">
+                        <img src="image/k1.png" alt="ধোকা দিলা Kids T-shirt" class="h-48 object-contain transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold mb-2 text-center text-gray-800">ধোকা দিলা Kids</h3>
+                    <div class="flex justify-center items-center gap-2 mb-4">
+                        <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                        <span class="text-xs text-gray-500">(28)</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <p class="text-gray-700 font-medium">$19.95 <span class="text-xs text-gray-500">AUD</span></p>
+                        <div class="flex space-x-1">
+                            <span class="w-4 h-4 rounded-full bg-black border-2 border-white"></span>
+                            <span class="w-4 h-4 rounded-full bg-yellow-500 border-2 border-white"></span>
+                        </div>
+                    </div>
+                    <button class="add-to-cart w-full bg-gradient-to-r from-amber-500 to-yellow-500 text-black py-3 px-4 rounded-lg font-semibold shadow-md transform transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center" 
+                            data-id="k1" 
+                            data-name="ধোকা দিলা Kids T-shirt" 
+                            data-price="19.95" 
+                            data-image="image/k1.png">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Add to Cart</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl group">
+                <div class="relative">
+                    <span class="absolute top-4 left-4 bg-blue-500 text-white text-xs font-bold py-1 px-2 rounded-md shadow-sm z-10">NEW</span>
+                    <div class="p-6 flex justify-center bg-gray-50 overflow-hidden">
+                        <img src="image/k2.png" alt="খেপসি Kids T-shirt" class="h-48 object-contain transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold mb-2 text-center text-gray-800">খেপসি Kids</h3>
+                    <div class="flex justify-center items-center gap-2 mb-4">
+                        <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                        <span class="text-xs text-gray-500">(24)</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <p class="text-gray-700 font-medium">$19.95 <span class="text-xs text-gray-500">AUD</span></p>
+                        <div class="flex space-x-1">
+                            <span class="w-4 h-4 rounded-full bg-green-600 border-2 border-white"></span>
+                            <span class="w-4 h-4 rounded-full bg-black border-2 border-white"></span>
+                        </div>
+                    </div>
+                    <button class="add-to-cart w-full bg-gradient-to-r from-amber-500 to-yellow-500 text-black py-3 px-4 rounded-lg font-semibold shadow-md transform transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center" 
+                            data-id="k2" 
+                            data-name="খেপসি Kids T-shirt" 
+                            data-price="19.95" 
+                            data-image="image/k2.png">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Add to Cart</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl group">
+                <div class="relative">
+                    <div class="p-6 flex justify-center bg-gray-50 overflow-hidden">
+                        <img src="image/k3.png" alt="পোংটা Kids T-shirt" class="h-48 object-contain transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold mb-2 text-center text-gray-800">পোংটা Kids</h3>
+                    <div class="flex justify-center items-center gap-2 mb-4">
+                        <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                        <span class="text-xs text-gray-500">(32)</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <p class="text-gray-700 font-medium">$19.95 <span class="text-xs text-gray-500">AUD</span></p>
+                        <div class="flex space-x-1">
+                            <span class="w-4 h-4 rounded-full bg-green-600 border-2 border-white"></span>
+                            <span class="w-4 h-4 rounded-full bg-ronghaz-orange border-2 border-white"></span>
+                        </div>
+                    </div>
+                    <button class="add-to-cart w-full bg-gradient-to-r from-amber-500 to-yellow-500 text-black py-3 px-4 rounded-lg font-semibold shadow-md transform transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center" 
+                            data-id="k3" 
+                            data-name="পোংটা Kids T-shirt" 
+                            data-price="19.95" 
+                            data-image="image/k3.png">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Add to Cart</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl group">
+                <div class="relative">
+                    <span class="absolute top-4 left-4 bg-purple-500 text-white text-xs font-bold py-1 px-2 rounded-md shadow-sm z-10">PREMIUM</span>
+                    <div class="p-6 flex justify-center bg-gray-50 overflow-hidden">
+                        <img src="image/k4.png" alt="একুশের Kids T-shirt" class="h-48 object-contain transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold mb-2 text-center text-gray-800">একুশের Kids</h3>
+                    <div class="flex justify-center items-center gap-2 mb-4">
+                        <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                        <span class="text-xs text-gray-500">(16)</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <p class="text-gray-700 font-medium">$22.95 <span class="text-xs text-gray-500">AUD</span></p>
+                        <div class="flex space-x-1">
+                            <span class="w-4 h-4 rounded-full bg-black border-2 border-white"></span>
+                            <span class="w-4 h-4 rounded-full bg-yellow-500 border-2 border-white"></span>
+                        </div>
+                    </div>
+                    <button class="add-to-cart w-full bg-gradient-to-r from-amber-500 to-yellow-500 text-black py-3 px-4 rounded-lg font-semibold shadow-md transform transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center" 
+                            data-id="k4" 
+                            data-name="একুশের Kids T-shirt" 
+                            data-price="22.95" 
+                            data-image="image/k4.png">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Add to Cart</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 5 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl group">
+                <div class="relative">
+                    <span class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded-md shadow-sm z-10">HOT</span>
+                    <div class="p-6 flex justify-center bg-gray-50 overflow-hidden">
+                        <img src="image/k5.png" alt="Warfaze Kids T-shirt" class="h-48 object-contain transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold mb-2 text-center text-gray-800">Warfaze Kids</h3>
+                    <div class="flex justify-center items-center gap-2 mb-4">
+                        <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                        <span class="text-xs text-gray-500">(38)</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <p class="text-gray-700 font-medium">$19.95 <span class="text-xs text-gray-500">AUD</span></p>
+                        <div class="flex space-x-1">
+                            <span class="w-4 h-4 rounded-full bg-black border-2 border-white"></span>
+                            <span class="w-4 h-4 rounded-full bg-yellow-500 border-2 border-white"></span>
+                            <span class="w-4 h-4 rounded-full bg-ronghaz-orange border-2 border-white"></span>
+                        </div>
+                    </div>
+                    <button class="add-to-cart w-full bg-gradient-to-r from-amber-500 to-yellow-500 text-black py-3 px-4 rounded-lg font-semibold shadow-md transform transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center" 
+                            data-id="k5" 
+                            data-name="Warfaze Kids T-shirt" 
+                            data-price="19.95" 
+                            data-image="image/k5.png">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Add to Cart</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Feature Banner -->
+        <div class="mt-12 bg-gradient-to-r from-yellow-100 to-amber-100 rounded-xl p-6 shadow-md">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Perfect for Little Ones</h3>
+                    <p class="text-gray-600">Our kids collection features soft, comfortable fabrics that are gentle on young skin. All designs are screen-printed with eco-friendly, non-toxic inks.</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            100% Soft Cotton
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            Non-toxic Screen Printing
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            Comfortable Fit
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            Sizes 2-12 Years
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex justify-center">
+                    <img src="image/kids-group.png" alt="Kids Collection" class="h-48 sm:h-60 md:h-72 object-contain rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
 <!-- Newsletter-->
-<div class="container mx-auto mb-12 px-4">
-    <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-6x4 mx-auto border border-gray-100">
+<div class="container mx-auto mb-6 px-4 mx-auto max-w-6xl">
+    <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-6xl mx-auto border border-gray-100">
         <div class="flex flex-col md:flex-row">
             <div class="bg-gradient-to-br from-amber-50 to-amber-100 p-8 md:p-10 md:w-3/5">
                 <div class="mb-3">
@@ -1246,7 +1663,7 @@
     
 
 
-<div class="bg-gradient-to-br from-orange-600 via-orange-500 to-amber-500 py-16 px-6" id="series">
+<div class="bg-gradient-to-br from-amber-700 via-orange-600 to-amber-500 py-8 px-6" id="series">
     <div class="container mx-auto text-center mb-12">
       <span class="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full text-yellow-50 text-sm font-medium tracking-wide mb-3">PREMIUM COLLECTIONS</span>
       <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">Exclusive Collections</h2>
@@ -1545,7 +1962,7 @@
     <div class="absolute top-0 left-0 w-64 h-64 bg-ronghaz-yellow opacity-10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
     <div class="absolute bottom-0 right-0 w-80 h-80 bg-ronghaz-orange opacity-10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
     
-    <div class="container relative mx-auto px-4 mb-12">
+    <div class="container relative mx-auto px-4 mb-12 max-w-6xl">
         <div class="flex flex-col md:flex-row gap-12 items-center">
             <div class="md:w-3/5 flex flex-col justify-center">
                 <div class="mb-4">
@@ -1600,7 +2017,7 @@
     <div class="absolute top-0 right-0 w-96 h-96 bg-yellow-200 opacity-40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
     <div class="absolute bottom-0 left-0 w-80 h-80 bg-orange-300 opacity-20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4"></div>
     
-    <div class="container relative mx-auto px-6">
+    <div class="container relative mx-auto px-6 max-w-6xl">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
             <div class="flex flex-col space-y-6">
                 <a href="index.html" class="inline-block transform hover:scale-105 transition-transform duration-300" aria-label="Rongbaz Home">
@@ -2070,7 +2487,25 @@
               canvas.height = canvas.offsetHeight;
             });
           });
-
+          document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && 
+                        !mobileMenuButton.contains(event.target) && 
+                        !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            }
+        });
     </script>
 </body>
 </html>
