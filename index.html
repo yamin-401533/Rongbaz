@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<div lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yamin401533</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #F9FAFB;
+      color: #1F2937;
+      line-height: 1.6;
+    }
+    .navbar {
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    .navbar a, .navbar button {
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .navbar a:hover, .navbar button:hover {
+      color: #2563EB;
+      transform: translateY(-1px);
+    }
+    .star-rating {
+      color: #FBBF24;
+    }
+    .price-strike {
+      text-decoration: line-through;
+      color: #6B7280;
+    }
+    .sale-price {
+      color: #DC2626;
+      font-weight: 600;
+    }
+    .highlight {
+      background: linear-gradient(90deg, #2563EB 0%, #4F46E5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 600;
+    }
+    .laser-glow {
+      filter: drop-shadow(0 0 15px rgba(37, 99, 235, 0.2));
+    }
+    .review-images img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .review-images img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .tech-section {
+      background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
+      border-radius: 16px;
+    }
+    .product-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    }
+    .accordion-toggle i {
+      transition: transform 0.3s ease;
+    }
+    .accordion-toggle.active i {
+      transform: rotate(45deg);
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .footer-links a {
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover {
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+    .image-thumbnail {
+      border: 2px solid transparent;
+      border-radius: 8px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .image-thumbnail:hover, .image-thumbnail.active {
+      border-color: #2563EB;
+      transform: scale(1.05);
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #2563EB 0%, #4F46E5 100%);
+      color: #FFFFFF;
+      font-weight: 500;
+      border-radius: 8px;
+      padding: 12px 24px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+    }
+    .btn-secondary {
+      background: #FFFFFF;
+      border: 1px solid #D1D5DB;
+      color: #374151;
+      font-weight: 500;
+      border-radius: 8px;
+      padding: 10px 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    .section-heading {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #1F2937;
+      margin-bottom: 2rem;
+    }
+    .section-subheading {
+      font-size: 1.125rem;
+      color: #6B7280;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .section-heading {
+        font-size: 1.875rem;
+      }
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<div>
+  <!-- Navigation Bar -->
+<nav class="navbar fixed w-full z-50">
+  <div class="container mx-auto px-4 sm:px-6 py-4">
+    <div class="flex justify-between items-center">
+      <!-- Logo Section -->
+      <div class="flex items-center">
+        <a href="#" class="text-xl sm:text-2xl font-bold text-gray-900 flex items-center">
+          <svg class="w-6 h-6 sm:w-8 sm:h-8 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z" clip-rule="evenodd"></path>
+          </svg>
+          <span class="truncate">PetHealing</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center space-x-6 xl:space-x-10">
+        <div class="relative group">
+          <button class="flex items-center text-gray-600 hover:text-blue-600 font-medium">
+            Products <i class="fas fa-chevron-down ml-1 text-xs mt-1"></i>
+          </button>
+          <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 invisible group-hover:visible">
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600">All Products</a>
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600">Helio Pet Device</a>
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600">Accessories</a>
+          </div>
+        </div>
+        <a href="#technology" class="text-gray-600 hover:text-blue-600 font-medium">Technology</a>
+        <a href="#testimonials" class="text-gray-600 hover:text-blue-600 font-medium">Testimonials</a>
+        <a href="#support" class="text-gray-600 hover:text-blue-600 font-medium">Support</a>
+      </div>
+
+      <!-- Right Side Actions -->
+      <div class="flex items-center space-x-3 sm:space-x-5 md:space-x-8">
+        <!-- Language Selector - Only on medium screens and up -->
+        <div class="hidden md:block relative group">
+          <button class="flex items-center text-gray-600 hover:text-blue-600">
+            <i class="fas fa-globe mr-1"></i> <span class="hidden sm:inline">ENG</span> <i class="fas fa-chevron-down ml-1 text-xs mt-1"></i>
+          </button>
+          <div class="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg py-2 z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 invisible group-hover:visible">
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600">English</a>
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600">Español</a>
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600">Français</a>
+          </div>
+        </div>
+
+        <!-- RONG BAZ Button - Adaptable size -->
+        <div class="hidden sm:block">
+          <a href="cart.html" class="btn-primary text-xs sm:text-sm px-3 sm:px-5 py-1.5 sm:py-2 rounded-lg flex items-center whitespace-nowrap">
+            <span class="font-bold">RONG</span>
+            <span class="ml-1">BAZ</span>
+          </a>
+        </div>
+
+        <!-- Mobile Navigation Toggle -->
+        <button id="mobileMenuToggle" class="lg:hidden text-gray-600 hover:text-blue-600 focus:outline-none">
+          <i class="fas fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu - Hidden by default -->
+    <div id="mobileMenu" class="lg:hidden mt-4 pb-2 hidden">
+      <div class="flex flex-col space-y-3 border-t pt-3 border-gray-100">
+        <div class="relative py-2">
+          <button class="mobile-dropdown-toggle flex items-center justify-between w-full text-gray-600 font-medium">
+            Products <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200"></i>
+          </button>
+          <div class="mobile-dropdown-content hidden mt-2 pl-4 border-l-2 border-gray-100">
+            <a href="#" class="block py-2 text-gray-800 hover:text-blue-600">All Products</a>
+            <a href="#" class="block py-2 text-gray-800 hover:text-blue-600">Helio Pet Device</a>
+            <a href="#" class="block py-2 text-gray-800 hover:text-blue-600">Accessories</a>
+          </div>
+        </div>
+        <a href="#technology" class="py-2 text-gray-600 hover:text-blue-600 font-medium">Technology</a>
+        <a href="#testimonials" class="py-2 text-gray-600 hover:text-blue-600 font-medium">Testimonials</a>
+        <a href="#support" class="py-2 text-gray-600 hover:text-blue-600 font-medium">Support</a>
+        
+        <!-- Only show language selector on mobile -->
+        <div class="md:hidden py-2 relative">
+          <button class="mobile-dropdown-toggle flex items-center justify-between w-full text-gray-600 font-medium">
+            <span><i class="fas fa-globe mr-1"></i> Language</span> <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200"></i>
+          </button>
+          <div class="mobile-dropdown-content hidden mt-2 pl-4 border-l-2 border-gray-100">
+            <a href="#" class="block py-2 text-gray-800 hover:text-blue-600">English</a>
+            <a href="#" class="block py-2 text-gray-800 hover:text-blue-600">Español</a>
+            <a href="#" class="block py-2 text-gray-800 hover:text-blue-600">Français</a>
+          </div>
+        </div>
+        
+        <!-- Mobile RONG BAZ Button -->
+        <div class="sm:hidden py-2">
+          <a href="cart.html" class="btn-primary text-sm px-5 py-2 rounded-lg flex items-center justify-center">
+            <span class="font-bold">RONG</span>
+            <span class="ml-1">BAZ</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 pt-20 pb-16 max-w-6xl font-sans">
+  <div class="flex flex-col lg:flex-row gap-10">
+    <div class="lg:w-1/2 lg:sticky lg:top-24 self-start">
+      <div class="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 transition-all duration-500 hover:shadow-2xl relative group">
+        <div class="relative p-12 flex justify-center items-center">
+          <img id="mainProductImage" src="image/main.png" alt="Helio Pet Device in use" class="w-full h-auto max-h-[480px] object-contain transition-transform duration-700 ease-out group-hover:scale-105">
+          <div class="absolute top-5 left-5 bg-gradient-to-r from-indigo-700 to-indigo-500 text-white text-xs font-semibold px-4 py-1.5 rounded-full shadow-md transition-all duration-300 group-hover:scale-105">
+            <i class="fas fa-award mr-1"></i> VETERINARIAN APPROVED
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-5 gap-3 mt-5">
+        <div class="bg-white p-2 rounded-xl shadow-sm cursor-pointer image-thumbnail border-2 border-indigo-600 hover:border-indigo-700 transition-all duration-300 active" data-image="image/main.png">
+          <img src="image/main.png" alt="Main product view" class="w-full h-auto rounded-lg transition-opacity duration-300 hover:opacity-80">
+        </div>
+        <div class="bg-white p-2 rounded-xl shadow-sm cursor-pointer image-thumbnail border-2 border-transparent hover:border-indigo-600 transition-all duration-300" data-image="image/1.png">
+          <img src="image/1.png" alt="Product view 1" class="w-full h-auto rounded-lg transition-opacity duration-300 hover:opacity-80">
+        </div>
+        <div class="bg-white p-2 rounded-xl shadow-sm cursor-pointer image-thumbnail border-2 border-transparent hover:border-indigo-600 transition-all duration-300" data-image="image/2.png">
+          <img src="image/2.png" alt="Product view 2" class="w-full h-auto rounded-lg transition-opacity duration-300 hover:opacity-80">
+        </div>
+        <div class="bg-white p-2 rounded-xl shadow-sm cursor-pointer image-thumbnail border-2 border-transparent hover:border-indigo-600 transition-all duration-300" data-image="image/3.png">
+          <img src="image/3.png" alt="Product view 3" class="w-full h-auto rounded-lg transition-opacity duration-300 hover:opacity-80">
+        </div>
+        <div class="bg-white p-2 rounded-xl shadow-sm cursor-pointer image-thumbnail border-2 border-transparent hover:border-indigo-600 transition-all duration-300" data-image="image/4.png">
+          <img src="image/4.png" alt="Product view 4" class="w-full h-auto rounded-lg transition-opacity duration-300 hover:opacity-80">
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Info - Right Side -->
+    <div class="lg:w-1/2">
+      <div class="flex items-center justify-between mb-5">
+        <div class="bg-indigo-50 text-indigo-700 text-xs font-semibold px-4 py-2 rounded-full flex items-center shadow-sm">
+          <i class="fas fa-trophy mr-1.5"></i> BEST SELLER
+        </div>
+        <div class="flex items-center bg-white rounded-full px-3 py-1.5 border border-gray-100 shadow-sm">
+          <div class="star-rating flex mr-1.5">
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+          </div>
+          <span class="text-xs font-medium text-gray-700">4.9 <span class="text-gray-500">(1,021)</span></span>
+        </div>
+      </div>
+
+      <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-3 tracking-tight">Helio Pet Device™ <span class="text-indigo-600">Professional</span></h1>
+      <p class="text-base text-gray-600 mb-6 leading-relaxed">Veterinary-grade cold laser therapy for effective pain relief and accelerated healing in pets.</p>
+      <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-4 mb-6 flex items-center transition-all duration-300 hover:shadow-md">
+        <div class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center mr-3 flex-shrink-0 shadow-md">
+          <i class="fas fa-bolt text-white"></i>
+        </div>
+        <p class="text-sm text-indigo-700">
+          <span class="font-semibold">Limited Time Offer:</span> Free veterinary therapist consultation with purchase
+        </p>
+      </div>
+      <div class="bg-white p-5 rounded-xl border border-gray-100 mb-6 shadow-sm hover:shadow-md transition-all duration-300">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold flex-shrink-0 border-2 border-white shadow-md">JD</div>
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <div class="font-semibold text-gray-900 text-sm">Jennifer D.</div>
+              <span class="inline-block px-2 py-0.5 bg-green-100 text-green-700 text-xs rounded-full">Verified Purchase</span>
+            </div>
+            <div class="text-gray-600 italic text-sm mb-2">"A game-changer for my Lab’s mobility issues!"</div>
+            <div class="flex items-center text-xs text-gray-500">
+              <div class="star-rating flex mr-2 text-xs">
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+              </div>
+              <span class="text-xs text-gray-400">Posted 2 weeks ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-6 bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+        <h3 class="text-xs uppercase text-gray-500 font-semibold mb-4 tracking-wider">Clinical Benefits</h3>
+        <div class="space-y-3">
+          <div class="flex items-start group hover:bg-indigo-50 p-3 rounded-lg transition-all duration-300">
+            <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3 flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+              <i class="fas fa-check"></i>
+            </div>
+            <div>
+              <div class="text-gray-800 font-medium text-sm">5-Minute Sessions</div>
+              <div class="text-gray-500 text-xs mt-1">Targeted therapy for compliance</div>
+            </div>
+          </div>
+          <div class="flex items-start group hover:bg-indigo-50 p-3 rounded-lg transition-all duration-300">
+            <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3 flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+              <i class="fas fa-check"></i>
+            </div>
+            <div>
+              <div class="text-gray-800 font-medium text-sm">Reduces Inflammation</div>
+              <div class="text-gray-500 text-xs mt-1">Promotes tissue repair</div>
+            </div>
+          </div>
+          <div class="flex items-start group hover:bg-indigo-50 p-3 rounded-lg transition-all duration-300">
+            <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3 flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+              <i class="fas fa-check"></i>
+            </div>
+            <div>
+              <div class="text-gray-800 font-medium text-sm">5 Laser Diodes</div>
+              <div class="text-gray-500 text-xs mt-1">Professional-grade technology</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white p-5 rounded-xl mb-6 border border-gray-100 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-4">
+          <div>
+            <p class="text-xs text-gray-500 mb-1 uppercase tracking-wider font-semibold">Pricing</p>
+            <div class="flex items-center">
+              <span class="price-strike text-sm text-gray-400 line-through mr-3">$369.00</span>
+              <span class="sale-price text-2xl font-bold text-gray-900">$249.00</span>
+            </div>
+          </div>
+          <div class="mt-3 sm:mt-0">
+            <span class="inline-flex items-center px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-semibold rounded-full shadow-sm">
+              <i class="fas fa-tag mr-1"></i> Save $120 (32% off)
+            </span>
+          </div>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center gap-3">
+          <div class="flex items-center border border-gray-200 rounded-lg bg-white w-full sm:w-28 shadow-sm hover:shadow-md transition-all duration-300">
+            <button class="px-3 py-2 text-gray-600 hover:bg-gray-100 text-sm font-medium transition-colors" id="decrementQuantity">
+              <i class="fas fa-minus"></i>
+            </button>
+            <span class="px-4 py-2 border-l border-r border-gray-200 text-center w-10 font-medium text-gray-800" id="quantityDisplay">1</span>
+            <button class="px-3 py-2 text-gray-600 hover:bg-gray-100 text-sm font-medium transition-colors" id="incrementQuantity">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+          <a href="cart.html" class="bg-indigo-600 hover:bg-indigo-700 text-white w-full sm:flex-1 text-center flex items-center justify-center py-2.5 px-6 gap-2 text-sm font-semibold rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Add to Cart</span>
+          </a>
+        </div>
+        <div class="mt-4 text-center text-xs text-gray-500 flex items-center justify-center">
+          <i class="fas fa-clock mr-1"></i> Estimated delivery: June 1 - June 3
+        </div>
+      </div>
+      <div class="mb-6">
+        <p class="text-xs text-gray-500 mb-2 flex items-center">
+          <i class="fas fa-lock mr-1 text-gray-400"></i> Secure transaction
+        </p>
+        <div class="flex items-center justify-start space-x-4 bg-white p-3 rounded-lg border border-gray-100 shadow-sm">
+          <i class="fab fa-cc-amex text-lg text-gray-700 hover:scale-105 transition-transform"></i>
+          <i class="fab fa-cc-visa text-lg text-gray-700 hover:scale-105 transition-transform"></i>
+          <i class="fab fa-cc-mastercard text-lg text-gray-700 hover:scale-105 transition-transform"></i>
+          <i class="fab fa-paypal text-lg text-gray-700 hover:scale-105 transition-transform"></i>
+          <i class="fab fa-cc-apple-pay text-lg text-gray-700 hover:scale-105 transition-transform"></i>
+          <span class="text-xs text-gray-500">and more</span>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 pt-5 grid grid-cols-2 gap-3">
+        <div class="flex items-center groupbien bg-white p-3 rounded-lg transition-all duration-300 hover:shadow-md border border-gray-100">
+          <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div>
+            <div class="font-medium text-gray-900 text-sm">30-Day Guarantee</div>
+            <div class="text-gray-600 text-xs">Risk-free trial</div>
+          </div>
+        </div>
+        <div class="flex items-center group bg-white p-3 rounded-lg transition-all duration-300 hover:shadow-md border border-gray-100">
+          <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+            <i class="fas fa-truck"></i>
+          </div>
+          <div>
+            <div class="font-medium text-gray-900 text-sm">Free Shipping</div>
+            <div class="text-gray-600 text-xs">2-4 business days</div>
+          </div>
+        </div>
+        <div class="flex items-center group bg-white p-3 rounded-lg transition-all duration-300 hover:shadow-md border border-gray-100">
+          <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+            <i class="fas fa-headset"></i>
+          </div>
+          <div>
+            <div class="font-medium text-gray-900 text-sm">24/7 Support</div>
+            <div class="text-gray-600 text-xs">Always available</div>
+          </div>
+        </div>
+        <div class="flex items-center group bg-white p-3 rounded-lg transition-all duration-300 hover:shadow-md border border-gray-100">
+          <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div>
+            <div class="font-medium text-gray-900 text-sm">2-Year Warranty</div>
+            <div class="text-gray-600 text-xs">Full coverage</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+<!-- Technical Section -->
+<div class="tech-section my-16" id="technology">
+  <div class="container mx-auto p-8 md:p-12">
+    <div class="flex flex-col lg:flex-row gap-8 items-center">
+      <div class="lg:w-1/2 max-w-lg mx-auto lg:mx-0">
+        <h2 class="section-heading text-white text-3xl mb-6">Cutting-Edge,<br/>Patented Technology</h2>
+        <p class="text-blue-100 mb-8 text-base lg:text-lg">Delivers <span class="text-white font-semibold">optimal output power</span> of 3-10 Joules per cm² with precise wavelengths (660nm + 850nm) for superior treatment efficacy.</p>
+        <div class="space-y-5">
+          <div class="flex items-start bg-blue-800 bg-opacity-30 rounded-lg p-4 transition-transform hover:translate-x-1">
+            <div class="bg-white text-blue-900 w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0 shadow-md">1</div>
+            <div>
+              <h3 class="text-white font-semibold text-lg mb-1">Expanded Treatment Area</h3>
+              <p class="text-blue-100 text-sm">340% larger treatment head enables <span class="text-white">3-minute sessions</span>, compared to 10-20 minutes with smaller devices.</p>
+            </div>
+          </div>
+          <div class="flex items-start bg-blue-800 bg-opacity-30 rounded-lg p-4 transition-transform hover:translate-x-1">
+            <div class="bg-white text-blue-900 w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0 shadow-md">2</div>
+            <div>
+              <h3 class="text-white font-semibold text-lg mb-1">Customizable Power Modes</h3>
+              <p class="text-blue-100 text-sm">Three power modes with optimal 660nm and 850nm wavelengths for versatile treatment applications.</p>
+            </div>
+          </div>
+          <div class="flex items-start bg-blue-800 bg-opacity-30 rounded-lg p-4 transition-transform hover:translate-x-1">
+            <div class="bg-white text-blue-900 w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0 shadow-md">3</div>
+            <div>
+              <h3 class="text-white font-semibold text-lg mb-1">Scientific Precision</h3>
+              <p class="text-blue-100 text-sm">Engineered for veterinary-grade precision with clinically tested wavelength combination for maximum efficacy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-1/2 flex justify-center relative h-full">
+        <div class="absolute -top-10 -left-10 w-48 h-48 bg-blue-400 rounded-full opacity-10 blur-3xl"></div>
+        <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-indigo-500 rounded-full opacity-10 blur-3xl"></div>
+        
+        <div class="relative z-10 bg-blue-900 bg-opacity-40 rounded-2xl p-8 shadow-xl max-w-md w-full">
+          <img src="image/main2.png" alt="Helio Pet Device" class="laser-glow rounded-xl w-full object-contain mb-6">
+          
+          <div class="flex flex-col space-y-3">
+            <div class="bg-white text-blue-900 px-5 py-3 rounded-lg font-semibold text-sm shadow-lg flex items-center">
+              <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                <i class="fas fa-bolt text-blue-600"></i>
+              </div>
+              <span>800% More Power than competitors</span>
+            </div>
+            <div class="bg-white text-blue-900 px-5 py-3 rounded-lg font-semibold text-sm shadow-lg flex items-center">
+              <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                <i class="fas fa-stopwatch text-blue-600"></i>
+              </div>
+              <span>3-Minute Treatment Sessions</span>
+            </div>
+            <div class="bg-white text-blue-900 px-5 py-3 rounded-lg font-semibold text-sm shadow-lg flex items-center">
+              <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                <i class="fas fa-certificate text-blue-600"></i>
+              </div>
+              <span>FDA-Registered Medical Device</span>
+            </div>
+          </div>
+          
+          <div class="mt-6 flex justify-center">
+            <a href="#" class="text-white bg-gradient-to-r from-blue-500 to-indigo-600 px-6 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-300 flex items-center">
+              <i class="fas fa-file-alt mr-2"></i> Download Specs
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <!-- Reviews Section -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 my-16" id="testimonials">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
+        <h2 class="section-heading">Trusted by <span class="highlight">Pet Owners</span></h2>
+        <div class="flex items-center bg-gray-50 px-4 py-2 rounded-full">
+          <div class="text-2xl font-bold mr-2">4.8</div>
+          <div class="star-rating flex mr-2">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <div class="text-gray-600">480 Reviews</div>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div>
+          <div class="space-y-3 mb-8">
+            <div class="flex items-center">
+              <div class="star-rating flex w-20">
+                <i class="fas fa-star text-sm"></i>
+                <i class="fas fa-star text-sm"></i>
+                <i class="fas fa-star text-sm"></i>
+                <i class="fas fa-star text-sm"></i>
+                <i class="fas fa-star text-sm"></i>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5 mx-3">
+                <div class="bg-blue-900 h-2.5 rounded-full" style="width: 89%"></div>
+              </div>
+              <div class="w-10 text-right text-gray-600 text-sm">89%</div>
+            </div>
+            <div class="flex items-center">
+              <div class="star-rating flex w-20">
+                <i class="fas fa-star text-sm"></i>
+                <i class="fas fa-star text-sm"></i>
+                <i class="fas fa-star text-sm"></i>
+                <i class="fas fa-star text-sm"></i>
+                <i class="far fa-star text-sm"></i>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5 mx-3">
+                <div class="bg-blue-900 h-2.5 rounded-full" style="width: 7%"></div>
+              </div>
+              <div class="w-10 text-right text-gray-600 text-sm">7%</div>
+            </div>
+            <div class="flex items-center">
+              <div class="star-rating flex w-20">
+                <i class="fas fa-star text-sm"></i>
+                <i class="fas fa-star text-sm"></i>
+                <i class="fas fa-star text-sm"></i>
+                <i class="far fa-star text-sm"></i>
+                <i class="far fa-star text-sm"></i>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5 mx-3">
+                <div class="bg-blue-900 h-2.5 rounded-full" style="width: 2%"></div>
+              </div>
+              <div class="w-10 text-right text-gray-600 text-sm">2%</div>
+            </div>
+            <div class="flex items-center">
+              <div class="star-rating flex w-20">
+                <i class="fas fa-star text-sm"></i>
+                <i class="fas fa-star text-sm"></i>
+                <i class="far fa-star text-sm"></i>
+                <i class="far fa-star text-sm"></i>
+                <i class="far fa-star text-sm"></i>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5 mx-3">
+                <div class="bg-blue-900 h-2.5 rounded-full" style="width: 1%"></div>
+              </div>
+              <div class="w-10 text-right text-gray-600 text-sm">1%</div>
+            </div>
+            <div class="flex items-center">
+              <div class="star-rating flex w-20">
+                <i class="fas fa-star text-sm"></i>
+                <i class="far fa-star text-sm"></i>
+                <i class="far fa-star text-sm"></i>
+                <i class="far fa-star text-sm"></i>
+                <i class="far fa-star text-sm"></i>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5 mx-3">
+                <div class="bg-blue-900 h-2.5 rounded-full" style="width: 1%"></div>
+              </div>
+              <div class="w-10 text-right text-gray-600 text-sm">1%</div>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-4">Customer Photos (48)</h3>
+            <div class="grid grid-cols-4 gap-3 review-images">
+              <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Customer Review Image" class="rounded">
+              <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Customer Review Image" class="rounded">
+              <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Customer Review Image" class="rounded">
+              <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Customer Review Image" class="rounded">
+              <img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Customer Review Image" class="rounded">
+              <img src="https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Customer Review Image" class="rounded">
+              <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Customer Review Image" class="rounded">
+              <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Customer Review Image" class="rounded">
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="border-b border-gray-200 pb-8 mb-8">
+            <div class="flex items-start mb-4">
+              <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold mr-4 flex-shrink-0">RC</div>
+              <div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                  <div class="font-bold text-gray-900">Rizalinda C. <span class="ml-2 text-green-500 text-sm font-normal">Verified Buyer</span></div>
+                  <div class="text-sm text-gray-500 mt-1 sm:mt-0">2 weeks ago</div>
+                </div>
+                <div class="flex items-center text-sm mb-2">
+                  <img src="https://flagcdn.com/w20/us.png" alt="US Flag" class="h-3 mr-1">
+                  <span>United States</span>
+                </div>
+                <div class="mb-2">
+                  <div class="star-rating flex mb-1">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="font-semibold text-lg text-gray-900 mb-2">Remarkable Results</div>
+                  <div class="text-gray-700 mb-4">
+                    My 23-year-old chihuahua struggled with mobility, but after a few sessions with the Helio Pet Device, she’s moving with ease. It’s user-friendly and exceptionally well-crafted.
+                  </div>
+                  <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Customer Review Image" class="rounded-lg mb-2">
+                  <div class="text-xs text-gray-500">Rizalinda's chihuahua using the Helio Pet Device</div>
+                </div>
+                <div class="flex items-center space-x-4 text-sm">
+                  <button class="text-gray-500 hover:text-blue-600 flex items-center">
+                    <i class="far fa-thumbs-up mr-1"></i> Helpful (12)
+                  </button>
+                  <button class="text-gray-500 hover:text-blue-600">Report</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 my-16" id="support">
+      <h2 class="section-heading">Frequently Asked <span class="highlight">Questions</span></h2>
+      <div class="space-y-4">
+        <div class="border-b border-gray-200 pb-4">
+          <button class="accordion-toggle flex justify-between items-center w-full text-left group">
+            <span class="font-semibold text-lg text-gray-900 group-hover:text-blue-600">How does the Helio Pet Device work?</span>
+            <i class="fas fa-plus text-blue-600 group-hover:text-blue-800"></i>
+          </button>
+          <div class="accordion-content mt-3 text-gray-600">
+            <p>The Helio Pet Device employs low-level laser therapy (LLLT) to deliver 660nm and 850nm wavelengths, stimulating cellular energy, enhancing circulation, and reducing inflammation for pain relief and faster healing.</p>
+          </div>
+        </div>
+        <div class="border-b border-gray-200 pb-4">
+          <button class="accordion-toggle flex justify-between items-center w-full text-left group">
+            <span class="font-semibold text-lg text-gray-900 group-hover:text-blue-600">Is it safe for my pet?</span>
+            <i class="fas fa-plus text-blue-600 group-hover:text-blue-800"></i>
+          </button>
+          <div class="accordion-content mt-3 text-gray-600">
+            <p>Absolutely, it’s veterinarian-approved, non-thermal, and non-invasive. Avoid eye exposure and consult your vet for pets with cancer or pregnancy.</p>
+          </div>
+        </div>
+        <div class="border-b border-gray-200 pb-4">
+          <button class="accordion-toggle flex justify-between items-center w-full text-left group">
+            <span class="font-semibold text-lg text-gray-900 group-hover:text-blue-600">How often should I use it?</span>
+            <i class="fas fa-plus text-blue-600 group-hover:text-blue-800"></i>
+          </button>
+          <div class="accordion-content mt-3 text-gray-600">
+            <p>Use 1-2 daily sessions for acute issues or 3-5 weekly for chronic conditions. Improvement is typically seen within 2-4 weeks.</p>
+          </div>
+        </div>
+        <div class="border-b border-gray-200 pb-4">
+          <button class="accordion-toggle flex justify-between items-center w-full text-left group">
+            <span class="font-semibold text-lg text-gray-900 group-hover:text-blue-600">What conditions can it help with?</span>
+            <i class="fas fa-plus text-blue-600 group-hover:text-blue-800"></i>
+          </button>
+          <div class="accordion-content mt-3 text-gray-600">
+            <p>It aids arthritis, hip dysplasia, muscle strains, post-surgical healing, wounds, and more, improving mobility and recovery.</p>
+          </div>
+        </div>
+        <div class="border-b border-gray-200 pb-4">
+          <button class="accordion-toggle flex justify-between items-center w-full text-left group">
+            <span class="font-semibold text-lg text-gray-900 group-hover:text-blue-600">How long is the warranty?</span>
+            <i class="fas fa-plus text-blue-600 group-hover:text-blue-800"></i>
+          </button>
+          <div class="accordion-content mt-3 text-gray-600">
+            <p>Includes a 2-year manufacturer’s warranty, a 30-day money-back guarantee, and a 1-year battery warranty.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 bg-blue-50 rounded-xl p-6">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-2/3 mb-4 md:mb-0">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Have More Questions?</h3>
+            <p class="text-gray-600">Our pet care specialists are here to assist you 7 days a week.</p>
+          </div>
+          <div class="md:w-1/3 text-right">
+            <button class="btn-primary inline-flex items-center">
+              <i class="fas fa-headset mr-2"></i> Contact Support
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Related Products Section -->
+<section aria-labelledby="related-products-heading" class="bg-gray-50 py-12 px-4 sm:px-8 my-20 rounded-3xl">
+  <div class="max-w-7xl mx-auto">
+    <header class="text-center mb-12">
+      <span class="text-blue-600 text-sm font-semibold tracking-wider uppercase block mb-2">Continue Your Pet's Healing Journey</span>
+      <h2 id="related-products-heading" class="text-3xl font-bold text-gray-900 mb-4">
+        Explore More <span class="text-blue-600">Pet Care Solutions</span>
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+        Complementary products designed to work alongside your Helio Pet Device for comprehensive care.
+      </p>
+    </header>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <figure class="relative h-64 bg-gray-50 flex items-center justify-center p-6">
+          <span class="absolute top-4 left-4 bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">NEW</span>
+          <img src="image/n1.png" 
+               alt="PetRelief Massager device with soft bristles" 
+               class="w-full h-full object-contain" 
+               loading="lazy"
+               width="300"
+               height="300">
+        </figure>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-lg font-semibold text-gray-900">PetRelief Massager</h3>
+            <div class="flex items-center" aria-label="Rating: 4.5 out of 5 stars">
+              <div class="flex text-yellow-400 mr-1">
+                <span class="sr-only">4.5 out of 5 stars</span>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="text-xs text-gray-500">(142 reviews)</span>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm mb-4">Vibration therapy device designed to relieve muscle tension and improve circulation in pets.</p>
+          <div class="flex items-center mb-5">
+            <span class="text-gray-400 text-sm line-through mr-2">$89.00</span>
+            <span class="text-gray-900 font-bold text-lg">$69.00</span>
+            <span class="ml-2 bg-red-50 text-red-600 text-xs px-2 py-1 rounded">Save 22%</span>
+          </div>
+          <button class="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors flex items-center justify-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            Add to Cart
+          </button>
+        </div>
+      </article>
+      <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <figure class="relative h-64 bg-gray-50 flex items-center justify-center p-6">
+          <img src="image/n2.png" 
+               alt="Mobility Chews supplement bottle" 
+               class="w-full h-full object-contain" 
+               loading="lazy"
+               width="300"
+               height="300">
+        </figure>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-lg font-semibold text-gray-900">Mobility Chews</h3>
+            <div class="flex items-center" aria-label="Rating: 4 out of 5 stars">
+              <div class="flex text-yellow-400 mr-1">
+                <span class="sr-only">4 out of 5 stars</span>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current text-gray-300" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="text-xs text-gray-500">(327 reviews)</span>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm mb-4">Glucosamine and chondroitin supplements for joint health and improved mobility in pets.</p>
+          <div class="flex items-center mb-5">
+            <span class="text-gray-900 font-bold text-lg">$39.00</span>
+            <span class="ml-2 bg-blue-50 text-blue-600 text-xs px-2 py-1 rounded">Bestseller</span>
+          </div>
+          <button class="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors flex items-center justify-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            Add to Cart
+          </button>
+        </div>
+      </article>
+      <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <figure class="relative h-64 bg-gray-50 flex items-center justify-center p-6">
+          <span class="absolute top-4 left-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">BUNDLE</span>
+          <img src="image/n3.png" 
+               alt="Complete Pet Care Bundle including multiple products" 
+               class="w-full h-full object-contain" 
+               loading="lazy"
+               width="300"
+               height="300">
+        </figure>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-lg font-semibold text-gray-900">Complete Care Bundle</h3>
+            <div class="flex items-center" aria-label="Rating: 5 out of 5 stars">
+              <div class="flex text-yellow-400 mr-1">
+                <span class="sr-only">5 out of 5 stars</span>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="text-xs text-gray-500">(89 reviews)</span>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm mb-4">Comprehensive healing package with device, supplements, and therapy accessories for complete pet care.</p>
+          <div class="flex items-center mb-5">
+            <span class="text-gray-400 text-sm line-through mr-2">$357.00</span>
+            <span class="text-gray-900 font-bold text-lg">$299.00</span>
+            <span class="ml-2 bg-red-50 text-red-600 text-xs px-2 py-1 rounded">Save 16%</span>
+          </div>
+          <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            Add to Cart
+          </button>
+        </div>
+      </article>
+    </div>
+    
+  </div>
+</section>
+  </div>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div>
+          <h3 class="text-xl font-bold mb-6 flex items-center">
+            <svg class="w-6 h-6 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z" clip-rule="evenodd"></path>
+            </svg>
+            PetHealing
+          </h3>
+          <p class="text-gray-400 mb-6">Science-backed, veterinarian-approved solutions for pet health and wellness.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-white">Shop</h3>
+          <ul class="space-y-3 footer-links">
+            <li><a href="#" class="text-gray-400">All Products</a></li>
+            <li><a href="#" class="text-gray-400">Helio Pet Device</a></li>
+            <li><a href="#" class="text-gray-400">Accessories</a></li>
+            <li><a href="#" class="text-gray-400">Bundles</a></li>
+            <li><a href="#" class="text-gray-400">Gift Cards</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-white">Support</h3>
+          <ul class="space-y-3 footer-links">
+            <li><a href="#" class="text-gray-400">Help Center</a></li>
+            <li><a href="#" class="text-gray-400">Contact Us</a></li>
+            <li><a href="#" class="text-gray-400">Shipping & Returns</a></li>
+            <li><a href="#" class="text-gray-400">Warranty</a></li>
+            <li><a href="#" class="text-gray-400">Product Manuals</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-white">Company</h3>
+          <ul class="space-y-3 footer-links">
+            <li><a href="#" class="text-gray-400">About Us</a></li>
+            <li><a href="#" class="text-gray-400">Technology</a></li>
+            <li><a href="#" class="text-gray-400">Veterinary Partners</a></li>
+            <li><a href="#" class="text-gray-400">Careers</a></li>
+            <li><a href="#" class="text-gray-400">Press</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 yamin401533. All rights reserved.
+          </div>
+          <div class="flex space-x-6">
+            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.accordion-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const isOpen = content.style.maxHeight;
+        button.classList.toggle('active');
+        content.style.maxHeight = isOpen ? null : `${content.scrollHeight}px`;
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImage = document.getElementById('mainProductImage');
+      const thumbnails = document.querySelectorAll('.image-thumbnail');
+      const quantityDisplay = document.getElementById('quantityDisplay');
+      const incrementBtn = document.getElementById('incrementQuantity');
+      const decrementBtn = document.getElementById('decrementQuantity');
+      let quantity = 1;
+  
+
+      thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', () => {
+          const newImageSrc = thumbnail.getAttribute('data-image');
+          mainImage.style.opacity = 0;
+          setTimeout(() => {
+            mainImage.src = newImageSrc;
+            mainImage.style.opacity = 1;
+          }, 150);
+  
+          thumbnails.forEach(thumb => {
+            thumb.classList.remove('active', 'border-indigo-600');
+            thumb.classList.add('border-transparent');
+          });
+          thumbnail.classList.add('active', 'border-indigo-600');
+          thumbnail.classList.remove('border-transparent');
+        });
+      });
+  
+
+      incrementBtn.addEventListener('click', () => {
+        if (quantity < 10) {
+          quantity++;
+          quantityDisplay.textContent = quantity;
+          quantityDisplay.classList.add('scale-125');
+          setTimeout(() => quantityDisplay.classList.remove('scale-125'), 150);
+        }
+      });
+  
+      decrementBtn.addEventListener('click', () => {
+        if (quantity > 1) {
+          quantity--;
+          quantityDisplay.textContent = quantity;
+          quantityDisplay.classList.add('scale-125');
+          setTimeout(() => quantityDisplay.classList.remove('scale-125'), 150);
+        }
+      });
+    });
+
+
+  // Add this to your existing JavaScript
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        // Change icon when menu is open
+        const icon = mobileMenuToggle.querySelector('i');
+        if (icon) {
+          if (mobileMenu.classList.contains('hidden')) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          } else {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+          }
+        }
+      });
+    }
+    
+    // Mobile dropdowns
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    
+    mobileDropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        content.classList.toggle('hidden');
+        
+        // Rotate chevron
+        const chevron = this.querySelector('.fa-chevron-down');
+        if (chevron) {
+          chevron.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+      });
+    });
+  });  
+  </script>
+</body>
+</html>

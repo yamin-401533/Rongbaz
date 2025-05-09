@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rongbaz - Premium T-Shirts Collection | Bangladesh</title>
+    <meta name="description" content="Discover Rongbaz's premium collection of designer T-Shirts. Unique Bangladeshi designs, high-quality fabrics, and perfect fit for every occasion.">
+    <meta name="keywords" content="Rongbaz, T-Shirts, Bangladesh, Designer Tees, Cotton T-Shirts, Fashion Bangladesh">
+    <meta name="author" content="Rongbaz">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Rongbaz - Premium T-Shirts Collection">
+    <meta property="og:description" content="Discover unique Bangladeshi designed T-Shirts from Rongbaz">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rongbaz.com/tshirts">
+    <meta property="og:image" content="https://rongbaz.com/images/social-preview.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style">
+    
+    <!-- CSS and Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #f59e0b;
+            --primary-dark: #d97706;
+            --secondary: #1f2937;
+            --accent: #d4a373;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #1f2937;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        .header {
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .header.scrolled {
+            background-color: rgba(245, 158, 11, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.03) 100%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .product-card:hover::before {
+            opacity: 1;
+        }
+        
+        .discount-badge {
+            background-color: var(--accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 2;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .cart-drawer {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cart-item {
+            transition: all 0.3s ease;
+        }
+        
+        .cart-item:hover {
+            background-color: rgba(249, 250, 251, 0.8);
+        }
+        
+        .filter-btn.active {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #111827;
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            background-color: var(--primary);
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Loading skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="header text-black py-4 sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 xl:px-0">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="text-2xl font-bold tracking-tight flex items-center">
+                        <span class="bg-black text-yellow-400 px-2 py-1 rounded mr-1">RONG</span>
+                        <span>BAZ</span>
+                    </a>
+                    <nav class="hidden lg:flex space-x-6">
+                        <a href="tshirts.html" class="font-medium hover:text-gray-700 transition-colors relative group">
+                            T-Shirts
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="kids.html" class="font-medium hover:text-gray-700 transition-colors relative group">
+                            Kids
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="hoodies.html" class="font-medium hover:text-gray-700 transition-colors relative group">
+                            Hoodies
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="accessories.html" class="font-medium hover:text-gray-700 transition-colors relative group">
+                            Accessories
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="cart.html#series" class="font-medium hover:text-gray-700 transition-colors relative group">
+                            Series
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <button id="cart-icon" class="relative group">
+                        <div class="flex items-center">
+                            <i class="fas fa-shopping-cart text-xl"></i>
+                            <span class="ml-2 font-medium">Cart</span>
+                            <span id="cart-count" class="ml-1">(0)</span>
+                        </div>
+                        <span id="cart-notification" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                    </button>
+                    <button id="mobileMenuButton" class="lg:hidden focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white px-4 py-3 shadow-lg">
+            <nav class="flex flex-col space-y-3">
+                <a href="tshirts.html" class="font-medium py-2 border-b border-gray-100">T-Shirts</a>
+                <a href="kids.html" class="font-medium py-2 border-b border-gray-100">Kids</a>
+                <a href="hoodies.html" class="font-medium py-2 border-b border-gray-100">Hoodies</a>
+                <a href="accessories.html" class="font-medium py-2 border-b border-gray-100">Accessories</a>
+                <a href="cart.html#series" class="font-medium py-2 border-b border-gray-100">Series</a>
+                
+            </nav>
+        </div>
+    </header>
+
+    <!-- Announcement Bar -->
+    <div class="bg-black text-white text-center py-2 px-4 text-sm">
+        <p>✨ Free Shipping on orders over ৳2000 | Use code <strong>RONGBAZ10</strong> for 10% off your first order ✨</p>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="cart-drawer fixed top-0 right-0 h-full w-full sm:w-96 bg-white shadow-xl transform translate-x-full z-50">
+        <div class="p-6 h-full flex flex-col">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="font-bold text-xl flex items-center">
+                    <i class="fas fa-shopping-cart mr-2"></i> Your Cart
+                </h3>
+                <button id="close-cart" class="text-gray-500 hover:text-black transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="cart-items" class="flex-1 overflow-y-auto mb-6">
+                <p class="text-center text-gray-500 py-8">Your cart is empty</p>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+                <div class="flex justify-between mb-2">
+                    <span class="font-semibold">Subtotal:</span>
+                    <span id="cart-subtotal" class="font-semibold">৳0.00</span>
+                </div>
+                <div class="flex justify-between mb-2 text-sm text-gray-600">
+                    <span>Shipping:</span>
+                    <span>Calculated at checkout</span>
+                </div>
+                <button id="checkout-button" class="w-full btn-primary text-white py-3 rounded-lg font-semibold mb-3 hover:shadow-md transition-all flex items-center justify-center">
+                    <span>Proceed to Checkout</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+                <button id="view-cart-button" class="w-full border border-gray-300 text-gray-800 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+                    View Cart Details
+                </button>
+                <div class="flex items-center gap-3">
+                    <!-- Visa -->
+                    <div class="h-8 w-12 bg-white rounded shadow-sm flex items-center justify-center p-1">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                            <path d="M10.9433 8.17191H8.6796C8.41972 8.17191 8.20755 8.34852 8.15365 8.60151L6.76425 15.8014C6.72709 15.9688 6.85335 16.1288 7.02372 16.1288H8.17152C8.43163 16.1288 8.64369 15.9516 8.69759 15.6993L9.0429 13.859C9.09658 13.6067 9.30886 13.4301 9.56874 13.4301H10.5481C12.252 13.4301 13.2984 12.3044 13.5582 10.6768C13.6756 10.0054 13.5554 9.47875 13.239 9.097C12.8897 8.67706 12.2272 8.17191 10.9433 8.17191ZM11.3927 10.7881C11.2536 11.727 10.5265 11.727 9.8214 11.727H9.40668L9.74005 10.0328C9.77002 9.88387 9.89873 9.77649 10.0495 9.77649H10.2363C10.7278 9.77649 11.1935 9.77649 11.4326 10.0651C11.5765 10.2287 11.6207 10.4628 11.3927 10.7881Z" fill="#0066FF"/>
+                            <path d="M19.9501 10.7237H18.799C18.6483 10.7237 18.5196 10.8311 18.4896 10.9801L18.4268 11.3066L18.3291 11.1585C18.0367 10.7066 17.3716 10.5543 16.7077 10.5543C15.1876 10.5543 13.8913 11.7181 13.6175 13.3262C13.475 14.1264 13.6614 14.8932 14.0906 15.4186C14.4829 15.8998 15.0579 16.0948 15.7499 16.0948C16.9675 16.0948 17.6606 15.334 17.6606 15.334L17.5972 15.6668C17.56 15.8342 17.6863 15.9943 17.8567 15.9943H18.9039C19.1638 15.9943 19.3758 15.8171 19.4297 15.5648L20.2096 11.0518C20.2465 10.8836 20.1205 10.7237 19.9501 10.7237ZM18.1001 13.3551C17.9557 14.1328 17.3348 14.6602 16.5459 14.6602C16.1513 14.6602 15.8373 14.5332 15.6403 14.2921C15.4451 14.0529 15.3693 13.7095 15.4394 13.3262C15.5738 12.556 16.2072 12.0156 16.9825 12.0156C17.3692 12.0156 17.6812 12.1443 17.8821 12.3869C18.0841 12.6317 18.1662 12.9763 18.1001 13.3551Z" fill="#0066FF"/>
+                            <path d="M15.2393 8.17191H14.0868C13.9094 8.17191 13.7455 8.27713 13.6743 8.44331L12.2866 15.8007C12.2495 15.9688 12.3757 16.1288 12.5461 16.1288H13.7747C13.9521 16.1288 14.116 16.0236 14.1871 15.8574L15.5749 8.5C15.612 8.33193 15.4858 8.17191 15.2393 8.17191Z" fill="#0066FF"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Mastercard -->
+                    <div class="h-8 w-12 bg-white rounded shadow-sm flex items-center justify-center p-1">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                            <path d="M9 12C9 13.3807 8.72858 14.7216 8.21982 16H15.7802C16.2889 14.7216 16.5604 13.3807 16.5604 12C16.5604 10.6193 16.2889 9.27842 15.7802 8H8.21982C8.72858 9.27842 9 10.6193 9 12Z" fill="#FF5F00"/>
+                            <path d="M6.98761 16C8.16917 18.3304 10.4315 20 13 20C17.4183 20 21 16.4183 21 12C21 7.58172 17.4183 4 13 4C10.4315 4 8.16917 5.66961 6.98761 8H15.7802C16.2889 9.27842 16.5604 10.6193 16.5604 12C16.5604 13.3807 16.2889 14.7216 15.7802 16H6.98761Z" fill="#EB001B"/>
+                            <path d="M16.5604 12C16.5604 10.6193 16.2889 9.27842 15.7802 8H6.98761C5.1283 11.3276 5.1283 12.6724 6.98761 16H15.7802C16.2889 14.7216 16.5604 13.3807 16.5604 12Z" fill="#F79E1B"/>
+                            <path d="M3 12C3 16.4183 6.58172 20 11 20C8.43146 20 6.16917 18.3304 4.98761 16C3.1283 12.6724 3.1283 11.3276 4.98761 8C6.16917 5.66961 8.43146 4 11 4C6.58172 4 3 7.58172 3 12Z" fill="#EB001B"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- PayPal -->
+                    <div class="h-8 w-12 bg-white rounded shadow-sm flex items-center justify-center p-1">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                            <path d="M9.29892 8.75885C9.38168 8.19454 9.82361 7.75879 10.393 7.75879H14.0436C15.6449 7.75879 16.9456 9.07414 16.9286 10.676C16.9117 12.278 15.5774 13.5765 13.976 13.5765H12.1005C11.8474 13.5765 11.627 13.7703 11.593 14.0214L11.1343 17.1771C11.1003 17.4282 10.8799 17.622 10.6268 17.622H8.87237C8.70475 17.622 8.59249 17.4654 8.62011 17.2997L9.29892 8.75885Z" fill="#002987"/>
+                            <path d="M16.9115 10.6761C16.9286 9.07432 15.628 7.75897 14.0267 7.75897H13.0584C13.6278 7.75897 14.0697 8.19473 14.1525 8.75903L14.7969 16.8223C14.8245 16.9879 14.7122 17.1446 14.5446 17.1446H16.2991C16.5521 17.1446 16.7726 16.9508 16.8065 16.6997L17.052 14.6774L17.2974 12.6551C17.3144 11.9847 17.1724 11.3148 16.9115 10.6761Z" fill="#0085CC"/>
+                            <path d="M15.4881 10.6761C15.505 9.07432 14.2045 7.75897 12.6031 7.75897H11.6348C12.2043 7.75897 12.6462 8.19473 12.729 8.75903L13.3734 16.8223C13.401 16.9879 13.2887 17.1446 13.1211 17.1446H14.8756C15.1286 17.1446 15.3491 16.9508 15.383 16.6997L15.6285 14.6774L15.8739 12.6551C15.8909 11.9847 15.7489 11.3148 15.4881 10.6761Z" fill="#00186A"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Apple Pay -->
+                    <div class="h-8 w-12 bg-white rounded shadow-sm flex items-center justify-center p-1">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                            <path d="M13.0583 7.31519C12.4864 7.31519 11.5786 6.81006 10.9248 6.81006C10.0889 6.81006 9.01023 7.37435 8.42748 8.32064C7.72388 9.52206 7.92481 11.6271 9.23123 13.7845C9.78305 14.7793 10.5005 15.9001 11.3503 15.9001C12.0538 15.9001 12.3133 15.399 13.2651 15.399C14.17 15.399 14.4864 15.9001 15.1898 15.9001C16.0537 15.9001 16.7002 14.9054 17.2521 13.9247C17.7328 13.1032 17.8757 12.3097 17.899 12.2249C17.875 12.2109 16.0977 11.4458 16.0977 9.3729C16.0977 7.6077 17.4809 6.79572 17.5275 6.75726C16.7712 5.60158 15.6459 5.50106 15.1898 5.50106C14.3399 5.50106 13.6365 6.06465 13.0583 6.06465" fill="black"/>
+                            <path d="M12.8083 4.65C13.1247 4.24347 13.4411 3.69482 13.4411 3C12.6752 3.0384 11.7914 3.5077 11.4281 3.96C11.0877 4.33953 10.7713 4.90318 10.7713 5.598C11.584 5.66441 12.4447 5.05652 12.8083 4.65Z" fill="black"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Google Pay -->
+                    <div class="h-8 w-12 bg-white rounded shadow-sm flex items-center justify-center p-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-full">
+                            <path d="M13.68 12.504c0-.308-.024-.588-.096-.84h-4.32v1.548h2.508c-.06.432-.252.792-.54 1.08v.888h1.38c.816-.744 1.068-1.86 1.068-2.676z" fill="#4285f4"/>
+                            <path d="M9.264 15.108c1.152 0 2.124-.384 2.832-1.032l-1.38-.876c-.384.252-.876.42-1.452.42-1.116 0-2.064-.756-2.4-1.776H5.448v.912a4.224 4.224 0 0 0 3.816 2.352z" fill="#34a853"/>
+                            <path d="M6.864 11.844a2.54 2.54 0 0 1 0-1.632V9.3H5.448a4.196 4.196 0 0 0 0 3.756l1.416-.912z" fill="#fbbc05"/>
+                            <path d="M9.264 8.46c.6 0 1.152.204 1.584.6l1.224-.96C11.34 7.464 10.344 7.02 9.264 7.02A4.224 4.224 0 0 0 5.448 9.3l1.416.912c.336-1.02 1.284-1.752 2.4-1.752z" fill="#ea4335"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+    <!-- Hero Banner -->
+    <section class="relative bg-gray-900 text-white overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="T-Shirt Collection" class="w-full h-full object-cover opacity-40">
+        </div>
+        <div class="container mx-auto px-4 py-24 relative z-10">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Premium T-Shirts Collection</h1>
+                <p class="text-xl mb-8">Express yourself with our unique Bangladeshi designed T-Shirts. 100% premium cotton, perfect fit, and exceptional comfort.</p>
+                <a href="#products" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all inline-block">
+                    Shop Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Collections</h2>
+            <div class="grid grid-cols-2 md:grid-cols-7 gap-4 md:gap-8">
+                <a href="#" class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="image/t1.png" alt="Series Collection" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                        <h3 class="text-white font-bold text-xl">Series</h3>
+                    </div>
+                </a>
+                <a href="#" class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="image/t9.png" alt="Father's Day" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                        <h3 class="text-white font-bold text-xl">Father's Day</h3>
+                    </div>
+                </a>
+                <a href="#" class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="image/wb.png" alt="Warface" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                        <h3 class="text-white font-bold text-xl">Warface</h3>
+                    </div>
+                </a>
+                <a href="#" class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="image/k2.png" alt="Bangladesh" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                        <h3 class="text-white font-bold text-xl">বাংলার বুলি</h3>
+                    </div>
+                </a>
+                <a href="#" class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="image/ka.png" alt="Warface" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                        <h3 class="text-white font-bold text-xl">কমিকস</h3>
+                    </div>
+                </a>
+                <a href="#" class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="image/ba.png" alt="Bangladesh" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                        <h3 class="text-white font-bold text-xl">Bangladesh</h3>
+                    </div>
+                </a>
+                <a href="#" class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="image/ta.png" alt="Bangladesh" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                        <h3 class="text-white font-bold text-xl">তুফান</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- T-Shirts Section -->
+    <section class="py-16 bg-gray-50" id="products">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-3xl font-bold">Premium T-Shirts</h2>
+                    <p class="text-gray-600 mt-2">Discover our collection of high-quality, uniquely designed T-Shirts</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button id="filterToggle" class="bg-white border border-gray-300 px-4 py-2 rounded-lg focus:outline-none flex items-center">
+                            <i class="fas fa-filter mr-2"></i>
+                            Filter
+                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                        </button>
+                        <div id="filterDropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10 hidden">
+                            <div class="py-1">
+                                <button class="filter-btn active block w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-filter="All">All Products</button>
+                                <button class="filter-btn block w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-filter="Father's Day">Father's Day</button>
+                                <button class="filter-btn block w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-filter="James">James</button>
+                                <button class="filter-btn block w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-filter="Warface">Warface</button>
+                                <button class="filter-btn block w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-filter="Bangladesh">Bangladesh</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <button id="sortToggle" class="bg-white border border-gray-300 px-4 py-2 rounded-lg focus:outline-none flex items-center">
+                            <i class="fas fa-sort mr-2"></i>
+                            Sort
+                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                        </button>
+                        <div id="sortDropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10 hidden">
+                            <div class="py-1">
+                                <button class="sort-btn block w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-sort="featured">Featured</button>
+                                <button class="sort-btn block w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-sort="price-asc">Price: Low to High</button>
+                                <button class="sort-btn block w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-sort="price-desc">Price: High to Low</button>
+                                <button class="sort-btn block w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-sort="newest">Newest Arrivals</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8">
+                <div id="filterSidebar" class="md:w-1/4 hidden md:block bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-lg font-semibold mb-4 flex items-center">
+                        <i class="fas fa-sliders-h mr-2"></i> Filters
+                    </h4>
+                    
+                    <div class="mb-6">
+                        <h5 class="font-medium mb-3">Categories</h5>
+                        <div class="space-y-2">
+                            <button class="filter-btn active w-full text-left px-3 py-2 rounded-lg bg-yellow-100 text-black" data-filter="All">All T-Shirts</button>
+                            <button class="filter-btn w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100" data-filter="Father's Day">Father's Day</button>
+                            <button class="filter-btn w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100" data-filter="James">James</button>
+                            <button class="filter-btn w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100" data-filter="Warface">Warface</button>
+                            <button class="filter-btn w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100" data-filter="Bangladesh">Bangladesh</button>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h5 class="font-medium mb-3">Price Range</h5>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-gray-600">৳500</span>
+                            <span class="text-sm text-gray-600">৳5000</span>
+                        </div>
+                        <input type="range" min="500" max="5000" value="2500" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between mt-2">
+                            <span class="text-sm font-medium">৳500</span>
+                            <span class="text-sm font-medium">৳5000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h5 class="font-medium mb-3">Colors</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="w-8 h-8 rounded-full bg-black border-2 border-transparent hover:border-gray-300"></button>
+                            <button class="w-8 h-8 rounded-full bg-white border-2 border-gray-300 hover:border-gray-400"></button>
+                            <button class="w-8 h-8 rounded-full bg-blue-500 border-2 border-transparent hover:border-gray-300"></button>
+                            <button class="w-8 h-8 rounded-full bg-red-500 border-2 border-transparent hover:border-gray-300"></button>
+                            <button class="w-8 h-8 rounded-full bg-green-500 border-2 border-transparent hover:border-gray-300"></button>
+                            <button class="w-8 h-8 rounded-full bg-yellow-500 border-2 border-transparent hover:border-gray-300"></button>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h5 class="font-medium mb-3">Sizes</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="px-3 py-1 border rounded-md hover:bg-gray-100">S</button>
+                            <button class="px-3 py-1 border rounded-md hover:bg-gray-100">M</button>
+                            <button class="px-3 py-1 border rounded-md hover:bg-gray-100">L</button>
+                            <button class="px-3 py-1 border rounded-md hover:bg-gray-100">XL</button>
+                            <button class="px-3 py-1 border rounded-md hover:bg-gray-100">XXL</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-3/4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="product-grid">
+                        <!-- Product 1 -->
+                        <div class="bg-white p-5 rounded-xl shadow-sm product-card fade-in" data-category="Father's Day" data-price="1990" data-date="2023-05-15">
+                            <div class="discount-badge">20% OFF</div>
+                            <div class="relative overflow-hidden rounded-lg mb-4 h-64">
+                                <img src="image/t13.png" alt="আমার পোলায় রংবাজ" class="w-full h-full object-contain transition-transform duration-500 hover:scale-105">
+                                <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-5 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+                                    <button class="quick-view bg-white text-black px-4 py-2 rounded-full font-medium shadow-md hover:bg-gray-100 transition-all">
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-semibold mb-1">আমার পোলায় রংবাজ</h4>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400 mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="text-sm text-gray-500">(42)</span>
+                            </div>
+                            <div class="flex items-center mb-3">
+                                <p class="text-lg font-bold text-gray-900">৳1,990</p>
+                                <p class="text-sm text-gray-500 line-through ml-2">৳2,490</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex space-x-1">
+                                    <span class="w-4 h-4 bg-black rounded-full border border-gray-300"></span>
+                                    <span class="w-4 h-4 bg-blue-500 rounded-full border border-gray-300"></span>
+                                </div>
+                                <button class="add-to-cart bg-yellow-400 text-black px-4 py-2 rounded-lg font-medium hover:bg-yellow-500 transition-colors flex items-center" 
+                                        data-id="1" 
+                                        data-name="আমার পোলায় রংবাজ" 
+                                        data-price="1990" 
+                                        data-image="image/t13.png">
+                                    <i class="fas fa-cart-plus mr-2"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="bg-white p-5 rounded-xl shadow-sm product-card fade-in" data-category="James" data-price="1990" data-date="2023-06-20">
+                            <div class="discount-badge">20% OFF</div>
+                            <div class="relative overflow-hidden rounded-lg mb-4 h-64">
+                                <img src="image/t11.png" alt="দুঃখিনী দুঃখ করোনা" class="w-full h-full object-contain transition-transform duration-500 hover:scale-105">
+                                <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-5 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+                                    <button class="quick-view bg-white text-black px-4 py-2 rounded-full font-medium shadow-md hover:bg-gray-100 transition-all">
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-semibold mb-1">দুঃখিনী দুঃখ করোনা</h4>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400 mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="text-sm text-gray-500">(36)</span>
+                            </div>
+                            <div class="flex items-center mb-3">
+                                <p class="text-lg font-bold text-gray-900">৳1,990</p>
+                                <p class="text-sm text-gray-500 line-through ml-2">৳2,490</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex space-x-1">
+                                    <span class="w-4 h-4 bg-blue-500 rounded-full border border-gray-300"></span>
+                                    <span class="w-4 h-4 bg-white rounded-full border border-gray-300"></span>
+                                </div>
+                                <button class="add-to-cart bg-yellow-400 text-black px-4 py-2 rounded-lg font-medium hover:bg-yellow-500 transition-colors flex items-center" 
+                                        data-id="2" 
+                                        data-name="দুঃখিনী দুঃখ করোনা" 
+                                        data-price="1990" 
+                                        data-image="image/t11.png">
+                                    <i class="fas fa-cart-plus mr-2"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="bg-white p-5 rounded-xl shadow-sm product-card fade-in" data-category="Warface" data-price="1990" data-date="2023-07-10">
+                            <div class="discount-badge">20% OFF</div>
+                            <div class="relative overflow-hidden rounded-lg mb-4 h-64">
+                                <img src="image/t10.png" alt="অবাক ভালবাসা - Warfaze" class="w-full h-full object-contain transition-transform duration-500 hover:scale-105">
+                                <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-5 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+                                    <button class="quick-view bg-white text-black px-4 py-2 rounded-full font-medium shadow-md hover:bg-gray-100 transition-all">
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-semibold mb-1">অবাক ভালবাসা - Warfaze</h4>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400 mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-sm text-gray-500">(58)</span>
+                            </div>
+                            <div class="flex items-center mb-3">
+                                <p class="text-lg font-bold text-gray-900">৳1,990</p>
+                                <p class="text-sm text-gray-500 line-through ml-2">৳2,490</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex space-x-1">
+                                    <span class="w-4 h-4 bg-white rounded-full border border-gray-300"></span>
+                                    <span class="w-4 h-4 bg-blue-500 rounded-full border border-gray-300"></span>
+                                </div>
+                                <button class="add-to-cart bg-yellow-400 text-black px-4 py-2 rounded-lg font-medium hover:bg-yellow-500 transition-colors flex items-center" 
+                                        data-id="3" 
+                                        data-name="অবাক ভালবাসা - Warfaze" 
+                                        data-price="1990" 
+                                        data-image="image/t10.png">
+                                    <i class="fas fa-cart-plus mr-2"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="bg-white p-5 rounded-xl shadow-sm product-card fade-in" data-category="Bangladesh" data-price="1990" data-date="2023-04-25">
+                            <div class="discount-badge">20% OFF</div>
+                            <div class="relative overflow-hidden rounded-lg mb-4 h-64">
+                                <img src="image/t12.png" alt="৭১ এর পতাকা" class="w-full h-full object-contain transition-transform duration-500 hover:scale-105">
+                                <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-5 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+                                    <button class="quick-view bg-white text-black px-4 py-2 rounded-full font-medium shadow-md hover:bg-gray-100 transition-all">
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-semibold mb-1">৭১ এর পতাকা</h4>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400 mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="text-sm text-gray-500">(47)</span>
+                            </div>
+                            <div class="flex items-center mb-3">
+                                <p class="text-lg font-bold text-gray-900">৳1,990</p>
+                                <p class="text-sm text-gray-500 line-through ml-2">৳2,490</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex space-x-1">
+                                    <span class="w-4 h-4 bg-green-500 rounded-full border border-gray-300"></span>
+                                    <span class="w-4 h-4 bg-red-500 rounded-full border border-gray-300"></span>
+                                </div>
+                                <button class="add-to-cart bg-yellow-400 text-black px-4 py-2 rounded-lg font-medium hover:bg-yellow-500 transition-colors flex items-center" 
+                                        data-id="4" 
+                                        data-name="৭১ এর পতাকা" 
+                                        data-price="1990" 
+                                        data-image="image/t12.png">
+                                    <i class="fas fa-cart-plus mr-2"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="bg-white p-5 rounded-xl shadow-sm product-card fade-in" data-category="Warface" data-price="1990" data-date="2023-08-05">
+                            <div class="discount-badge">20% OFF</div>
+                            <div class="relative overflow-hidden rounded-lg mb-4 h-64">
+                                <img src="image/t5.png" alt="Warface T-Shirt" class="w-full h-full object-contain transition-transform duration-500 hover:scale-105">
+                                <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-5 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+                                    <button class="quick-view bg-white text-black px-4 py-2 rounded-full font-medium shadow-md hover:bg-gray-100 transition-all">
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-semibold mb-1">Warface T-Shirt</h4>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400 mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="text-sm text-gray-500">(29)</span>
+                            </div>
+                            <div class="flex items-center mb-3">
+                                <p class="text-lg font-bold text-gray-900">৳1,990</p>
+                                <p class="text-sm text-gray-500 line-through ml-2">৳2,490</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex space-x-1">
+                                    <span class="w-4 h-4 bg-black rounded-full border border-gray-300"></span>
+                                    <span class="w-4 h-4 bg-green-500 rounded-full border border-gray-300"></span>
+                                </div>
+                                <button class="add-to-cart bg-yellow-400 text-black px-4 py-2 rounded-lg font-medium hover:bg-yellow-500 transition-colors flex items-center" 
+                                        data-id="5" 
+                                        data-name="Warface T-Shirt" 
+                                        data-price="1990" 
+                                        data-image="image/t5.png">
+                                    <i class="fas fa-cart-plus mr-2"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="bg-white p-5 rounded-xl shadow-sm product-card fade-in" data-category="James" data-price="1990" data-date="2023-09-15">
+                            <div class="discount-badge">20% OFF</div>
+                            <div class="relative overflow-hidden rounded-lg mb-4 h-64">
+                                <img src="image/t8.png" alt="James Portrait and Signature" class="w-full h-full object-contain transition-transform duration-500 hover:scale-105">
+                                <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-5 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+                                    <button class="quick-view bg-white text-black px-4 py-2 rounded-full font-medium shadow-md hover:bg-gray-100 transition-all">
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-semibold mb-1">James Portrait and Signature</h4>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400 mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-sm text-gray-500">(63)</span>
+                            </div>
+                            <div class="flex items-center mb-3">
+                                <p class="text-lg font-bold text-gray-900">৳1,990</p>
+                                <p class="text-sm text-gray-500 line-through ml-2">৳2,490</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex space-x-1">
+                                    <span class="w-4 h-4 bg-blue-500 rounded-full border border-gray-300"></span>
+                                    <span class="w-4 h-4 bg-yellow-500 rounded-full border border-gray-300"></span>
+                                </div>
+                                <button class="add-to-cart bg-yellow-400 text-black px-4 py-2 rounded-lg font-medium hover:bg-yellow-500 transition-colors flex items-center" 
+                                        data-id="6" 
+                                        data-name="James Portrait and Signature" 
+                                        data-price="1990" 
+                                        data-image="image/t8.png">
+                                    <i class="fas fa-cart-plus mr-2"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-12">
+                        <button class="btn-secondary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all inline-flex items-center" id="load-more">
+                            <span>Load More</span>
+                            <i class="fas fa-chevron-down ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg hover:shadow-md transition-all">
+                    <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-truck text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Free Shipping</h3>
+                    <p class="text-gray-600">Free shipping on all orders over ৳2000 across Bangladesh</p>
+                </div>
+                <div class="text-center p-6 rounded-lg hover:shadow-md transition-all">
+                    <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-undo-alt text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Easy Returns</h3>
+                    <p class="text-gray-600">30-day return policy for unused products with tags</p>
+                </div>
+                <div class="text-center p-6 rounded-lg hover:shadow-md transition-all">
+                    <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-award text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Premium Quality</h3>
+                    <p class="text-gray-600">100% premium cotton with high-quality prints that last</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">2 weeks ago</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"The quality of the fabric is amazing! The print hasn't faded even after multiple washes. Definitely worth the price."</p>
+                    <div class="flex items-center">
+                        <img src="https://via.placeholder.com/40" alt="Customer" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium">Rahim Khan</h4>
+                            <p class="text-sm text-gray-500">Dhaka</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">1 month ago</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"I bought the Warface T-shirt for my husband and he loved it! The fit is perfect and the design is unique."</p>
+                    <div class="flex items-center">
+                        <img src="https://via.placeholder.com/40" alt="Customer" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium">Tasnim Ahmed</h4>
+                            <p class="text-sm text-gray-500">Chittagong</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">3 days ago</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Fast delivery and excellent customer service. The T-shirt quality exceeded my expectations. Will order again!"</p>
+                    <div class="flex items-center">
+                        <img src="https://via.placeholder.com/40" alt="Customer" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium">Farhana Islam</h4>
+                            <p class="text-sm text-gray-500">Sylhet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-yellow-400">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Join Our Newsletter</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">Subscribe to get updates on new arrivals, special offers and other discount information.</p>
+            <div class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-l-lg focus:outline-none">
+                <button class="bg-black text-white px-6 py-3 rounded-r-lg font-semibold hover:bg-gray-900 transition-colors">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-black py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 flex items-center">
+                        <span class="bg-black text-yellow-400 px-2 py-1 rounded mr-2 text-xl font-bold">RONGBAZ</span>
+                    </h4>
+                    <p class="mb-4">Premium quality T-Shirts with unique Bangladeshi designs. Express yourself with our exclusive collections.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-black hover:text-gray-700 transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-black hover:text-gray-700 transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-black hover:text-gray-700 transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Shop</h4>
+                    <ul class="space-y-2">
+                        <li><a href="tshirts.html" class="hover:text-gray-700 transition-colors">T-Shirts</a></li>
+                        <li><a href="kids.html" class="hover:text-gray-700 transition-colors">Kids</a></li>
+                        <li><a href="hoodies.html" class="hover:text-gray-700 transition-colors">Hoodies</a></li>
+                        <li><a href="accessories.html" class="hover:text-gray-700 transition-colors">Accessories</a></li>
+                        <li><a href="series.html" class="hover:text-gray-700 transition-colors">Series</a></li>
+                        <li><a href="mugs.html" class="hover:text-gray-700 transition-colors">Mugs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Customer Service</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-700 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-gray-700 transition-colors">FAQs</a></li>
+                        <li><a href="#" class="hover:text-gray-700 transition-colors">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:text-gray-700 transition-colors">Return & Exchange</a></li>
+                        <li><a href="#" class="hover:text-gray-700 transition-colors">Size Guide</a></li>
+                        <li><a href="#" class="hover:text-gray-700 transition-colors">Track Order</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Jhal murir Dokan, Cottessori road, Chittagong, Bangladesh</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2"></i>
+                            <span>+880 1970915225</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>info@rongbaz.com</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4">
+                        <h5 class="font-medium mb-2">We Accept</h5>
+                        <div class="flex items-center gap-3 cursor-pointer">
+                            <!-- Visa -->
+                            <div class="h-8 w-12 bg-white rounded shadow-sm flex items-center justify-center p-1">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                                    <path d="M10.9433 8.17191H8.6796C8.41972 8.17191 8.20755 8.34852 8.15365 8.60151L6.76425 15.8014C6.72709 15.9688 6.85335 16.1288 7.02372 16.1288H8.17152C8.43163 16.1288 8.64369 15.9516 8.69759 15.6993L9.0429 13.859C9.09658 13.6067 9.30886 13.4301 9.56874 13.4301H10.5481C12.252 13.4301 13.2984 12.3044 13.5582 10.6768C13.6756 10.0054 13.5554 9.47875 13.239 9.097C12.8897 8.67706 12.2272 8.17191 10.9433 8.17191ZM11.3927 10.7881C11.2536 11.727 10.5265 11.727 9.8214 11.727H9.40668L9.74005 10.0328C9.77002 9.88387 9.89873 9.77649 10.0495 9.77649H10.2363C10.7278 9.77649 11.1935 9.77649 11.4326 10.0651C11.5765 10.2287 11.6207 10.4628 11.3927 10.7881Z" fill="#0066FF"/>
+                                    <path d="M19.9501 10.7237H18.799C18.6483 10.7237 18.5196 10.8311 18.4896 10.9801L18.4268 11.3066L18.3291 11.1585C18.0367 10.7066 17.3716 10.5543 16.7077 10.5543C15.1876 10.5543 13.8913 11.7181 13.6175 13.3262C13.475 14.1264 13.6614 14.8932 14.0906 15.4186C14.4829 15.8998 15.0579 16.0948 15.7499 16.0948C16.9675 16.0948 17.6606 15.334 17.6606 15.334L17.5972 15.6668C17.56 15.8342 17.6863 15.9943 17.8567 15.9943H18.9039C19.1638 15.9943 19.3758 15.8171 19.4297 15.5648L20.2096 11.0518C20.2465 10.8836 20.1205 10.7237 19.9501 10.7237ZM18.1001 13.3551C17.9557 14.1328 17.3348 14.6602 16.5459 14.6602C16.1513 14.6602 15.8373 14.5332 15.6403 14.2921C15.4451 14.0529 15.3693 13.7095 15.4394 13.3262C15.5738 12.556 16.2072 12.0156 16.9825 12.0156C17.3692 12.0156 17.6812 12.1443 17.8821 12.3869C18.0841 12.6317 18.1662 12.9763 18.1001 13.3551Z" fill="#0066FF"/>
+                                    <path d="M15.2393 8.17191H14.0868C13.9094 8.17191 13.7455 8.27713 13.6743 8.44331L12.2866 15.8007C12.2495 15.9688 12.3757 16.1288 12.5461 16.1288H13.7747C13.9521 16.1288 14.116 16.0236 14.1871 15.8574L15.5749 8.5C15.612 8.33193 15.4858 8.17191 15.2393 8.17191Z" fill="#0066FF"/>
+                                </svg>
+                            </div>
+                            
+                            <!-- Mastercard -->
+                            <div class="h-8 w-12 bg-white rounded shadow-sm flex items-center justify-center p-1">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                                    <path d="M9 12C9 13.3807 8.72858 14.7216 8.21982 16H15.7802C16.2889 14.7216 16.5604 13.3807 16.5604 12C16.5604 10.6193 16.2889 9.27842 15.7802 8H8.21982C8.72858 9.27842 9 10.6193 9 12Z" fill="#FF5F00"/>
+                                    <path d="M6.98761 16C8.16917 18.3304 10.4315 20 13 20C17.4183 20 21 16.4183 21 12C21 7.58172 17.4183 4 13 4C10.4315 4 8.16917 5.66961 6.98761 8H15.7802C16.2889 9.27842 16.5604 10.6193 16.5604 12C16.5604 13.3807 16.2889 14.7216 15.7802 16H6.98761Z" fill="#EB001B"/>
+                                    <path d="M16.5604 12C16.5604 10.6193 16.2889 9.27842 15.7802 8H6.98761C5.1283 11.3276 5.1283 12.6724 6.98761 16H15.7802C16.2889 14.7216 16.5604 13.3807 16.5604 12Z" fill="#F79E1B"/>
+                                    <path d="M3 12C3 16.4183 6.58172 20 11 20C8.43146 20 6.16917 18.3304 4.98761 16C3.1283 12.6724 3.1283 11.3276 4.98761 8C6.16917 5.66961 8.43146 4 11 4C6.58172 4 3 7.58172 3 12Z" fill="#EB001B"/>
+                                </svg>
+                            </div>
+                            
+                            <!-- PayPal -->
+                            <div class="h-8 w-12 bg-white rounded shadow-sm flex items-center justify-center p-1">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                                    <path d="M9.29892 8.75885C9.38168 8.19454 9.82361 7.75879 10.393 7.75879H14.0436C15.6449 7.75879 16.9456 9.07414 16.9286 10.676C16.9117 12.278 15.5774 13.5765 13.976 13.5765H12.1005C11.8474 13.5765 11.627 13.7703 11.593 14.0214L11.1343 17.1771C11.1003 17.4282 10.8799 17.622 10.6268 17.622H8.87237C8.70475 17.622 8.59249 17.4654 8.62011 17.2997L9.29892 8.75885Z" fill="#002987"/>
+                                    <path d="M16.9115 10.6761C16.9286 9.07432 15.628 7.75897 14.0267 7.75897H13.0584C13.6278 7.75897 14.0697 8.19473 14.1525 8.75903L14.7969 16.8223C14.8245 16.9879 14.7122 17.1446 14.5446 17.1446H16.2991C16.5521 17.1446 16.7726 16.9508 16.8065 16.6997L17.052 14.6774L17.2974 12.6551C17.3144 11.9847 17.1724 11.3148 16.9115 10.6761Z" fill="#0085CC"/>
+                                    <path d="M15.4881 10.6761C15.505 9.07432 14.2045 7.75897 12.6031 7.75897H11.6348C12.2043 7.75897 12.6462 8.19473 12.729 8.75903L13.3734 16.8223C13.401 16.9879 13.2887 17.1446 13.1211 17.1446H14.8756C15.1286 17.1446 15.3491 16.9508 15.383 16.6997L15.6285 14.6774L15.8739 12.6551C15.8909 11.9847 15.7489 11.3148 15.4881 10.6761Z" fill="#00186A"/>
+                                </svg>
+                            </div>
+                            
+                            <!-- Apple Pay -->
+                            <div class="h-8 w-12 bg-white rounded shadow-sm flex items-center justify-center p-1">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                                    <path d="M13.0583 7.31519C12.4864 7.31519 11.5786 6.81006 10.9248 6.81006C10.0889 6.81006 9.01023 7.37435 8.42748 8.32064C7.72388 9.52206 7.92481 11.6271 9.23123 13.7845C9.78305 14.7793 10.5005 15.9001 11.3503 15.9001C12.0538 15.9001 12.3133 15.399 13.2651 15.399C14.17 15.399 14.4864 15.9001 15.1898 15.9001C16.0537 15.9001 16.7002 14.9054 17.2521 13.9247C17.7328 13.1032 17.8757 12.3097 17.899 12.2249C17.875 12.2109 16.0977 11.4458 16.0977 9.3729C16.0977 7.6077 17.4809 6.79572 17.5275 6.75726C16.7712 5.60158 15.6459 5.50106 15.1898 5.50106C14.3399 5.50106 13.6365 6.06465 13.0583 6.06465" fill="black"/>
+                                    <path d="M12.8083 4.65C13.1247 4.24347 13.4411 3.69482 13.4411 3C12.6752 3.0384 11.7914 3.5077 11.4281 3.96C11.0877 4.33953 10.7713 4.90318 10.7713 5.598C11.584 5.66441 12.4447 5.05652 12.8083 4.65Z" fill="black"/>
+                                </svg>
+                            </div>
+                            
+                            <!-- Google Pay -->
+                            <div class="h-8 w-12 bg-white rounded shadow-sm flex items-center justify-center p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-full">
+                                    <path d="M13.68 12.504c0-.308-.024-.588-.096-.84h-4.32v1.548h2.508c-.06.432-.252.792-.54 1.08v.888h1.38c.816-.744 1.068-1.86 1.068-2.676z" fill="#4285f4"/>
+                                    <path d="M9.264 15.108c1.152 0 2.124-.384 2.832-1.032l-1.38-.876c-.384.252-.876.42-1.452.42-1.116 0-2.064-.756-2.4-1.776H5.448v.912a4.224 4.224 0 0 0 3.816 2.352z" fill="#34a853"/>
+                                    <path d="M6.864 11.844a2.54 2.54 0 0 1 0-1.632V9.3H5.448a4.196 4.196 0 0 0 0 3.756l1.416-.912z" fill="#fbbc05"/>
+                                    <path d="M9.264 8.46c.6 0 1.152.204 1.584.6l1.224-.96C11.34 7.464 10.344 7.02 9.264 7.02A4.224 4.224 0 0 0 5.448 9.3l1.416.912c.336-1.02 1.284-1.752 2.4-1.752z" fill="#ea4335"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm">© 2023 Rongbaz. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-sm hover:text-gray-700 transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-sm hover:text-gray-700 transition-colors">Terms of Service</a>
+                    <a href="#" class="text-sm hover:text-gray-700 transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div id="quickViewModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="relative">
+                <button id="closeQuickView" class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md z-10">
+                    <i class="fas fa-times text-gray-700"></i>
+                </button>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
+                    <div class="sticky top-0">
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <img id="quickViewImage" src="" alt="" class="w-full h-auto object-contain">
+                        </div>
+                        <div class="flex mt-4 space-x-2">
+                            <img src="https://via.placeholder.com/60" alt="Thumbnail" class="w-16 h-16 object-cover border border-gray-200 rounded cursor-pointer">
+                            <img src="https://via.placeholder.com/60" alt="Thumbnail" class="w-16 h-16 object-cover border border-gray-200 rounded cursor-pointer">
+                            <img src="https://via.placeholder.com/60" alt="Thumbnail" class="w-16 h-16 object-cover border border-gray-200 rounded cursor-pointer">
+                        </div>
+                    </div>
+                    <div>
+                        <h3 id="quickViewTitle" class="text-2xl font-bold mb-2"></h3>
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">(42 Reviews)</span>
+                        </div>
+                        <div class="flex items-center mb-6">
+                            <span id="quickViewPrice" class="text-2xl font-bold text-gray-900 mr-3"></span>
+                            <span id="quickViewOldPrice" class="text-lg text-gray-500 line-through"></span>
+                            <span class="bg-red-100 text-red-800 text-xs font-medium ml-2 px-2.5 py-0.5 rounded">20% OFF</span>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-medium mb-2">Description</h4>
+                            <p id="quickViewDescription" class="text-gray-700"></p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-medium mb-2">Colors</h4>
+                            <div class="flex space-x-2">
+                                <button class="w-10 h-10 rounded-full bg-black border-2 border-gray-300"></button>
+                                <button class="w-10 h-10 rounded-full bg-blue-500 border-2 border-transparent"></button>
+                                <button class="w-10 h-10 rounded-full bg-white border-2 border-gray-300"></button>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-medium mb-2">Size</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="px-4 py-2 border rounded-md hover:bg-gray-100">S</button>
+                                <button class="px-4 py-2 border rounded-md hover:bg-gray-100 bg-gray-100">M</button>
+                                <button class="px-4 py-2 border rounded-md hover:bg-gray-100">L</button>
+                                <button class="px-4 py-2 border rounded-md hover:bg-gray-100">XL</button>
+                                <button class="px-4 py-2 border rounded-md hover:bg-gray-100">XXL</button>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-medium mb-2">Quantity</h4>
+                            <div class="flex items-center">
+                                <button class="bg-gray-200 px-3 py-1 rounded-l">-</button>
+                                <input type="number" value="1" min="1" class="w-16 text-center border-t border-b border-gray-300 py-1">
+                                <button class="bg-gray-200 px-3 py-1 rounded-r">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <button class="add-to-cart btn-primary text-white px-6 py-3 rounded-lg font-semibold flex-1 flex items-center justify-center">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Add to Cart
+                            </button>
+                            <button class="btn-secondary text-white px-6 py-3 rounded-lg font-semibold flex-1">
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-black text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-gray-800 transition-colors hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Cart Management
+        class Cart {
+            constructor() {
+                this.items = JSON.parse(localStorage.getItem('cart')) || [];
+                this.updateCartUI();
+            }
+
+            addItem(item, quantity = 1) {
+                const existingItem = this.items.find(i => i.id === item.id && i.color === item.color && i.size === item.size);
+                if (existingItem) {
+                    existingItem.quantity += quantity;
+                } else {
+                    this.items.push({...item, quantity});
+                }
+                this.saveCart();
+                this.updateCartUI();
+                this.showNotification(item.name, quantity);
+            }
+
+            removeItem(id) {
+                this.items = this.items.filter(item => item.id !== id);
+                this.saveCart();
+                this.updateCartUI();
+            }
+
+            updateQuantity(id, quantity) {
+                const item = this.items.find(i => i.id === id);
+                if (item) {
+                    item.quantity = quantity;
+                    this.saveCart();
+                    this.updateCartUI();
+                }
+            }
+
+            getTotal() {
+                return this.items.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2);
+            }
+
+            getItemCount() {
+                return this.items.reduce((sum, item) => sum + item.quantity, 0);
+            }
+
+            saveCart() {
+                localStorage.setItem('cart', JSON.stringify(this.items));
+            }
+
+            updateCartUI() {
+                const cartItemsDiv = document.getElementById('cart-items');
+                const cartCount = document.getElementById('cart-count');
+                const cartNotification = document.getElementById('cart-notification');
+                const cartSubtotal = document.getElementById('cart-subtotal');
+                const totalItems = this.getItemCount();
+
+                cartCount.textContent = `(${totalItems})`;
+                cartSubtotal.textContent = `৳${this.getTotal()}`;
+
+                if (totalItems > 0) {
+                    cartNotification.textContent = totalItems;
+                    cartNotification.classList.remove('hidden');
+                } else {
+                    cartNotification.classList.add('hidden');
+                }
+
+                cartItemsDiv.innerHTML = '';
+                if (this.items.length === 0) {
+                    cartItemsDiv.innerHTML = '<p class="text-center text-gray-500 py-8">Your cart is empty</p>';
+                } else {
+                    this.items.forEach(item => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = 'cart-item';
+                        itemDiv.innerHTML = `
+                            <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-contain rounded-lg">
+                            <div class="cart-item-details">
+                                <p class="font-medium">${item.name}</p>
+                                <p class="text-sm text-gray-600">${item.color} / ${item.size}</p>
+                                <div class="flex items-center mt-1">
+                                    <button class="quantity-btn" data-id="${item.id}" data-action="decrease">-</button>
+                                    <span class="quantity mx-2">${item.quantity}</span>
+                                    <button class="quantity-btn" data-id="${item.id}" data-action="increase">+</button>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="price font-medium">৳${(item.price * item.quantity).toFixed(2)}</p>
+                                <button class="remove-from-cart text-red-500 hover:text-red-700 text-sm mt-1" data-id="${item.id}">
+                                    <i class="fas fa-trash"></i> Remove
+                                </button>
+                            </div>
+                        `;
+                        cartItemsDiv.appendChild(itemDiv);
+                    });
+
+                    // Re-attach event listeners
+                    document.querySelectorAll('.remove-from-cart').forEach(button => {
+                        button.addEventListener('click', (e) => {
+                            const id = e.currentTarget.getAttribute('data-id');
+                            this.removeItem(id);
+                        });
+                    });
+
+                    document.querySelectorAll('.quantity-btn').forEach(button => {
+                        button.addEventListener('click', (e) => {
+                            const id = e.currentTarget.getAttribute('data-id');
+                            const action = e.currentTarget.getAttribute('data-action');
+                            const item = this.items.find(i => i.id === id);
+                            if (item) {
+                                if (action === 'increase') {
+                                    this.updateQuantity(id, item.quantity + 1);
+                                } else if (action === 'decrease' && item.quantity > 1) {
+                                    this.updateQuantity(id, item.quantity - 1);
+                                }
+                            }
+                        });
+                    });
+                }
+            }
+
+            showNotification(name, quantity) {
+                const notification = document.createElement('div');
+                notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg flex items-center animate-fade-in';
+                notification.innerHTML = `
+                    <i class="fas fa-check-circle mr-2"></i>
+                    ${quantity} × ${name} added to cart
+                `;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('animate-fade-out');
+                    setTimeout(() => notification.remove(), 300);
+                }, 3000);
+            }
+        }
+
+        const cart = new Cart();
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll effect
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Cart toggle
+            const cartIcon = document.getElementById('cart-icon');
+            const cartDrawer = document.getElementById('cart-drawer');
+            const cartOverlay = document.getElementById('cart-overlay');
+            const closeCart = document.getElementById('close-cart');
+
+            cartIcon.addEventListener('click', function() {
+                cartDrawer.classList.remove('translate-x-full');
+                cartOverlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+
+            function closeCartDrawer() {
+                cartDrawer.classList.add('translate-x-full');
+                cartOverlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+
+            closeCart.addEventListener('click', closeCartDrawer);
+            cartOverlay.addEventListener('click', closeCartDrawer);
+
+            // Checkout button
+            document.getElementById('checkout-button').addEventListener('click', function() {
+                if (cart.items.length === 0) {
+                    alert('Your cart is empty!');
+                    return;
+                }
+                alert('Redirecting to checkout...');
+                // In a real implementation, redirect to checkout page
+            });
+
+            // View cart button
+            document.getElementById('view-cart-button').addEventListener('click', function() {
+                alert('Redirecting to cart page...');
+                // In a real implementation, redirect to cart page
+            });
+
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const products = document.querySelectorAll('.product-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    products.forEach(product => {
+                        const category = product.getAttribute('data-category');
+                        if (filter === 'All' || category === filter) {
+                            product.style.display = 'block';
+                            product.classList.add('fade-in');
+                        } else {
+                            product.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Sort functionality
+            const sortButtons = document.querySelectorAll('.sort-btn');
+            sortButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const sortBy = this.getAttribute('data-sort');
+                    sortProducts(sortBy);
+                    sortButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            function sortProducts(sortBy) {
+                const productGrid = document.getElementById('product-grid');
+                const products = Array.from(document.querySelectorAll('.product-card'));
+                
+                products.sort((a, b) => {
+                    switch(sortBy) {
+                        case 'price-asc':
+                            return parseFloat(a.getAttribute('data-price')) - parseFloat(b.getAttribute('data-price'));
+                        case 'price-desc':
+                            return parseFloat(b.getAttribute('data-price')) - parseFloat(a.getAttribute('data-price'));
+                        case 'newest':
+                            return new Date(b.getAttribute('data-date')) - new Date(a.getAttribute('data-date'));
+                        default: // featured
+                            return 0;
+                    }
+                });
+                
+                products.forEach(product => productGrid.appendChild(product));
+            }
+
+            // Filter toggle for mobile
+            const filterToggle = document.getElementById('filterToggle');
+            const filterDropdown = document.getElementById('filterDropdown');
+            filterToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                filterDropdown.classList.toggle('hidden');
+                document.getElementById('sortDropdown').classList.add('hidden');
+            });
+
+            // Sort toggle for mobile
+            const sortToggle = document.getElementById('sortToggle');
+            const sortDropdown = document.getElementById('sortDropdown');
+            sortToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                sortDropdown.classList.toggle('hidden');
+                filterDropdown.classList.add('hidden');
+            });
+
+            // Close dd
+            document.addEventListener('click', function() {
+                filterDropdown.classList.add('hidden');
+                sortDropdown.classList.add('hidden');
+            });
+
+            // Add to cart buttons
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const item = {
+                        id: this.getAttribute('data-id'),
+                        name: this.getAttribute('data-name'),
+                        price: parseFloat(this.getAttribute('data-price')),
+                        image: this.getAttribute('data-image'),
+                        color: 'Black', // Default color, would be dynamic in real implementation
+                        size: 'M' // Default size, would be dynamic in real implementation
+                    };
+                    cart.addItem(item);
+                });
+            });
+
+            // Quick view functionality
+            const quickViewButtons = document.querySelectorAll('.quick-view');
+            const quickViewModal = document.getElementById('quickViewModal');
+            const closeQuickView = document.getElementById('closeQuickView');
+            const quickViewImage = document.getElementById('quickViewImage');
+            const quickViewTitle = document.getElementById('quickViewTitle');
+            const quickViewPrice = document.getElementById('quickViewPrice');
+            const quickViewOldPrice = document.getElementById('quickViewOldPrice');
+            const quickViewDescription = document.getElementById('quickViewDescription');
+
+            quickViewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productCard = this.closest('.product-card');
+                    const productName = productCard.querySelector('h4').textContent;
+                    const productPrice = productCard.querySelector('.text-lg.font-bold').textContent;
+                    const productOldPrice = productCard.querySelector('.line-through').textContent;
+                    const productImage = productCard.querySelector('img').src;
+                    
+                    quickViewTitle.textContent = productName;
+                    quickViewPrice.textContent = productPrice;
+                    quickViewOldPrice.textContent = productOldPrice;
+                    quickViewImage.src = productImage;
+                    quickViewDescription.textContent = 'This premium quality T-Shirt features a unique design printed with high-quality techniques to ensure long-lasting vibrancy. Made from 100% cotton for maximum comfort.';
+                    
+                    quickViewModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            closeQuickView.addEventListener('click', function() {
+                quickViewModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
+
+            quickViewModal.addEventListener('click', function(e) {
+                if (e.target === quickViewModal) {
+                    quickViewModal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            });
+
+ 
+            const loadMoreButton = document.getElementById('load-more');
+            let productCount = 6;
+            loadMoreButton.addEventListener('click', function() {
+                const productGrid = document.getElementById('product-grid');
+                const newProducts = [
+                    { 
+                        name: 'Boarding Pass T-Shirt', 
+                        price: '৳1,990', 
+                        oldPrice: '৳2,490', 
+                        colors: ['black', 'gray'], 
+                        category: "Father's Day", 
+                        id: '7', 
+                        image: 'https://via.placeholder.com/500x500?text=Boarding+Pass+T-Shirt',
+                        date: '2023-03-10'
+                    },
+                    { 
+                        name: 'Bangladesh Map T-Shirt', 
+                        price: '৳1,990', 
+                        oldPrice: '৳2,490', 
+                        colors: ['green', 'red'], 
+                        category: 'Bangladesh', 
+                        id: '8', 
+                        image: 'https://via.placeholder.com/500x500?text=Bangladesh+Map+T-Shirt',
+                        date: '2023-02-15'
+                    },
+                    { 
+                        name: 'Warface College T-Shirt', 
+                        price: '৳1,990', 
+                        oldPrice: '৳2,490', 
+                        colors: ['black', 'green'], 
+                        category: 'Warface', 
+                        id: '9', 
+                        image: 'https://via.placeholder.com/500x500?text=Warface+College+T-Shirt',
+                        date: '2023-01-20'
+                    },
+                ];
+
+                newProducts.forEach(product => {
+                    if (productCount < 9) {
+                        const productCard = document.createElement('div');
+                        productCard.className = 'bg-white p-5 rounded-xl shadow-sm product-card fade-in';
+                        productCard.setAttribute('data-category', product.category);
+                        productCard.setAttribute('data-price', '1990');
+                        productCard.setAttribute('data-date', product.date);
+                        productCard.innerHTML = `
+                            <div class="discount-badge">20% OFF</div>
+                            <div class="relative overflow-hidden rounded-lg mb-4 h-64">
+                                <img src="${product.image}" alt="${product.name}" class="w-full h-full object-contain transition-transform duration-500 hover:scale-105">
+                                <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-5 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+                                    <button class="quick-view bg-white text-black px-4 py-2 rounded-full font-medium shadow-md hover:bg-gray-100 transition-all">
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-semibold mb-1">${product.name}</h4>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400 mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="text-sm text-gray-500">(${Math.floor(Math.random() * 50) + 10})</span>
+                            </div>
+                            <div class="flex items-center mb-3">
+                                <p class="text-lg font-bold text-gray-900">${product.price}</p>
+                                <p class="text-sm text-gray-500 line-through ml-2">${product.oldPrice}</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex space-x-1">
+                                    ${product.colors.map(color => `<span class="w-4 h-4 bg-${color}-500 rounded-full border border-gray-300"></span>`).join('')}
+                                </div>
+                                <button class="add-to-cart bg-yellow-400 text-black px-4 py-2 rounded-lg font-medium hover:bg-yellow-500 transition-colors flex items-center" 
+                                        data-id="${product.id}" 
+                                        data-name="${product.name}" 
+                                        data-price="1990" 
+                                        data-image="${product.image}">
+                                    <i class="fas fa-cart-plus mr-2"></i>
+                                    Add
+                                </button>
+                            </div>
+                        `;
+                        productGrid.appendChild(productCard);
+                        productCount++;
+                    }
+                });
+                
+                if (productCount >= 9) {
+                    loadMoreButton.style.display = 'none';
+                }
+                
+
+                document.querySelectorAll('.quick-view').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const productCard = this.closest('.product-card');
+                        const productName = productCard.querySelector('h4').textContent;
+                        const productPrice = productCard.querySelector('.text-lg.font-bold').textContent;
+                        const productOldPrice = productCard.querySelector('.line-through').textContent;
+                        const productImage = productCard.querySelector('img').src;
+                        
+                        quickViewTitle.textContent = productName;
+                        quickViewPrice.textContent = productPrice;
+                        quickViewOldPrice.textContent = productOldPrice;
+                        quickViewImage.src = productImage;
+                        quickViewDescription.textContent = 'This premium quality T-Shirt features a unique design printed with high-quality techniques to ensure long-lasting vibrancy. Made from 100% cotton for maximum comfort.';
+                        
+                        quickViewModal.classList.remove('hidden');
+                        document.body.style.overflow = 'hidden';
+                    });
+                });
+                
+                document.querySelectorAll('.add-to-cart').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const item = {
+                            id: this.getAttribute('data-id'),
+                            name: this.getAttribute('data-name'),
+                            price: parseFloat(this.getAttribute('data-price')),
+                            image: this.getAttribute('data-image'),
+                            color: 'Black',
+                            size: 'M'
+                        };
+                        cart.addItem(item);
+                    });
+                });
+            });
+
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('hidden');
+                } else {
+                    backToTopButton.classList.add('hidden');
+                }
+            });
+
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.fade-in');
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+
+
+            document.querySelectorAll('.fade-in').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); 
+        });
+
+
+        const style = document.createElement('style');
+        style.textContent = `
+            .animate-fade-in {
+                animation: fadeIn 0.3s ease-in-out;
+            }
+            .animate-fade-out {
+                animation: fadeOut 0.3s ease-in-out;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateY(0); }
+                to { opacity: 0; transform: translateY(10px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

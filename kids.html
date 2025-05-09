@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rongbaz - Kids</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .discount-badge {
+            background-color: #d4a373;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <header class="bg-yellow-500 header text-black py-4 sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 xl:px-0">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="text-2xl font-bold tracking-tight flex items-center">
+                        <span class="bg-black text-yellow-400 px-2 py-1 rounded mr-1">RONG</span>
+                        <span>BAZ</span>
+                    </a>
+                    <nav class="hidden lg:flex space-x-6">
+                        <a href="tshirts.html" class="font-medium hover:text-gray-700 transition-colors relative group">
+                            T-Shirts
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="kids.html" class="font-medium hover:text-gray-700 transition-colors relative group">
+                            Kids
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="hoodies.html" class="font-medium hover:text-gray-700 transition-colors relative group">
+                            Hoodies
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="accessories.html" class="font-medium hover:text-gray-700 transition-colors relative group">
+                            Accessories
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="cart.html#series" class="font-medium hover:text-gray-700 transition-colors relative group">
+                            Series
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <button id="cart-icon" class="relative group">
+                        <div class="flex items-center">
+                            <i class="fas fa-shopping-cart text-xl"></i>
+                            <span class="ml-2 font-medium">Cart</span>
+                            <span id="cart-count" class="ml-1">(0)</span>
+                        </div>
+                        <span id="cart-notification" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                    </button>
+                    <button id="mobileMenuButton" class="lg:hidden focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white px-4 py-3 shadow-lg">
+            <nav class="flex flex-col space-y-3">
+                <a href="tshirts.html" class="font-medium py-2 border-b border-gray-100">T-Shirts</a>
+                <a href="kids.html" class="font-medium py-2 border-b border-gray-100">Kids</a>
+                <a href="hoodies.html" class="font-medium py-2 border-b border-gray-100">Hoodies</a>
+                <a href="accessories.html" class="font-medium py-2 border-b border-gray-100">Accessories</a>
+                <a href="cart.html#series" class="font-medium py-2 border-b border-gray-100">Series</a>
+                
+            </nav>
+        </div>
+    </header>
+
+    <!-- Announcement Bar -->
+    <div class="bg-black text-white text-center py-2 px-4 text-sm">
+        <p>✨ Free Shipping on orders over ৳2000 | Use code <strong>RONGBAZ10</strong> for 10% off your first order ✨</p>
+    </div>
+
+    <!-- Kids Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h3 class="text-2xl font-bold">Kids</h3>
+                    <div class="bg-yellow-400 text-black p-4 rounded-lg mt-2">
+                        <p>Explore our vibrant kids’ collection, designed for comfort and fun. Soft fabrics and playful designs make these perfect for everyday adventures.</p>
+                    </div>
+                </div>
+                <button class="bg-gray-200 px-4 py-2 rounded-full focus:outline-none">Filter <span>▾</span></button>
+            </div>
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="md:w-1/4 hidden md:block">
+                    <h4 class="text-lg font-semibold mb-4">Quick Filter</h4>
+                    <div class="space-y-2">
+                        <button class="bg-gray-200 px-4 py-2 rounded-full w-full text-left filter-btn" data-filter="All">All</button>
+                        <button class="bg-gray-200 px-4 py-2 rounded-full w-full text-left filter-btn" data-filter="Animals">Animals</button>
+                        <button class="bg-gray-200 px-4 py-2 rounded-full w-full text-left filter-btn" data-filter="Cartoons">Cartoons</button>
+                        <button class="bg-gray-200 px-4 py-2 rounded-full w-full text-left filter-btn" data-filter="Space">Space</button>
+                        <button class="bg-gray-200 px-4 py-2 rounded-full w-full text-left filter-btn" data-filter="Nature">Nature</button>
+                    </div>
+                </div>
+                <div class="md:w-3/4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="product-grid">
+                        <div class="relative bg-gray-50 p-4 rounded-lg text-center product-card" data-category="Animals">
+                            <div class="discount-badge">20% OFF</div>
+                            <img src="image/k1.png" alt="Elephant Tee" class="mx-auto mb-4">
+                            <h4 class="text-lg font-semibold">নাটক কম করো পিও - Kids
+                            </h4>
+                            <p class="text-sm text-gray-600 line-through mb-1">৳1,490</p>
+                            <p class="text-lg font-semibold">৳1,190</p>
+                            <div class="flex justify-center space-x-2 mb-4">
+                                <span class="w-4 h-4 bg-blue-500 rounded-full"></span>
+                                <span class="w-4 h-4 bg-green-500 rounded-full"></span>
+                            </div>
+                            <div class="flex justify-center space-x-2">
+                                <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-900">View</a>
+                                <button class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="relative bg-gray-50 p-4 rounded-lg text-center product-card" data-category="Cartoons">
+                            <div class="discount-badge">20% OFF</div>
+                            <img src="image/k2.png" alt="Cartoon Dino Tee" class="mx-auto mb-4">
+                            <h4 class="text-lg font-semibold">আমার বাপ রংবাজ - Kids</h4>
+                            <p class="text-sm text-gray-600 line-through mb-1">৳1,490</p>
+                            <p class="text-lg font-semibold">৳1,190</p>
+                            <div class="flex justify-center space-x-2 mb-4">
+                                <span class="w-4 h-4 bg-red-500 rounded-full"></span>
+                                <span class="w-4 h-4 bg-yellow-500 rounded-full"></span>
+                            </div>
+                            <div class="flex justify-center space-x-2">
+                                <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-900">View</a>
+                                <button class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="relative bg-gray-50 p-4 rounded-lg text-center product-card" data-category="Space">
+                            <div class="discount-badge">20% OFF</div>
+                            <img src="image/k3.png" alt="Astronaut Tee" class="mx-auto mb-4">
+                            <h4 class="text-lg font-semibold">লাগে উরা ধুরা - Kids</h4>
+                            <p class="text-sm text-gray-600 line-through mb-1">৳1,490</p>
+                            <p class="text-lg font-semibold">৳1,190</p>
+                            <div class="flex justify-center space-x-2 mb-4">
+                                <span class="w-4 h-4 bg-black rounded-full"></span>
+                                <span class="w-4 h-4 bg-white rounded-full border"></span>
+                            </div>
+                            <div class="flex justify-center space-x-2">
+                                <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-900">View</a>
+                                <button class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="relative bg-gray-50 p-4 rounded-lg text-center product-card" data-category="Nature">
+                            <div class="discount-badge">20% OFF</div>
+                            <img src="image/k4.png" alt="Tree Hugger Tee" class="mx-auto mb-4">
+                            <h4 class="text-lg font-semibold">Tree Hugger Tee</h4>
+                            <p class="text-sm text-gray-600 line-through mb-1">৳1,490</p>
+                            <p class="text-lg font-semibold">৳1,190</p>
+                            <div class="flex justify-center space-x-2 mb-4">
+                                <span class="w-4 h-4 bg-green-500 rounded-full"></span>
+                                <span class="w-4 h-4 bg-brown-500 rounded-full"></span>
+                            </div>
+                            <div class="flex justify-center space-x-2">
+                                <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-900">View</a>
+                                <button class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="relative bg-gray-50 p-4 rounded-lg text-center product-card" data-category="Animals">
+                            <div class="discount-badge">20% OFF</div>
+                            <img src="image/k5.png" alt="Lion Cub Tee" class="mx-auto mb-4">
+                            <h4 class="text-lg font-semibold">Lion Cub Tee</h4>
+                            <p class="text-sm text-gray-600 line-through mb-1">৳1,490</p>
+                            <p class="text-lg font-semibold">৳1,190</p>
+                            <div class="flex justify-center space-x-2 mb-4">
+                                <span class="w-4 h-4 bg-yellow-500 rounded-full"></span>
+                                <span class="w-4 h-4 bg-orange-500 rounded-full"></span>
+                            </div>
+                            <div class="flex justify-center space-x-2">
+                                <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-900">View</a>
+                                <button class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="relative bg-gray-50 p-4 rounded-lg text-center product-card" data-category="Cartoons">
+                            <div class="discount-badge">20% OFF</div>
+                            <img src="image/t1.png" alt="Superhero Tee" class="mx-auto mb-4">
+                            <h4 class="text-lg font-semibold">ধোকা দিলা-kidds</h4>
+                            <p class="text-sm text-gray-600 line-through mb-1">৳1,490</p>
+                            <p class="text-lg font-semibold">৳1,190</p>
+                            <div class="flex justify-center space-x-2 mb-4">
+                                <span class="w-4 h-4 bg-blue-500 rounded-full"></span>
+                                <span class="w-4 h-4 bg-red-500 rounded-full"></span>
+                            </div>
+                            <div class="flex justify-center space-x-2">
+                                <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-900">View</a>
+                                <button class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-6">
+                        <button class="bg-red-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-600" id="load-more">Load More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 text-yellow-600">
+                <p>FREE SHIPPING on orders over $50, Australia wide*</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Series Banner -->
+    <section class="py-12 bg-pink-500 text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="bg-white text-black p-4 rounded-lg text-center">
+                    <h4 class="text-lg font-semibold">Bangladesh Series</h4>
+                </div>
+                <div class="bg-white text-black p-4 rounded-lg text-center">
+                    <h4 class="text-lg font-semibold">Warface</h4>
+                </div>
+                <div class="bg-white text-black p-4 rounded-lg text-center">
+                    <h4 class="text-lg font-semibold">Bangladesh 43</h4>
+                </div>
+                <div class="bg-white text-black p-4 rounded-lg text-center">
+                    <h4 class="text-lg font-semibold">Bangladesh 3.0</h4>
+                </div>
+                <div class="bg-white text-black p-4 rounded-lg text-center">
+                    <h4 class="text-lg font-semibold">Arthritic</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-400 text-black py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Shop</h4>
+                    <ul class="space-y-2">
+                        <li><a href="tshirts.html" class="hover:text-gray-600">T-Shirts</a></li>
+                        <li><a href="kids.html" class="hover:text-gray-600">Kids</a></li>
+                        <li><a href="hoodies.html" class="hover:text-gray-600">Hoodies</a></li>
+                        <li><a href="accessories.html" class="hover:text-gray-600">Accessories</a></li>
+                        <li><a href="series.html" class="hover:text-gray-600">Series</a></li>
+                        <li><a href="mugs.html" class="hover:text-gray-600">Mugs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">About</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-600">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-gray-600">Subscribe</a></li>
+                        <li><a href="#" class="hover:text-gray-600">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-gray-600">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:text-gray-600">Return and Refund Policy</a></li>
+                        <li><a href="#" class="hover:text-gray-600">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#"><img src="https://via.placeholder.com/24?text=IG" alt="Instagram"></a>
+                        <a href="#"><img src="https://via.placeholder.com/24?text=FB" alt="Facebook"></a>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-sm">We accept</p>
+                        <div class="flex space-x-2 mt-2">
+                            <img src="https://via.placeholder.com/24?text=Visa" alt="Visa">
+                            <img src="https://via.placeholder.com/24?text=Mastercard" alt="Mastercard">
+                            <img src="https://via.placeholder.com/24?text=Paypal" alt="Paypal">
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <label class="text-sm">Change Currency (AUD)</label>
+                        <select class="bg-gray-200 p-2 rounded mt-2">
+                            <option>AUD</option>
+                            <option>USD</option>
+                            <option>EUR</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-6">
+                <p class="text-sm">© 2025 Rongbaz, ABN 70 659 404 529</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Filter Functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const products = document.querySelectorAll('.product-card');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                filterButtons.forEach(btn => btn.classList.remove('bg-yellow-400', 'text-black'));
+                button.classList.add('bg-yellow-400', 'text-black');
+                
+                products.forEach(product => {
+                    const category = product.getAttribute('data-category');
+                    if (filter === 'All' || category === filter) {
+                        product.style.display = 'block';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Load More Functionality
+        const loadMoreButton = document.getElementById('load-more');
+        let productCount = 6; // Initial number of products
+        loadMoreButton.addEventListener('click', () => {
+            const productGrid = document.getElementById('product-grid');
+            const newProducts = [
+                { name: 'Rocket Ship Tee', price: '৳1,190', oldPrice: '৳1,490', colors: ['blue', 'white'], category: 'Space' },
+                { name: 'Butterfly Tee', price: '৳1,190', oldPrice: '৳1,490', colors: ['pink', 'yellow'], category: 'Nature' },
+                { name: 'Cartoon Robot Tee', price: '৳1,190', oldPrice: '৳1,490', colors: ['gray', 'black'], category: 'Cartoons' },
+            ];
+
+            newProducts.forEach(product => {
+                if (productCount < 9) { // Limit to 9 products for this example
+                    const productCard = document.createElement('div');
+                    productCard.className = 'relative bg-gray-50 p-4 rounded-lg text-center product-card';
+                    productCard.setAttribute('data-category', product.category);
+                    productCard.innerHTML = `
+                        <div class="discount-badge">20% OFF</div>
+                        <img src="https://via.placeholder.com/200?text=${product.name}" alt="${product.name}" class="mx-auto mb-4">
+                        <h4 class="text-lg font-semibold">${product.name}</h4>
+                        <p class="text-sm text-gray-600 line-through mb-1">${product.oldPrice}</p>
+                        <p class="text-lg font-semibold">${product.price}</p>
+                        <div class="flex justify-center space-x-2 mb-4">
+                            ${product.colors.map(color => `<span class="w-4 h-4 bg-${color}-500 rounded-full"></span>`).join('')}
+                        </div>
+                        <div class="flex justify-center space-x-2">
+                            <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-900">View</a>
+                            <button class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">Add to Cart</button>
+                        </div>
+                    `;
+                    productGrid.appendChild(productCard);
+                    productCount++;
+                }
+            });
+            if (productCount >= 9) loadMoreButton.style.display = 'none';
+        });
+
+        // Add to Cart Functionality
+        const addToCartButtons = document.querySelectorAll('.bg-yellow-400');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Product added to cart!');
+            });
+        });
+    </script>
+</body>
+</html>
