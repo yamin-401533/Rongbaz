@@ -3,375 +3,1644 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rongbaz - Kids</title>
+    <title>MoonBuddies - Enchanting Kids' Fashion</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.3/cdn.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moon: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e'
+                        },
+                        glow: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12'
+                        },
+                        nebula: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843'
+                        },
+                        stardust: {
+                            light: '#a5b4fc',
+                            DEFAULT: '#818cf8',
+                            dark: '#6366f1'
+                        },
+                        comet: {
+                            light: '#f87171',
+                            DEFAULT: '#ef4444',
+                            dark: '#dc2626'
+                        }
+                    },
+                    fontFamily: {
+                        comic: ['"Comic Neue"', 'cursive'],
+                        nunito: ['Nunito', 'sans-serif']
+                    },
+                    animation: {
+                        'twinkle': 'twinkle 3s infinite',
+                        'float': 'float 5s ease-in-out infinite',
+                        'spin-slow': 'spin 10s linear infinite',
+                        'bounce-slow': 'bounce 3s infinite'
+                    },
+                    keyframes: {
+                        twinkle: {
+                            '0%, 100%': { opacity: '0.5', transform: 'scale(1)' },
+                            '50%': { opacity: '1', transform: 'scale(1.2)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(10deg)' }
+                        }
+                    }
+                }
+            }
+        };
+    </script>
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Nunito', sans-serif;
+            scroll-behavior: smooth;
+            background: linear-gradient(to bottom, #1e3a8a, #fef3c7);
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ec4899" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'), auto;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Comic Neue', cursive;
+        }
+        .moon-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cpath fill='%23ec4899' fill-opacity='0.2' d='M40 0a40 40 0 0 0-8 80 40 40 0 0 1 0-80z'/%3E%3C/svg%3E");
         }
         .product-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            position: relative;
+            overflow: hidden;
         }
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
         }
-        .discount-badge {
-            background-color: #d4a373;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 12px;
+        .product-card img {
+            transition: transform 0.6s ease, filter 0.6s ease;
+        }
+        .product-card:hover img {
+            transform: scale(1.15) rotate(5deg);
+            filter: brightness(1.1);
+        }
+        .badge {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 15px;
+            left: 15px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 6px 14px;
+            border-radius: 999px;
+            transform: rotate(-15deg);
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: twinkle 2s infinite;
+        }
+        .age-tag {
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            border-radius: 999px;
+            font-weight: bold;
+            padding: 4px 12px;
+            transform: rotate(10deg);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .bubble {
+            border-radius: 999px;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .bubble:nth-child(2) { animation-delay: -1s; }
+        .bubble:nth-child(3) { animation-delay: -2s; }
+        .bubble:nth-child(4) { animation-delay: -3s; }
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 6px 12px;
+            background: #1e3a8a;
+            color: white;
+            border-radius: 6px;
+            font-size: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .tooltip:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+        .filter-btn.active {
+            background: linear-gradient(135deg, #ec4899, #f97316);
+            color: white;
+            transform: scale(1.15);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .color-dot {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            margin: 0 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, border 0.3s ease;
+            border: 3px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .color-dot:hover {
+            transform: scale(1.3);
+        }
+        .color-dot.selected {
+            transform: scale(1.3);
+            border-color: #fef3c7;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        }
+        .size-btn {
+            padding: 8px 16px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            backdrop-filter: blur(5px);
+        }
+        .size-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        .size-btn.selected {
+            background: #ec4899;
+            color: white;
+        }
+        .cart-pulse {
+            animation: cartPulse 0.6s ease;
+        }
+        @keyframes cartPermitAllPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        .modal {
+            transform: translateY(100%);
+            transition: transform 0.6s ease;
+        }
+        .modal.active {
+            transform: translateY(0);
+        }
+        .confetti {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            opacity: 0;
+            z-index: -1;
+            animation: confettiFall 2.5s ease-out forwards;
+        }
+        @keyframes confettiFall {
+            0% { opacity: 1; transform: translateY(0) rotate(0deg); }
+            100% { opacity: 0; transform: translateY(100vh) rotate(1080deg); }
+        }
+        .mascot {
+            animation: bounce 2s infinite alternate;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-30px); }
+        }
+        .hover-sound:hover {
+            cursor: pointer;
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <!-- Header Section -->
-    <header class="bg-yellow-500 header text-black py-4 sticky top-0 z-50 shadow-sm">
-        <div class="container mx-auto px-4 xl:px-0">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-8">
-                    <a href="index.html" class="text-2xl font-bold tracking-tight flex items-center">
-                        <span class="bg-black text-yellow-400 px-2 py-1 rounded mr-1">RONG</span>
-                        <span>BAZ</span>
-                    </a>
-                    <nav class="hidden lg:flex space-x-6">
-                        <a href="tshirts.html" class="font-medium hover:text-gray-700 transition-colors relative group">
-                            T-Shirts
-                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                        <a href="kids.html" class="font-medium hover:text-gray-700 transition-colors relative group">
-                            Kids
-                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                        <a href="hoodies.html" class="font-medium hover:text-gray-700 transition-colors relative group">
-                            Hoodies
-                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                        <a href="accessories.html" class="font-medium hover:text-gray-700 transition-colors relative group">
-                            Accessories
-                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                        <a href="cart.html#series" class="font-medium hover:text-gray-700 transition-colors relative group">
-                            Series
-                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                        
-                    </nav>
+<body x-data="{
+    cart: JSON.parse(localStorage.getItem('cart')) || [],
+    wishlist: JSON.parse(localStorage.getItem('wishlist')) || [],
+    activeFilter: 'All',
+    cartOpen: false,
+    previewOpen: false,
+    sizeGuideOpen: false,
+    previewProduct: null,
+    mobileMenu: false,
+    rewardPoints: 0,
+    addToCart(product) {
+        const existingItem = this.cart.find(item => item.name === product.name);
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            this.cart.push({ ...product, quantity: 1 });
+        }
+        this.rewardPoints += 10;
+        localStorage.setItem('cart', JSON.stringify(this.cart));
+        this.createConfetti();
+        this.playSound('add-to-cart');
+        alert(`${product.name} added to cart! +10 Magic Points`);
+    },
+    toggleWishlist(name) {
+        if (this.wishlist.includes(name)) {
+            this.wishlist = this.wishlist.filter(item => item !== name);
+            alert('Removed from wishlist!');
+        } else {
+            this.wishlist.push(name);
+            this.playSound('wishlist');
+            alert('Added to wishlist!');
+        }
+        localStorage.setItem('wishlist', JSON.stringify(this.wishlist));
+    },
+    createConfetti() {
+        for (let i = 0; i < 30; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.background = ['#ec4899', '#f97316', '#0ea5e9', '#818cf8'][Math.floor(Math.random() * 4)];
+            confetti.style.left = `${Math.random() * 100}vw`;
+            confetti.style.animationDelay = `${Math.random() * 0.8}s`;
+            document.body.appendChild(confetti);
+            setTimeout(() => confetti.remove(), 2500);
+        }
+    },
+    selectColor(event) {
+        const dots = event.target.parentElement.querySelectorAll('.color-dot');
+        dots.forEach(dot => dot.classList.remove('selected'));
+        event.target.classList.add('selected');
+    },
+    playSound(type) {
+        const sounds = {
+            'add-to-cart': new Audio('https://cdn.pixabay.com/audio/2022/03/10/audio_5b8b3a7d5d.mp3'),
+            'wishlist': new Audio('https://cdn.pixabay.com/audio/2022/03/10/audio_3f3f3f3f3f.mp3')
+        };
+        sounds[type]?.play();
+    }
+}">
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-lg shadow-2xl sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <div class="bg-gradient-to-r from-nebula-500 to-glow-500 text-white px-6 py-2 rounded-full shadow-2xl">
+                    <span class="text-2xl font-extrabold">Moon</span>
                 </div>
-                <div class="flex items-center space-x-6">
-                    <button id="cart-icon" class="relative group">
-                        <div class="flex items-center">
-                            <i class="fas fa-shopping-cart text-xl"></i>
-                            <span class="ml-2 font-medium">Cart</span>
-                            <span id="cart-count" class="ml-1">(0)</span>
-                        </div>
-                        <span id="cart-notification" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
-                    </button>
-                    <button id="mobileMenuButton" class="lg:hidden focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
-                    </button>
-                </div>
+                <span class="text-3xl font-bold text-gray-900">Buddies</span>
+            </a>
+            <nav class="hidden lg:flex space-x-12">
+                <a href="#" class="text-gray-700 hover:text-nebula-500 font-semibold relative group">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-1 bg-nebula-500 transition-all duration-400 group-hover:w-full"></span>
+                </a>
+                <a href="#products" class="text-gray-700 hover:text-nebula-500 font-semibold relative group">
+                    Shop
+                    <span class="absolute bottom-0 left-0 w-0 h-1 bg-nebula-500 transition-all duration-400 group-hover:w-full"></span>
+                </a>
+                <a href="#collections" class="text-gray-700 hover:text-nebula-500 font-semibold relative group">
+                    Collections
+                    <span class="absolute bottom-0 left-0 w-0 h-1 bg-nebula-500 transition-all duration-400 group-hover:w-full"></span>
+                </a>
+                <a href="#magic-land" class="text-gray-700 hover:text-nebula-500 font-semibold relative group">
+                    Magic Land
+                    <span class="absolute bottom-0 left-0 w-0 h-1 bg-nebula-500 transition-all duration-400 group-hover:w-full"></span>
+                </a>
+            </nav>
+            <div class="flex items-center space-x-8">
+                <button class="text-gray-700 hover:text-nebula-500 hover-sound" @click="alert('Voice search coming soon!')"><i class="fas fa-microphone text-lg"></i></button>
+                <button @click="cartOpen = !cartOpen" class="relative text-gray-700 hover:text-nebula-500 hover-sound">
+                    <i class="fas fa-shopping-cart text-lg"></i>
+                    <span x-text="cart.reduce((sum, item) => sum + item.quantity, 0)" class="absolute -top-3 -right-3 bg-nebula-500 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center cart-pulse"></span>
+                </button>
+                <button @click="mobileMenu = !mobileMenu" class="lg:hidden text-gray-700 hover-sound"><i class="fas fa-bars text-xl"></i></button>
             </div>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-white px-4 py-3 shadow-lg">
-            <nav class="flex flex-col space-y-3">
-                <a href="tshirts.html" class="font-medium py-2 border-b border-gray-100">T-Shirts</a>
-                <a href="kids.html" class="font-medium py-2 border-b border-gray-100">Kids</a>
-                <a href="hoodies.html" class="font-medium py-2 border-b border-gray-100">Hoodies</a>
-                <a href="accessories.html" class="font-medium py-2 border-b border-gray-100">Accessories</a>
-                <a href="cart.html#series" class="font-medium py-2 border-b border-gray-100">Series</a>
-                
+        <div x-show="mobileMenu" class="lg:hidden bg-white/95 backdrop-blur-lg shadow-2xl px-6 py-8">
+            <nav class="flex flex-col space-y-6">
+                <a href="#" class="text-gray-700 hover:text-nebula-500 font-semibold text-lg hover-sound">Home</a>
+                <a href="#products" class="text-gray-700 hover:text-nebula-500 font-semibold text-lg hover-sound">Shop</a>
+                <a href="#collections" class="text-gray-700 hover:text-nebula-500 font-semibold text-lg hover-sound">Collections</a>
+                <a href="#magic-land" class="text-gray-700 hover:text-nebula-500 font-semibold text-lg hover-sound">Magic Land</a>
             </nav>
         </div>
     </header>
 
-    <!-- Announcement Bar -->
-    <div class="bg-black text-white text-center py-2 px-4 text-sm">
-        <p>✨ Free Shipping on orders over ৳2000 | Use code <strong>RONGBAZ10</strong> for 10% off your first order ✨</p>
+        <!-- Hero Section -->
+    <section class="hero-section relative min-h-[70vh] overflow-hidden">
+        <!-- Professional Gradient Background with Subtle Animation -->
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute inset-0 bg-gradient-to-br from-nebula-600 via-moon-600 to-glow-700 opacity-95"></div>
+            <div class="absolute inset-0 bg-[url('https://assets.website-files.com/5e51c674258ffe10d286d30a/5e5355579d5f29a047fe0f3f_petern.svg')] bg-repeat opacity-10"></div>
+        </div>
+        
+        <!-- Subtle Animated Elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <!-- Professional Floating Elements -->
+            <div class="absolute top-[15%] left-[10%] w-40 h-40 bg-glow-300/20 rounded-full filter blur-3xl animate-float-slow"></div>
+            <div class="absolute bottom-[20%] right-[10%] w-48 h-48 bg-nebula-300/20 rounded-full filter blur-3xl animate-float-slow animation-delay-2000"></div>
+            <div class="absolute top-[40%] right-[25%] w-32 h-32 bg-moon-300/20 rounded-full filter blur-3xl animate-float-slow animation-delay-1000"></div>
+            
+            <!-- Professional Subtle Stars -->
+            <div class="stars absolute inset-0">
+                <span class="absolute top-[15%] left-[20%] text-white/40 text-xl animate-pulse-slow">★</span>
+                <span class="absolute top-[25%] right-[15%] text-white/40 text-sm animate-pulse-slow animation-delay-700">★</span>
+                <span class="absolute bottom-[30%] left-[15%] text-white/40 text-lg animate-pulse-slow animation-delay-1500">★</span>
+                <span class="absolute top-[45%] right-[25%] text-white/40 text-sm animate-pulse-slow animation-delay-1000">★</span>
+                <span class="absolute bottom-[15%] right-[20%] text-white/40 text-xl animate-pulse-slow animation-delay-500">★</span>
+            </div>
+        </div>
+        
+        <!-- Main Content Container -->
+        <div class="container mx-auto px-4 relative z-10 h-full flex flex-col md:flex-row items-center justify-center py-16">
+            <!-- Left Column: Hero Content -->
+            <div class="w-full md:w-1/2 text-center md:text-left mb-12 md:mb-0 md:pr-8" data-aos="fade-right">
+                <!-- Professional Brand Headline -->
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
+                    <span class="block">Adventure Awaits</span>
+                    <span class="block mt-1">with <span class="text-glow-300 relative inline-block">
+                        MoonBuddies
+                        <svg class="absolute -bottom-2 left-0 w-full" height="6" viewBox="0 0 200 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 3C50 0.5 150 0.5 200 3" stroke="url(#paint0_linear)" stroke-width="5" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="paint0_linear" x1="0" y1="3" x2="200" y2="3" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#f97316" stop-opacity="0"/>
+                                    <stop offset="0.5" stop-color="#f97316"/>
+                                    <stop offset="1" stop-color="#f97316" stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </span></span>
+                </h1>
+                
+                <!-- Professional Subheading -->
+                <p class="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-2xl md:max-w-lg">
+                    Enchanting, eco-friendly fashion that makes every day a magical journey for your little ones.
+                </p>
+                
+                <!-- Professional Trust Badges -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-5 mb-8">
+                    <div class="flex items-center bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg">
+                        <svg class="w-5 h-5 text-glow-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-sm text-white">Eco-friendly</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg">
+                        <svg class="w-5 h-5 text-glow-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <span class="text-sm text-white">Award-winning</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg">
+                        <svg class="w-5 h-5 text-glow-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-sm text-white">Safe materials</span>
+                    </div>
+                </div>
+                
+                <!-- Professional CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                    <a href="#products" class="w-full sm:w-auto bg-white hover:bg-glow-100 text-nebula-500 px-8 py-4 rounded-full font-bold text-lg shadow-lg transition duration-300 flex items-center justify-center group">
+                        <span>Shop Now</span>
+                        <svg class="w-5 h-5 ml-2 transform transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                    <a href="#collections" class="w-full sm:w-auto bg-transparent hover:bg-white/10 border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg transition duration-300 backdrop-blur-sm">
+                        Explore Collections
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right Column: Hero Image -->
+            <div class="w-full md:w-1/2 relative" data-aos="fade-left">
+                <div class="relative">
+                    <!-- Main Hero Image with Professional Styling -->
+                    <div class="relative z-10 overflow-hidden rounded-3xl shadow-2xl border-4 border-white/20">
+                        <img src="image/l.png" alt="MoonBuddies Fashion" class="w-full h-auto object-cover">
+                        
+                        <!-- Subtle Overlay Gradient -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-nebula-600/30 to-transparent"></div>
+                        
+                        <!-- Professional Highlights on Image -->
+                        <div class="absolute top-8 right-8 bg-white/90 backdrop-blur-sm text-nebula-600 px-4 py-2 rounded-full font-bold shadow-lg">
+                            New Collection
+                        </div>
+                    </div>
+                    
+                    <!-- Professional Decorative Elements -->
+                    <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-glow-400/30 rounded-full filter blur-2xl z-0"></div>
+                    
+                    <!-- Professional Mascot Positioning -->
+                    
+                </>
+            </div>
+        </div>
+        
+        <!-- Professional Navigation Indicators -->
+        <div class="absolute bottom-8 left-0 right-0 flex justify-center gap-3 z-10">
+            <button class="w-12 h-1.5 rounded-full bg-white opacity-100"></button>
+            <button class="w-8 h-1.5 rounded-full bg-white/40 hover:bg-white/70 transition duration-300"></button>
+            <button class="w-8 h-1.5 rounded-full bg-white/40 hover:bg-white/70 transition duration-300"></button>
+        </div>
+    </section>
+    
+    <style>
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        
+        .animate-float-slow {
+            animation: float-slow 6s ease-in-out infinite;
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse-slow 4s ease-in-out infinite;
+        }
+        
+        .animation-delay-500 { animation-delay: 500ms; }
+        .animation-delay-700 { animation-delay: 700ms; }
+        .animation-delay-1000 { animation-delay: 1000ms; }
+        .animation-delay-1500 { animation-delay: 1500ms; }
+        .animation-delay-2000 { animation-delay: 2000ms; }
+        
+        [data-aos="fade-right"] {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        [data-aos="fade-left"] {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .aos-animate[data-aos="fade-right"],
+        .aos-animate[data-aos="fade-left"] {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+    
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulate AOS library functionality
+            setTimeout(function() {
+                document.querySelectorAll('[data-aos]').forEach(element => {
+                    element.classList.add('aos-animate');
+                });
+            }, 100);
+        });
+    </script>
+
+    
+
+
+
+
+
+
+
+        <!-- Products Section -->
+    <section id="products" class="py-20 relative overflow-hidden" x-data="{ 
+        activeFilter: 'All',
+        showFilterMenu: false,
+        animating: false,
+        hoveredProduct: null,
+        filterOptions: ['All', 'T-Shirts', 'Dresses', 'Jackets', 'Accessories', 'Shoes']
+    }">
+        <!-- Background Animation Elements -->
+        <div class="absolute inset-0 -z-10 bg-gradient-to-b from-white to-moon-50 opacity-90"></div>
+        <div class="absolute top-20 left-10 w-40 h-40 bg-nebula-100 rounded-full filter blur-3xl mix-blend-multiply opacity-30 animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-56 h-56 bg-glow-100 rounded-full filter blur-3xl mix-blend-multiply opacity-30 animate-float animation-delay-1000"></div>
+        <div class="absolute top-40 right-20 w-32 h-32 bg-stardust-light rounded-full filter blur-3xl mix-blend-multiply opacity-20 animate-spin-slow"></div>
+        
+        <!-- Floating Stars -->
+        <div class="stars absolute inset-0 -z-5">
+            <span class="absolute top-[10%] left-[15%] text-glow-500 text-2xl animate-pulse">★</span>
+            <span class="absolute top-[20%] right-[10%] text-nebula-500 text-lg animate-pulse animation-delay-700">★</span>
+            <span class="absolute bottom-[30%] left-[5%] text-moon-500 text-3xl animate-pulse animation-delay-1500">★</span>
+            <span class="absolute top-[40%] right-[30%] text-stardust-DEFAULT text-xl animate-pulse animation-delay-1000">★</span>
+            <span class="absolute bottom-[10%] right-[15%] text-comet-light text-2xl animate-pulse animation-delay-500">★</span>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Section Header with Animated Title -->
+            <div class="flex flex-col md:flex-row items-center justify-between mb-12">
+                <div class="text-center md:text-left mb-8 md:mb-0">
+                    <div class="relative inline-block">
+                        <h2 class="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-nebula-500 via-glow-500 to-moon-500 animate-gradient-text">Enchanted Wardrobe</h2>
+                        <div class="absolute -bottom-3 left-0 h-2 w-24 bg-gradient-to-r from-nebula-400 to-glow-400 rounded-full"></div>
+                    </div>
+                    <p class="text-gray-600 mt-4 max-w-xl">Discover magical outfits that spark joy and adventure in your little one's everyday journey!</p>
+                </div>
+                
+                <!-- Animated Filter Buttons (Desktop) -->
+                <div class="hidden md:flex flex-wrap gap-3 filter-buttons">
+                    <template x-for="filter in filterOptions" :key="filter">
+                        <button 
+                            @click="activeFilter = filter; animating = true; setTimeout(() => animating = false, 600)"
+                            :class="{ 
+                                'active': activeFilter === filter,
+                                'scale-105 shadow-lg': activeFilter === filter
+                            }" 
+                            class="filter-btn relative overflow-hidden bg-white border-2 border-transparent px-6 py-3 rounded-full text-gray-700 font-bold hover:border-nebula-300 transition-all duration-300 hover-sound group">
+                            <!-- Button Background Animation -->
+                            <span 
+                                :class="{ 'opacity-100': activeFilter === filter, 'opacity-0': activeFilter !== filter }"
+                                class="absolute inset-0 bg-gradient-to-r from-nebula-100 via-glow-100 to-moon-100 transition-opacity duration-300"></span>
+                            
+                            <!-- Icon Based on Category -->
+                            <span class="relative flex items-center justify-center">
+                                <i :class="{
+                                    'fas fa-tshirt': filter === 'T-Shirts',
+                                    'fas fa-female': filter === 'Dresses',
+                                    'fas fa-vest': filter === 'Jackets',
+                                    'fas fa-socks': filter === 'Accessories',
+                                    'fas fa-shoe-prints': filter === 'Shoes',
+                                    'fas fa-magic': filter === 'All'
+                                }" class="mr-2 text-nebula-500 transform group-hover:rotate-12 transition-transform"></i>
+                                <span x-text="filter" class="relative"></span>
+                            </span>
+                            
+                            <!-- Active Indicator -->
+                            <span 
+                                :class="{ 'scale-100': activeFilter === filter, 'scale-0': activeFilter !== filter }"
+                                class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-nebula-500 transition-transform duration-300"></span>
+                        </button>
+                    </template>
+                </div>
+                
+                <!-- Mobile Filter Dropdown -->
+                <div class="md:hidden relative">
+                    <button 
+                        @click="showFilterMenu = !showFilterMenu" 
+                        class="flex items-center justify-between w-full bg-white px-6 py-3 rounded-full shadow-md text-gray-700 font-bold"
+                    >
+                        <span class="flex items-center">
+                            <i class="fas fa-filter mr-2 text-nebula-500"></i>
+                            <span x-text="activeFilter"></span>
+                        </span>
+                        <i :class="showFilterMenu ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-nebula-500 ml-2"></i>
+                    </button>
+                    
+                    <div 
+                        x-show="showFilterMenu" 
+                        @click.away="showFilterMenu = false"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-4"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 transform translate-y-0"
+                        x-transition:leave-end="opacity-0 transform -translate-y-4"
+                        class="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl z-10 p-2"
+                    >
+                        <template x-for="filter in filterOptions" :key="filter">
+                            <button 
+                                @click="activeFilter = filter; showFilterMenu = false" 
+                                :class="{ 'bg-nebula-100 text-nebula-600': activeFilter === filter }"
+                                class="block w-full text-left px-4 py-2 rounded-lg hover:bg-nebula-50 transition-colors"
+                            >
+                                <i :class="{
+                                    'fas fa-tshirt': filter === 'T-Shirts',
+                                    'fas fa-female': filter === 'Dresses',
+                                    'fas fa-vest': filter === 'Jackets',
+                                    'fas fa-socks': filter === 'Accessories',
+                                    'fas fa-shoe-prints': filter === 'Shoes',
+                                    'fas fa-magic': filter === 'All'
+                                }" class="mr-2 text-nebula-500"></i>
+                                <span x-text="filter"></span>
+                            </button>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Enhanced Product Grid with Animation Effects -->
+            <div 
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" 
+                id="product-grid"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 transform translate-y-8"
+                x-transition:enter-end="opacity-100 transform translate-y-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 transform translate-y-0"
+                x-transition:leave-end="opacity-0 transform translate-y-8"
+            >
+                <template x-for="product in [
+                    { name: 'Moonlit Tee', price: 1590, oldPrice: 1990, colors: ['nebula-500', 'glow-500', 'moon-500'], category: 'T-Shirts', badge: 'New', image: 'image/l1.png', age: '3-6Y', rating: 4.5, features: ['100% Organic Cotton', 'Glow-in-the-dark prints', 'Super soft fabric'] },
+                    
+                    { name: 'Stardust Dress', price: 2290, oldPrice: 2990, colors: ['stardust-500', 'comet-500', 'nebula-300'], category: 'Dresses', badge: '25% Off', image: 'image/l7.png', age: '4-8Y', rating: 4.8, features: ['Twirly skirt design', 'Pocket details', 'Adjustable straps'] },
+                    
+                    { name: 'Cosmic Jacket', price: 3190, oldPrice: 3790, colors: ['moon-500', 'gray-700', 'glow-400'], category: 'Jackets', badge: 'Best Seller', image: 'image/l2.png', age: '6-10Y', rating: 4.2, features: ['Water-resistant', 'Detachable hood', 'Reflective details'] },
+                    
+                    { name: 'Fluffy Cloud Onesie', price: 1690, oldPrice: 2090, colors: ['glow-500', 'nebula-500', 'white'], category: 'T-Shirts', badge: 'Eco-Friendly', image: 'image/l4.png', age: '2-5Y', rating: 4.7, features: ['Made from recycled materials', 'Hypoallergenic', 'Breathable fabric'] },
+                    
+                    { name: 'Planet Explorer Pants', price: 1990, oldPrice: 2490, colors: ['moon-600', 'nebula-700', 'comet-600'], category: 'Jackets', badge: 'New', image: 'image/l6.png', age: '5-9Y', rating: 4.4, features: ['Reinforced knees', 'Adjustable waist', '6 pockets for treasures'] },
+                    
+                    { name: 'Celestial Socks', price: 790, oldPrice: 990, colors: ['stardust-DEFAULT', 'nebula-400', 'comet-light'], category: 'Accessories', badge: 'Set of 3', image: 'image/l10.png', age: '1-10Y', rating: 4.9, features: ['Non-slip soles', 'Seamless toes', 'Cushioned heel'] },
+                    
+                    { name: 'Star Jumper Shoes', price: 2790, oldPrice: 3490, colors: ['nebula-600', 'glow-600', 'stardust-dark'], category: 'Shoes', badge: 'Limited', image: 'image/l11.png', age: '4-8Y', rating: 4.6, features: ['Light-up soles', 'Easy velcro fastening', 'Extra cushioning'] },
+                    
+                    { name: 'Superhero Pajama Set', price: 1890, oldPrice: 2190, colors: ['stardust-light', 'nebula-300', 'comet-light'], category: 'Dresses', badge: 'Trending', image: 'image/l5.png', age: '3-7Y', rating: 4.3, features: ['Multi-layer skirt', 'Comfortable stretch top', 'Machine washable'] }
+                ]" :key="product.name">
+                    <div 
+                        class="product-card p-6 relative group"
+                        :data-category="product.category" 
+                        x-show="activeFilter === 'All' || activeFilter === product.category"
+                        @mouseenter="hoveredProduct = product.name"
+                        @mouseleave="hoveredProduct = null"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform scale-90"
+                        x-transition:enter-end="opacity-100 transform scale-100"
+                    >
+                        <!-- Special Badge with Animation -->
+                        <div class="absolute -top-2 -left-2 z-10 animate-bounce-slow">
+                            <span 
+                                class="badge relative flex items-center justify-center w-16 h-16" 
+                                :class="{
+                                    'bg-nebula-500': product.badge === 'New',
+                                    'bg-glow-500': product.badge === '25% Off',
+                                    'bg-moon-500': product.badge === 'Best Seller',
+                                    'bg-stardust-500': product.badge === 'Eco-Friendly',
+                                    'bg-comet-light': product.badge === 'Set of 3',
+                                    'bg-gradient-to-r from-nebula-400 to-stardust-DEFAULT': product.badge === 'Limited',
+                                    'bg-gradient-to-r from-glow-400 to-comet-light': product.badge === 'Trending'
+                                }"
+                            >
+                                <div class="absolute inset-0 rounded-full bg-white/10 animate-ping-slow opacity-70"></div>
+                                <div class="w-16 h-16 flex items-center justify-center rounded-full transform rotate-12 text-xs font-extrabold text-white shadow-lg">
+                                    <span x-text="product.badge" class="transform -rotate-12"></span>
+                                </div>
+                            </span>
+                        </div>
+                        
+                        <!-- Age Range Tag -->
+                        <span class="age-tag absolute top-3 right-3 z-10 bg-gradient-to-r from-glow-400 to-glow-500 text-white px-3 py-1 rounded-full font-bold shadow-md transform rotate-3" x-text="product.age"></span>
+                        
+                        <!-- Product Image with Hover Effects -->
+                        <div class="relative overflow-hidden rounded-2xl mb-5 h-64 shadow-inner">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                            
+                            <img 
+                                :src="product.image" 
+                                :alt="product.name" 
+                                class="w-full h-full object-cover transition-all duration-700 ease-in-out transform group-hover:scale-110"
+                            >
+                            
+                            <!-- Quick Action Buttons -->
+                            <div class="absolute bottom-0 left-0 right-0 p-4 flex justify-center space-x-3 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20">
+                                <button 
+                                    class="w-12 h-12 rounded-full bg-white text-nebula-500 flex items-center justify-center hover:bg-nebula-50 transition shadow-lg tooltip hover-sound"
+                                    data-tooltip="Quick view"
+                                    @click="previewProduct = product; previewOpen = true"
+                                >
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                
+                                <button 
+                                    class="w-12 h-12 rounded-full bg-white text-glow-500 flex items-center justify-center hover:bg-glow-50 transition shadow-lg tooltip hover-sound"
+                                    data-tooltip="Add to cart"
+                                    @click="addToCart(product)"
+                                >
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                                
+                                <button 
+                                    class="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:bg-comet-50 transition shadow-lg tooltip hover-sound"
+                                    :class="{ 'text-comet-500': wishlist.includes(product.name), 'text-gray-400': !wishlist.includes(product.name) }"
+                                    data-tooltip="Add to wishlist"
+                                    @click="toggleWishlist(product.name)"
+                                >
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                            
+                            <!-- Feature Tags (visible on hover) -->
+                            <div class="absolute top-0 left-0 right-0 p-3 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 z-20">
+                                <template x-for="feature in product.features" :key="feature">
+                                    <span class="text-xs bg-white/90 backdrop-blur-sm text-gray-700 px-2 py-1 rounded-full" x-text="feature"></span>
+                                </template>
+                            </div>
+                        </div>
+                        
+                        <!-- Product Information -->
+                        <div class="relative">
+                            <!-- Product title with animated underline -->
+                            <h3 class="text-xl font-bold text-gray-900 group-hover:text-nebula-500 transition-colors mb-2 relative inline-block" x-text="product.name">
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-nebula-400 group-hover:w-full transition-all duration-300"></span>
+                            </h3>
+                            
+                            <!-- Star Rating -->
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-glow-500">
+                                    <template x-for="i in 5" :key="i">
+                                        <i :class="i <= Math.floor(product.rating) ? 'fas fa-star' : i <= product.rating ? 'fas fa-star-half-alt' : 'far fa-star'" class="text-sm"></i>
+                                    </template>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-2" x-text="product.rating + ' (' + Math.floor(Math.random() * 50 + 10) + ')'"></span>
+                            </div>
+                            
+                            <!-- Price with Discount -->
+                            <div class="flex items-center mb-3">
+                                <span class="font-bold text-lg text-gray-900">৳<span x-text="product.price.toLocaleString()"></span></span>
+                                <span class="line-through text-gray-400 text-sm ml-2">৳<span x-text="product.oldPrice.toLocaleString()"></span></span>
+                                <span 
+                                    class="ml-2 text-xs font-bold px-1.5 py-0.5 rounded-md" 
+                                    :class="{
+                                        'bg-red-100 text-red-600': (product.oldPrice - product.price) / product.oldPrice > 0.2,
+                                        'bg-amber-100 text-amber-600': (product.oldPrice - product.price) / product.oldPrice <= 0.2
+                                    }"
+                                    x-text="Math.round((product.oldPrice - product.price) / product.oldPrice * 100) + '% OFF'"
+                                ></span>
+                            </div>
+                            
+                            <!-- Color Selection -->
+                            <div class="flex space-x-3 mb-4 relative">
+                                <template x-for="(color, index) in product.colors" :key="color">
+                                    <button 
+                                        class="color-dot flex-shrink-0 cursor-pointer transform transition duration-300 hover:scale-125"
+                                        :class="['bg-' + color, {'scale-125 ring-2 ring-offset-2': product.name === hoveredProduct && index === 0}]"
+                                        @click="selectColor($event)"
+                                    ></button>
+                                </template>
+                            </div>
+                            
+                            <!-- Action Buttons -->
+                            <div class="space-y-2">
+                                <button 
+                                    class="add-to-cart w-full bg-gradient-to-r from-nebula-500 to-glow-500 hover:from-nebula-600 hover:to-glow-600 text-white py-3 px-4 rounded-full font-bold shadow-md transition transform hover:translate-y-1 hover:shadow-lg group flex items-center justify-center hover-sound"
+                                    @click="addToCart(product)"
+                                >
+                                    <span class="absolute rounded-full w-1 h-1 bg-white opacity-0 group-hover:w-full group-hover:h-full group-hover:opacity-30 transition-all duration-300 ease-out"></span>
+                                    <i class="fas fa-shopping-cart mr-2 group-hover:animate-bounce-once"></i>
+                                    <span>Add to Cart</span>
+                                </button>
+                                
+                                <div class="flex justify-between">
+                                    <button 
+                                        class="text-sm text-nebula-500 hover:text-nebula-700 transition hover-sound flex items-center"
+                                        @click="sizeGuideOpen = true"
+                                    >
+                                        <i class="fas fa-ruler-combined mr-1"></i> Size Guide
+                                    </button>
+                                    
+                                    <button 
+                                        class="text-sm text-nebula-500 hover:text-nebula-700 transition hover-sound flex items-center"
+                                        @click="previewProduct = product; previewOpen = true"
+                                    >
+                                        View Details <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            
+            <!-- Enhanced Load More Button with Animation -->
+            <div class="text-center mt-16 relative">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="h-0.5 w-full max-w-3xl bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+                </div>
+                
+                <button 
+                    id="load-more" 
+                    class="relative bg-white border-2 border-nebula-400 text-nebula-500 hover:text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl transition-all duration-300 overflow-hidden group hover-sound"
+                >
+                    <span class="absolute inset-0 w-0 bg-gradient-to-r from-nebula-500 to-glow-500 transition-all duration-500 ease-out group-hover:w-full"></span>
+                    <span class="absolute inset-0 w-full h-full flex items-center justify-center">
+                        <i class="fas fa-sparkles mr-2 group-hover:animate-twinkle"></i>
+                        <span class="relative">Discover More Magic</span>
+                        <i class="fas fa-wand-magic-sparkles ml-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </span>
+                </button>
+                
+                <p class="text-gray-500 text-sm mt-4">Showing 8 out of 36 magical products</p>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        @keyframes ping-slow {
+            0% { transform: scale(0.8); opacity: 0.8; }
+            70%, 100% { transform: scale(1.5); opacity: 0; }
+        }
+        
+        @keyframes bounce-once {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-8px); }
+            60% { transform: translateY(-4px); }
+        }
+        
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes gradient-text {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .animate-gradient-text {
+            background-size: 200% auto;
+            animation: gradient-text 4s ease infinite;
+        }
+        
+        .animate-bounce-once {
+            animation: bounce-once 1s;
+        }
+        
+        .animate-bounce-slow {
+            animation: bounce-slow 3s infinite;
+        }
+        
+        .animate-ping-slow {
+            animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+        
+        .animate-twinkle {
+            animation: twinkle 2s infinite;
+        }
+        
+        .animation-delay-500 {
+            animation-delay: 500ms;
+        }
+        
+        .animation-delay-700 {
+            animation-delay: 700ms;
+        }
+        
+        .animation-delay-1000 {
+            animation-delay: 1000ms;
+        }
+        
+        .animation-delay-1500 {
+            animation-delay: 1500ms;
+        }
+    </style>
+
+
+
+
+
+
+
+
+       
+        <!-- Collections Carousel -->
+    <section id="collections" class="py-20 bg-moon-50 moon-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Magical Collections</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Discover our curated seasonal collections designed with comfort and imagination in mind.</p>
+            </div>
+            
+            <div class="relative mx-auto max-w-5xl">
+                <!-- Carousel Navigation Indicators -->
+                <div class="flex justify-center mb-8 carousel-indicators">
+                    <button class="w-3 h-3 rounded-full mx-1 bg-nebula-300 indicator active" data-index="0"></button>
+                    <button class="w-3 h-3 rounded-full mx-1 bg-gray-300 indicator" data-index="1"></button>
+                    <button class="w-3 h-3 rounded-full mx-1 bg-gray-300 indicator" data-index="2"></button>
+                </div>
+                
+                <!-- Carousel Container -->
+                <div class="carousel-container overflow-hidden">
+                                        <div class="carousel-track flex transition-transform duration-500 ease-in-out" id="carousel">
+                        <!-- Collection 1: Moonlit Dreams -->
+                        <div class="min-w-full md:min-w-[33.333%] px-3">
+                            <div class="bg-white/90 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="https://via.placeholder.com/320?text=Moonlit+Dreams" alt="Moonlit Dreams" class="w-full h-48 object-cover rounded-xl mb-4 transition duration-300 hover:scale-105">
+                                    <div class="absolute top-3 right-3 bg-nebula-500/80 text-white text-xs font-bold py-1 px-3 rounded-full backdrop-blur-sm">New Arrival</div>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900 mt-4">Moonlit Dreams</h3>
+                                <p class="text-sm text-gray-600 mb-4">Glowing outfits for starry nights and sweet dreams.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-medium bg-nebula-100 text-nebula-600 px-3 py-1 rounded-full">Spring 2025</span>
+                                    <a href="#" class="text-nebula-500 font-semibold hover:text-nebula-600 inline-flex items-center group">
+                                        Explore <i class="fas fa-arrow-right ml-2 text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Collection 2: Nebula Nights -->
+                        <div class="min-w-full md:min-w-[33.333%] px-3">
+                            <div class="bg-white/90 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="https://via.placeholder.com/320?text=Nebula+Nights" alt="Nebula Nights" class="w-full h-48 object-cover rounded-xl mb-4 transition duration-300 hover:scale-105">
+                                    <div class="absolute top-3 right-3 bg-glow-500/80 text-white text-xs font-bold py-1 px-3 rounded-full backdrop-blur-sm">Popular</div>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900 mt-4">Nebula Nights</h3>
+                                <p class="text-sm text-gray-600 mb-4">Cosmic styles for bold adventurers and dreamers.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-medium bg-glow-100 text-glow-600 px-3 py-1 rounded-full">Best Seller</span>
+                                    <a href="#" class="text-nebula-500 font-semibold hover:text-nebula-600 inline-flex items-center group">
+                                        Explore <i class="fas fa-arrow-right ml-2 text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Collection 3: Cosmic Explorer -->
+                        <div class="min-w-full md:min-w-[33.333%] px-3">
+                            <div class="bg-white/90 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="https://via.placeholder.com/320?text=Cosmic+Explorer" alt="Cosmic Explorer" class="w-full h-48 object-cover rounded-xl mb-4 transition duration-300 hover:scale-105">
+                                    <div class="absolute top-3 right-3 bg-moon-500/80 text-white text-xs font-bold py-1 px-3 rounded-full backdrop-blur-sm">Eco-friendly</div>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900 mt-4">Cosmic Explorer</h3>
+                                <p class="text-sm text-gray-600 mb-4">Bold designs for the little kids space explorers.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-medium bg-moon-100 text-moon-600 px-3 py-1 rounded-full">Limited Edition</span>
+                                    <a href="#" class="text-nebula-500 font-semibold hover:text-nebula-600 inline-flex items-center group">
+                                        Explore <i class="fas fa-arrow-right ml-2 text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Collection 4: Star Sailors -->
+                        <div class="min-w-full md:min-w-[33.333%] px-3">
+                            <div class="bg-white/90 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="https://via.placeholder.com/320?text=Star+Sailors" alt="Star Sailors" class="w-full h-48 object-cover rounded-xl mb-4 transition duration-300 hover:scale-105">
+                                    <div class="absolute top-3 right-3 bg-stardust-DEFAULT/80 text-white text-xs font-bold py-1 px-3 rounded-full backdrop-blur-sm">New Collection</div>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900 mt-4">Star Sailors</h3>
+                                <p class="text-sm text-gray-600 mb-4">Nautical-inspired outfits with a celestial twist.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-medium bg-stardust-light text-stardust-dark px-3 py-1 rounded-full">Summer 2025</span>
+                                    <a href="#" class="text-nebula-500 font-semibold hover:text-nebula-600 inline-flex items-center group">
+                                        Explore <i class="fas fa-arrow-right ml-2 text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Collection 5: Dreamweavers -->
+                        <div class="min-w-full md:min-w-[33.333%] px-3">
+                            <div class="bg-white/90 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="https://via.placeholder.com/320?text=Dreamweavers" alt="Dreamweavers" class="w-full h-48 object-cover rounded-xl mb-4 transition duration-300 hover:scale-105">
+                                    <div class="absolute top-3 right-3 bg-comet-DEFAULT/80 text-white text-xs font-bold py-1 px-3 rounded-full backdrop-blur-sm">Premium</div>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900 mt-4">Dreamweavers</h3>
+                                <p class="text-sm text-gray-600 mb-4">Handcrafted pieces with artisanal details and patterns.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-medium bg-comet-light text-white px-3 py-1 rounded-full">Artisan Crafted</span>
+                                    <a href="#" class="text-nebula-500 font-semibold hover:text-nebula-600 inline-flex items-center group">
+                                        Explore <i class="fas fa-arrow-right ml-2 text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Collection 6: Aurora Prints -->
+                        <div class="min-w-full md:min-w-[33.333%] px-3">
+                            <div class="bg-white/90 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="https://via.placeholder.com/320?text=Aurora+Prints" alt="Aurora Prints" class="w-full h-48 object-cover rounded-xl mb-4 transition duration-300 hover:scale-105">
+                                    <div class="absolute top-3 right-3 bg-gradient-to-r from-nebula-400 to-glow-400 text-white text-xs font-bold py-1 px-3 rounded-full backdrop-blur-sm">Trending</div>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900 mt-4">Aurora Prints</h3>
+                                <p class="text-sm text-gray-600 mb-4">Color-shifting patterns inspired by the northern lights.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-medium bg-gradient-to-r from-nebula-100 to-glow-100 text-nebula-600 px-3 py-1 rounded-full">Exclusive</span>
+                                    <a href="#" class="text-nebula-500 font-semibold hover:text-nebula-600 inline-flex items-center group">
+                                        Explore <i class="fas fa-arrow-right ml-2 text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Collection 7: Cozy Cosmos -->
+                        <div class="min-w-full md:min-w-[33.333%] px-3">
+                            <div class="bg-white/90 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="https://via.placeholder.com/320?text=Cozy+Cosmos" alt="Cozy Cosmos" class="w-full h-48 object-cover rounded-xl mb-4 transition duration-300 hover:scale-105">
+                                    <div class="absolute top-3 right-3 bg-moon-400/80 text-white text-xs font-bold py-1 px-3 rounded-full backdrop-blur-sm">Seasonal</div>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900 mt-4">Cozy Cosmos</h3>
+                                <p class="text-sm text-gray-600 mb-4">Soft, warm sleepwear featuring celestial themes.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-medium bg-moon-100 text-moon-600 px-3 py-1 rounded-full">Winter 2025</span>
+                                    <a href="#" class="text-nebula-500 font-semibold hover:text-nebula-600 inline-flex items-center group">
+                                        Explore <i class="fas fa-arrow-right ml-2 text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Collection 8: Planet Playtime -->
+                        <div class="min-w-full md:min-w-[33.333%] px-3">
+                            <div class="bg-white/90 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="https://via.placeholder.com/320?text=Planet+Playtime" alt="Planet Playtime" class="w-full h-48 object-cover rounded-xl mb-4 transition duration-300 hover:scale-105">
+                                    <div class="absolute top-3 right-3 bg-gradient-to-r from-moon-400 to-nebula-400 text-white text-xs font-bold py-1 px-3 rounded-full backdrop-blur-sm">Active Wear</div>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900 mt-4">Planet Playtime</h3>
+                                <p class="text-sm text-gray-600 mb-4">Durable, stain-resistant clothes for active adventures.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-medium bg-moon-100 text-moon-600 px-3 py-1 rounded-full">Outdoor Ready</span>
+                                    <a href="#" class="text-nebula-500 font-semibold hover:text-nebula-600 inline-flex items-center group">
+                                        Explore <i class="fas fa-arrow-right ml-2 text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Collection 9: Galaxy Glamour -->
+                        <div class="min-w-full md:min-w-[33.333%] px-3">
+                            <div class="bg-white/90 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="https://via.placeholder.com/320?text=Galaxy+Glamour" alt="Galaxy Glamour" class="w-full h-48 object-cover rounded-xl mb-4 transition duration-300 hover:scale-105">
+                                    <div class="absolute top-3 right-3 bg-nebula-500/80 text-white text-xs font-bold py-1 px-3 rounded-full backdrop-blur-sm">Special Events</div>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900 mt-4">Galaxy Glamour</h3>
+                                <p class="text-sm text-gray-600 mb-4">Elegant party wear with subtle shimmer and sparkle.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-medium bg-nebula-100 text-nebula-600 px-3 py-1 rounded-full">Celebration Wear</span>
+                                    <a href="#" class="text-nebula-500 font-semibold hover:text-nebula-600 inline-flex items-center group">
+                                        Explore <i class="fas fa-arrow-right ml-2 text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Collection 10: Moon Basics -->
+                        <div class="min-w-full md:min-w-[33.333%] px-3">
+                            <div class="bg-white/90 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="https://via.placeholder.com/320?text=Moon+Basics" alt="Moon Basics" class="w-full h-48 object-cover rounded-xl mb-4 transition duration-300 hover:scale-105">
+                                    <div class="absolute top-3 right-3 bg-glow-500/80 text-white text-xs font-bold py-1 px-3 rounded-full backdrop-blur-sm">Essentials</div>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900 mt-4">Moon Basics</h3>
+                                <p class="text-sm text-gray-600 mb-4">Premium everyday essentials in sustainable fabrics.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-medium bg-glow-100 text-glow-600 px-3 py-1 rounded-full">Organic Cotton</span>
+                                    <a href="#" class="text-nebula-500 font-semibold hover:text-nebula-600 inline-flex items-center group">
+                                        Explore <i class="fas fa-arrow-right ml-2 text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <button id="carousel-prev" class="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-nebula-500 text-white p-3 rounded-full hover:bg-nebula-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-nebula-400 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-nebula-500 text-white p-3 rounded-full hover:bg-nebula-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-nebula-400 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Magic Land (Kids' Corner) -->
+    <section id="magic-land" class="py-20 bg-gradient-to-r from-glow-100 to-stardust-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Magic Land</h2>
+                <p class="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">A wonderland for kids to play, create, and dream!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Activity 1 -->
+                <div class="activity-card bg-white/90 p-6 rounded-2xl shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://via.placeholder.com/300?text=Star+Art" alt="Star Art" class="w-full h-40 object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute top-3 right-3 bg-nebula-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Popular
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Star Art Studio</h3>
+                    <p class="text-sm text-gray-600 mt-2 mb-4">Unleash creativity with our interactive drawing tools designed for young artists.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs bg-nebula-100 text-nebula-600 px-3 py-1 rounded-full">Ages 4-10</span>
+                        <a href="#" class="text-nebula-500 font-semibold inline-flex items-center group">
+                            Create Now 
+                            <i class="fas fa-arrow-right ml-2 text-xs transition duration-300 transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Activity 2 -->
+                <div class="activity-card bg-white/90 p-6 rounded-2xl shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://via.placeholder.com/300?text=Moon+Tales" alt="Moon Tales" class="w-full h-40 object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute top-3 right-3 bg-glow-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            New Stories
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Moon Tales</h3>
+                    <p class="text-sm text-gray-600 mt-2 mb-4">Interactive storytelling adventures that spark imagination and inspire dreams.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs bg-glow-100 text-glow-600 px-3 py-1 rounded-full">Ages 3-8</span>
+                        <a href="#" class="text-nebula-500 font-semibold inline-flex items-center group">
+                            Read Now 
+                            <i class="fas fa-arrow-right ml-2 text-xs transition duration-300 transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Activity 3 -->
+                <div class="activity-card bg-white/90 p-6 rounded-2xl shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://via.placeholder.com/300?text=Style+Quest" alt="Style Quest" class="w-full h-40 object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute top-3 right-3 bg-moon-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Game
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Style Quest</h3>
+                    <p class="text-sm text-gray-600 mt-2 mb-4">Design virtual outfits and learn about fashion in this fun interactive game.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs bg-moon-100 text-moon-600 px-3 py-1 rounded-full">Ages 5-12</span>
+                        <a href="#" class="text-nebula-500 font-semibold inline-flex items-center group">
+                            Play Now 
+                            <i class="fas fa-arrow-right ml-2 text-xs transition duration-300 transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+     <!-- Cart Modal -->
+     <div id="cart-modal" class="modal fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-lg shadow-2xl p-8 rounded-t-3xl z-50 max-h-[85vh] overflow-y-auto" :class="{ 'active': cartOpen }" x-show="cartOpen">
+        <div class="flex justify-between items-center mb-8">
+            <h3 class="text-3xl font-bold text-gray-900">Your Magic Cart</h3>
+            <button @click="cartOpen = false" class="hover-sound"><i class="fas fa-times text-2xl text-gray-600 hover:text-comet-500"></i></button>
+        </div>
+        <div class="space-y-6">
+            <template x-for="(item, index) in cart" :key="item.name">
+                <div class="flex justify-between items-center border-b py-4">
+                    <div class="flex items-center space-x-4">
+                        <img :src="item.image" :alt="item.name" class="w-16 h-16 object-cover rounded-lg">
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900" x-text="item.name"></h4>
+                            <p class="text-sm text-gray-600">৳<span x-text="(item.price * item.quantity).toLocaleString()"></span></p>
+                            <div class="flex items-center space-x-2 mt-1">
+                                <button @click="cart[index].quantity--; if (cart[index].quantity === 0) cart.splice(index, 1); localStorage.setItem('cart', JSON.stringify(cart))" class="bg-gray-200 px-2 py-1 rounded hover-sound">-</button>
+                                <span x-text="item.quantity"></span>
+                                <button @click="cart[index].quantity++; localStorage.setItem('cart', JSON.stringify(cart))" class="bg-gray-200 px-2 py-1 rounded hover-sound">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button @click="cart.splice(index, 1); localStorage.setItem('cart', JSON.stringify(cart))" class="text-comet-500 hover:text-comet-700 hover-sound"><i class="fas fa-trash"></i></button>
+                </div>
+            </template>
+        </div>
+        <div class="mt-8">
+            <p class="text-xl font-semibold text-gray-900">Total: ৳<span x-text="cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toLocaleString()"></span></p>
+            <p class="text-sm text-gray-600 mt-2">Magic Points: <span x-text="rewardPoints"></span></p>
+            <button class="bg-gradient-to-r from-nebula-500 to-glow-500 text-white px-8 py-4 rounded-full font-bold w-full mt-4 hover:from-nebula-600 hover:to-glow-600 animate-twinkle hover-sound">
+                Proceed to Checkout
+            </button>
+        </div>
     </div>
 
-    <!-- Kids Section -->
-    <section class="py-12 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between mb-6">
-                <div>
-                    <h3 class="text-2xl font-bold">Kids</h3>
-                    <div class="bg-yellow-400 text-black p-4 rounded-lg mt-2">
-                        <p>Explore our vibrant kids’ collection, designed for comfort and fun. Soft fabrics and playful designs make these perfect for everyday adventures.</p>
-                    </div>
-                </div>
-                <button class="bg-gray-200 px-4 py-2 rounded-full focus:outline-none">Filter <span>▾</span></button>
+    <!-- Product Preview Modal -->
+    <div id="preview-modal" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50" x-show="previewOpen">
+        <div class="bg-white/95 backdrop-blur-lg p-8 rounded-2xl max-w-lg w-full">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-900" x-text="previewProduct?.name"></h3>
+                <button @click="previewOpen = false" class="hover-sound"><i class="fas fa-times text-2xl text-gray-600 hover:text-comet-500"></i></button>
             </div>
-            <div class="flex flex-col md:flex-row gap-6">
-                <div class="md:w-1/4 hidden md:block">
-                    <h4 class="text-lg font-semibold mb-4">Quick Filter</h4>
-                    <div class="space-y-2">
-                        <button class="bg-gray-200 px-4 py-2 rounded-full w-full text-left filter-btn" data-filter="All">All</button>
-                        <button class="bg-gray-200 px-4 py-2 rounded-full w-full text-left filter-btn" data-filter="Animals">Animals</button>
-                        <button class="bg-gray-200 px-4 py-2 rounded-full w-full text-left filter-btn" data-filter="Cartoons">Cartoons</button>
-                        <button class="bg-gray-200 px-4 py-2 rounded-full w-full text-left filter-btn" data-filter="Space">Space</button>
-                        <button class="bg-gray-200 px-4 py-2 rounded-full w-full text-left filter-btn" data-filter="Nature">Nature</button>
-                    </div>
-                </div>
-                <div class="md:w-3/4">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="product-grid">
-                        <div class="relative bg-gray-50 p-4 rounded-lg text-center product-card" data-category="Animals">
-                            <div class="discount-badge">20% OFF</div>
-                            <img src="image/k1.png" alt="Elephant Tee" class="mx-auto mb-4">
-                            <h4 class="text-lg font-semibold">নাটক কম করো পিও - Kids
-                            </h4>
-                            <p class="text-sm text-gray-600 line-through mb-1">৳1,490</p>
-                            <p class="text-lg font-semibold">৳1,190</p>
-                            <div class="flex justify-center space-x-2 mb-4">
-                                <span class="w-4 h-4 bg-blue-500 rounded-full"></span>
-                                <span class="w-4 h-4 bg-green-500 rounded-full"></span>
-                            </div>
-                            <div class="flex justify-center space-x-2">
-                                <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-900">View</a>
-                                <button class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">Add to Cart</button>
-                            </div>
-                        </div>
-                        <div class="relative bg-gray-50 p-4 rounded-lg text-center product-card" data-category="Cartoons">
-                            <div class="discount-badge">20% OFF</div>
-                            <img src="image/k2.png" alt="Cartoon Dino Tee" class="mx-auto mb-4">
-                            <h4 class="text-lg font-semibold">আমার বাপ রংবাজ - Kids</h4>
-                            <p class="text-sm text-gray-600 line-through mb-1">৳1,490</p>
-                            <p class="text-lg font-semibold">৳1,190</p>
-                            <div class="flex justify-center space-x-2 mb-4">
-                                <span class="w-4 h-4 bg-red-500 rounded-full"></span>
-                                <span class="w-4 h-4 bg-yellow-500 rounded-full"></span>
-                            </div>
-                            <div class="flex justify-center space-x-2">
-                                <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-900">View</a>
-                                <button class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">Add to Cart</button>
-                            </div>
-                        </div>
-                        <div class="relative bg-gray-50 p-4 rounded-lg text-center product-card" data-category="Space">
-                            <div class="discount-badge">20% OFF</div>
-                            <img src="image/k3.png" alt="Astronaut Tee" class="mx-auto mb-4">
-                            <h4 class="text-lg font-semibold">লাগে উরা ধুরা - Kids</h4>
-                            <p class="text-sm text-gray-600 line-through mb-1">৳1,490</p>
-                            <p class="text-lg font-semibold">৳1,190</p>
-                            <div class="flex justify-center space-x-2 mb-4">
-                                <span class="w-4 h-4 bg-black rounded-full"></span>
-                                <span class="w-4 h-4 bg-white rounded-full border"></span>
-                            </div>
-                            <div class="flex justify-center space-x-2">
-                                <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-900">View</a>
-                                <button class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">Add to Cart</button>
-                            </div>
-                        </div>
-                        <div class="relative bg-gray-50 p-4 rounded-lg text-center product-card" data-category="Nature">
-                            <div class="discount-badge">20% OFF</div>
-                            <img src="image/k4.png" alt="Tree Hugger Tee" class="mx-auto mb-4">
-                            <h4 class="text-lg font-semibold">Tree Hugger Tee</h4>
-                            <p class="text-sm text-gray-600 line-through mb-1">৳1,490</p>
-                            <p class="text-lg font-semibold">৳1,190</p>
-                            <div class="flex justify-center space-x-2 mb-4">
-                                <span class="w-4 h-4 bg-green-500 rounded-full"></span>
-                                <span class="w-4 h-4 bg-brown-500 rounded-full"></span>
-                            </div>
-                            <div class="flex justify-center space-x-2">
-                                <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-900">View</a>
-                                <button class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">Add to Cart</button>
-                            </div>
-                        </div>
-                        <div class="relative bg-gray-50 p-4 rounded-lg text-center product-card" data-category="Animals">
-                            <div class="discount-badge">20% OFF</div>
-                            <img src="image/k5.png" alt="Lion Cub Tee" class="mx-auto mb-4">
-                            <h4 class="text-lg font-semibold">Lion Cub Tee</h4>
-                            <p class="text-sm text-gray-600 line-through mb-1">৳1,490</p>
-                            <p class="text-lg font-semibold">৳1,190</p>
-                            <div class="flex justify-center space-x-2 mb-4">
-                                <span class="w-4 h-4 bg-yellow-500 rounded-full"></span>
-                                <span class="w-4 h-4 bg-orange-500 rounded-full"></span>
-                            </div>
-                            <div class="flex justify-center space-x-2">
-                                <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-900">View</a>
-                                <button class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">Add to Cart</button>
-                            </div>
-                        </div>
-                        <div class="relative bg-gray-50 p-4 rounded-lg text-center product-card" data-category="Cartoons">
-                            <div class="discount-badge">20% OFF</div>
-                            <img src="image/t1.png" alt="Superhero Tee" class="mx-auto mb-4">
-                            <h4 class="text-lg font-semibold">ধোকা দিলা-kidds</h4>
-                            <p class="text-sm text-gray-600 line-through mb-1">৳1,490</p>
-                            <p class="text-lg font-semibold">৳1,190</p>
-                            <div class="flex justify-center space-x-2 mb-4">
-                                <span class="w-4 h-4 bg-blue-500 rounded-full"></span>
-                                <span class="w-4 h-4 bg-red-500 rounded-full"></span>
-                            </div>
-                            <div class="flex justify-center space-x-2">
-                                <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-900">View</a>
-                                <button class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center mt-6">
-                        <button class="bg-red-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-600" id="load-more">Load More</button>
-                    </div>
-                </div>
+            <img :src="previewProduct?.image" :alt="previewProduct?.name" class="w-full h-64 object-cover rounded-xl mb-4">
+            <p class="text-lg text-gray-600 mb-4">
+                ৳<span x-text="previewProduct?.price.toLocaleString()"></span>
+                <span class="line-through text-gray-400" x-text="'৳' + previewProduct?.oldPrice.toLocaleString()"></span>
+            </p>
+            <div class="flex justify-center space-x-3 mb-6">
+                <template x-for="color in previewProduct?.colors">
+                    <span class="color-dot" :class="'bg-' + color"></span>
+                </template>
             </div>
-            <div class="text-center mt-4 text-yellow-600">
-                <p>FREE SHIPPING on orders over $50, Australia wide*</p>
-            </div>
+            <button class="add-to-cart bg-gradient-to-r from-nebula-500 to-glow-500 text-white px-6 py-3 rounded-full font-bold w-full hover:from-nebula-600 hover:to-glow-600 hover-sound" @click="addToCart(previewProduct); previewOpen = false">
+                Add to Cart
+            </button>
         </div>
-    </section>
-
-    <!-- Series Banner -->
-    <section class="py-12 bg-pink-500 text-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-                <div class="bg-white text-black p-4 rounded-lg text-center">
-                    <h4 class="text-lg font-semibold">Bangladesh Series</h4>
+    </div>
+    
+    <!-- Product Preview Modal -->
+    <div id="preview-modal" class="fixed inset-0 z-50 overflow-y-auto" x-show="previewOpen" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity" @click="previewOpen = false"></div>
+            
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
+                <div class="absolute top-0 right-0 pt-4 pr-4">
+                    <button @click="previewOpen = false" class="text-gray-400 hover:text-gray-600 transition focus:outline-none focus:ring-2 focus:ring-nebula-400 focus:ring-offset-2 rounded-full p-1">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
                 </div>
-                <div class="bg-white text-black p-4 rounded-lg text-center">
-                    <h4 class="text-lg font-semibold">Warface</h4>
-                </div>
-                <div class="bg-white text-black p-4 rounded-lg text-center">
-                    <h4 class="text-lg font-semibold">Bangladesh 43</h4>
-                </div>
-                <div class="bg-white text-black p-4 rounded-lg text-center">
-                    <h4 class="text-lg font-semibold">Bangladesh 3.0</h4>
-                </div>
-                <div class="bg-white text-black p-4 rounded-lg text-center">
-                    <h4 class="text-lg font-semibold">Arthritic</h4>
+                
+                <div class="sm:flex sm:items-start">
+                    <div class="w-full">
+                        <div class="relative">
+                            <img :src="previewProduct?.image" :alt="previewProduct?.name" class="w-full h-64 object-cover">
+                            <div class="absolute top-4 left-4" x-show="previewProduct?.badge">
+                                <span class="badge" :class="{
+                                    'bg-nebula-500': previewProduct?.badge === 'New',
+                                    'bg-glow-500': previewProduct?.badge === '25% Off',
+                                    'bg-moon-500': previewProduct?.badge === 'Best Seller',
+                                    'bg-stardust-500': previewProduct?.badge === 'Eco-Friendly'
+                                }" x-text="previewProduct?.badge"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="px-6 pt-5 pb-6">
+                            <h3 class="text-2xl font-bold text-gray-900" x-text="previewProduct?.name"></h3>
+                            <div class="flex items-center mt-2 mb-4">
+                                <div class="flex text-glow-500">
+                                    <template x-for="i in 5" :key="i">
+                                        <i :class="i <= Math.floor(previewProduct?.rating) ? 'fas fa-star' : i <= previewProduct?.rating ? 'fas fa-star-half-alt' : 'far fa-star'"></i>
+                                    </template>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-2" x-text="previewProduct?.rating + ' (' + Math.floor(Math.random() * 50 + 10) + ')'"></span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center mb-5">
+                                <div>
+                                    <p class="text-2xl font-bold text-gray-900">৳<span x-text="previewProduct?.price.toLocaleString()"></span></p>
+                                    <p class="text-sm text-gray-500">
+                                        <span class="line-through" x-text="'৳' + previewProduct?.oldPrice.toLocaleString()"></span>
+                                        <span class="text-red-500 ml-1" x-text="Math.round((1 - previewProduct?.price / previewProduct?.oldPrice) * 100) + '% off'"></span>
+                                    </p>
+                                </div>
+                                <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full flex items-center"><i class="fas fa-check-circle mr-1"></i> In Stock</span>
+                            </div>
+                            
+                            <div class="mb-5">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Colors</label>
+                                <div class="flex space-x-3">
+                                    <template x-for="color in previewProduct?.colors" :key="color">
+                                        <span class="color-dot cursor-pointer" :class="'bg-' + color" @click="selectColor($event)"></span>
+                                    </template>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6" x-data="{ selectedSize: 'M' }">
+                                <div class="flex justify-between items-center mb-2">
+                                    <label class="block text-sm font-medium text-gray-700">Size</label>
+                                    <button class="text-xs text-nebula-500 hover:text-nebula-600" @click="$dispatch('open-size-guide')">Size Guide</button>
+                                </div>
+                                <div class="grid grid-cols-4 gap-2">
+                                    <button 
+                                        class="size-btn border rounded py-2 text-center text-sm font-medium transition"
+                                        :class="selectedSize === 'XS' ? 'bg-nebula-500 text-white border-nebula-500' : 'border-gray-300 text-gray-700 hover:border-nebula-500'"
+                                        @click="selectedSize = 'XS'">XS</button>
+                                    <button 
+                                        class="size-btn border rounded py-2 text-center text-sm font-medium transition"
+                                        :class="selectedSize === 'S' ? 'bg-nebula-500 text-white border-nebula-500' : 'border-gray-300 text-gray-700 hover:border-nebula-500'"
+                                        @click="selectedSize = 'S'">S</button>
+                                    <button 
+                                        class="size-btn border rounded py-2 text-center text-sm font-medium transition"
+                                        :class="selectedSize === 'M' ? 'bg-nebula-500 text-white border-nebula-500' : 'border-gray-300 text-gray-700 hover:border-nebula-500'"
+                                        @click="selectedSize = 'M'">M</button>
+                                    <button 
+                                        class="size-btn border rounded py-2 text-center text-sm font-medium transition"
+                                        :class="selectedSize === 'L' ? 'bg-nebula-500 text-white border-nebula-500' : 'border-gray-300 text-gray-700 hover:border-nebula-500'"
+                                        @click="selectedSize = 'L'">L</button>
+                                </div>
+                            </div>
+                            
+                            <div class="flex space-x-3">
+                                <button class="flex-1 bg-gradient-to-r from-nebula-500 to-glow-500 hover:from-nebula-600 hover:to-glow-600 text-white font-bold py-3 px-4 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-nebula-400 focus:ring-offset-2 flex items-center justify-center" @click="addToCart({...previewProduct, size: selectedSize}); previewOpen = false">
+                                    <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                                </button>
+                                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 p-3 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2" @click="toggleWishlist(previewProduct?.name)">
+                                    <i class="fas fa-heart" :class="wishlist.includes(previewProduct?.name) ? 'text-comet-500' : 'text-gray-600'"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="mt-4 text-sm text-gray-500 flex items-center">
+                                <i class="fas fa-truck mr-2"></i> Free shipping for orders over ৳5000
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    
+   
+    <!-- Size Guide Modal -->
+    <div id="size-guide-modal" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50" x-show="sizeGuideOpen">
+        <div class="bg-white/95 backdrop-blur-lg p-8 rounded-2xl max-w-md w-full transform transition-transform" :class="{ 'scale-100': sizeGuideOpen, 'scale-0': !sizeGuideOpen }">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-900">Size Guide</h3>
+                <button @click="sizeGuideOpen = false" class="hover-sound"><i class="fas fa-times text-2xl text-gray-600 hover:text-comet-500"></i></button>
+            </div>
+            <table class="w-full text-left text-sm text-gray-600">
+                <thead>
+                    <tr class="border-b">
+                        <th class="py-2">Size</th>
+                        <th class="py-2">Age</th>
+                        <th class="py-2">Chest</th>
+                        <th class="py-2">Height</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <td class="py-2">XS</td>
+                        <td class="py-2">2-3</td>
+                        <td class="py-2">20-22"</td>
+                        <td class="py-2">33-36"</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2">S</td>
+                        <td class="py-2">4-5</td>
+                        <td class="py-2">22-24"</td>
+                        <td class="py-2">36-40"</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2">M</td>
+                        <td class="py-2">6-7</td>
+                        <td class="py-2">24-26"</td>
+                        <td class="py-2">40-44"</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <!-- Footer -->
-    <footer class="bg-yellow-400 text-black py-12">
+    <footer class="bg-gray-900 text-white py-16">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Shop</h4>
-                    <ul class="space-y-2">
-                        <li><a href="tshirts.html" class="hover:text-gray-600">T-Shirts</a></li>
-                        <li><a href="kids.html" class="hover:text-gray-600">Kids</a></li>
-                        <li><a href="hoodies.html" class="hover:text-gray-600">Hoodies</a></li>
-                        <li><a href="accessories.html" class="hover:text-gray-600">Accessories</a></li>
-                        <li><a href="series.html" class="hover:text-gray-600">Series</a></li>
-                        <li><a href="mugs.html" class="hover:text-gray-600">Mugs</a></li>
+                    <h3 class="text-3xl font-bold mb-4">MoonBuddies</h3>
+                    <p class="text-sm text-gray-400">Crafting enchanting, sustainable kids' fashion that sparks joy and adventure.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Shop</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#products" class="hover:text-nebula-400 transition hover-sound">Shop All</a></li>
+                        <li><a href="#collections" class="hover:text-nebula-400 transition hover-sound">Collections</a></li>
+                        <li><a href="#magic-land" class="hover:text-nebula-400 transition hover-sound">Magic Land</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">About</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-gray-600">Contact Us</a></li>
-                        <li><a href="#" class="hover:text-gray-600">Subscribe</a></li>
-                        <li><a href="#" class="hover:text-gray-600">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-gray-600">Shipping Policy</a></li>
-                        <li><a href="#" class="hover:text-gray-600">Return and Refund Policy</a></li>
-                        <li><a href="#" class="hover:text-gray-600">Terms of Service</a></li>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-nebula-400 transition hover-sound">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-nebula-400 transition hover-sound">FAQs</a></li>
+                        <li><a href="#" class="hover:text-nebula-400 transition hover-sound">Shipping & Returns</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
-                    <div class="flex space-x-4">
-                        <a href="#"><img src="https://via.placeholder.com/24?text=IG" alt="Instagram"></a>
-                        <a href="#"><img src="https://via.placeholder.com/24?text=FB" alt="Facebook"></a>
-                    </div>
-                    <div class="mt-4">
-                        <p class="text-sm">We accept</p>
-                        <div class="flex space-x-2 mt-2">
-                            <img src="https://via.placeholder.com/24?text=Visa" alt="Visa">
-                            <img src="https://via.placeholder.com/24?text=Mastercard" alt="Mastercard">
-                            <img src="https://via.placeholder.com/24?text=Paypal" alt="Paypal">
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <label class="text-sm">Change Currency (AUD)</label>
-                        <select class="bg-gray-200 p-2 rounded mt-2">
-                            <option>AUD</option>
-                            <option>USD</option>
-                            <option>EUR</option>
-                        </select>
+                    <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-6">
+                        <a href="#" class="hover:text-nebula-400 hover-sound"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="#" class="hover:text-nebula-400 hover-sound"><i class="fab fa-facebook text-2xl"></i></a>
+                        <a href="#" class="hover:text-nebula-400 hover-sound"><i class="fab fa-twitter text-2xl"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-6">
-                <p class="text-sm">© 2025 Rongbaz, ABN 70 659 404 529</p>
+            <div class="text-center mt-12">
+                <p class="text-sm text-gray-400">© 2025 MoonBuddies. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Interactivity -->
     <script>
-        // Filter Functionality
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const products = document.querySelectorAll('.product-card');
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const filter = button.getAttribute('data-filter');
-                filterButtons.forEach(btn => btn.classList.remove('bg-yellow-400', 'text-black'));
-                button.classList.add('bg-yellow-400', 'text-black');
+        // GSAP Animations
+        gsap.from('.hero-section h1', { opacity: 0, y: 60, duration: 1.2, ease: 'power3.out' });
+        gsap.from('.hero-section p', { opacity: 0, y: 40, duration: 1.2, delay: 0.3, ease: 'power3.out' });
+        gsap.from('.hero-section a', { opacity: 0, scale: 0.7, duration: 1.2, delay: 0.6, ease: 'back.out(1.7)', stagger: 0.2 });
+        gsap.from('.mascot', { opacity: 0, x: -100, duration: 1.5, ease: 'elastic.out(1, 0.5)' });
+        gsap.from('.product-card', {
+            scrollTrigger: { trigger: '#products', start: 'top 80%' },
+            opacity: 0,
+            y: 60,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+        gsap.from('.carousel > div', {
+            scrollTrigger: { trigger: '#collections', start: 'top 80%' },
+            opacity: 0,
+            x: 60,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+        gsap.from('#magic-land > div', {
+            scrollTrigger: { trigger: '#magic-land', start: 'top 80%' },
+            opacity: 0,
+            scale: 0.8,
+            duration: 1,
+            stagger: 0.3,
+            ease: 'back.out(1.7)'
+        });
+
+        // Carousel Navigation
+        const carousel = document.getElementById('carousel');
+        const carouselPrev = document.getElementById('carousel-prev');
+        const carouselNext = document.getElementById('carousel-next');
+        let currentSlide = 0;
+        const slideWidth = 320 + 24;
+
+        carouselNext.addEventListener('click', () => {
+            if (currentSlide < carousel.children.length - 1) {
+                currentSlide++;
+                carousel.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            }
+        });
+        carouselPrev.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                carousel.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            }
+        });
+
+        // Touch Support for Carousel
+        let startX = 0;
+        carousel.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+        });
+        carousel.addEventListener('touchend', e => {
+            const endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50 && currentSlide < carousel.children.length - 1) {
+                currentSlide++;
+                carousel.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            } else if (endX - startX > 50 && currentSlide > 0) {
+                currentSlide--;
+                carousel.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            }
+        });
+
+        // Load More Products
+        document.getElementById('load-more').addEventListener('click', () => {
+            alert('More magical products coming soon!');
+        });
+
+        // Voice Search Placeholder
+        document.querySelector('.fa-microphone').parentElement.addEventListener('click', () => {
+            alert('Voice search coming soon! Say "Find starry tees" to try it!');
+        });
+
+        
+            // Updated Carousel Functionality
+            document.addEventListener('DOMContentLoaded', () => {
+                const carousel = document.getElementById('carousel');
+                const carouselPrev = document.getElementById('carousel-prev');
+                const carouselNext = document.getElementById('carousel-next');
+                const indicators = document.querySelectorAll('.indicator');
                 
-                products.forEach(product => {
-                    const category = product.getAttribute('data-category');
-                    if (filter === 'All' || category === filter) {
-                        product.style.display = 'block';
-                    } else {
-                        product.style.display = 'none';
+                let currentIndex = 0;
+                const totalSlides = carousel.children.length;
+                
+                // Determine slide width based on viewport
+                function getSlideWidth() {
+                    return window.innerWidth >= 768 
+                        ? carousel.parentElement.offsetWidth / 3
+                        : carousel.parentElement.offsetWidth;
+                }
+                
+                // Update carousel position
+                function updateCarousel() {
+                    const slideWidth = getSlideWidth();
+                    carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+                    
+                    // Update indicators
+                    indicators.forEach((indicator, index) => {
+                        if (index === currentIndex) {
+                            indicator.classList.add('bg-nebula-300');
+                            indicator.classList.remove('bg-gray-300');
+                        } else {
+                            indicator.classList.remove('bg-nebula-300');
+                            indicator.classList.add('bg-gray-300');
+                        }
+                    });
+                    
+                    // Disable buttons at limits
+                    carouselPrev.disabled = currentIndex === 0;
+                    carouselNext.disabled = currentIndex === (window.innerWidth >= 768 ? totalSlides - 3 : totalSlides - 1);
+                    
+                    // Update button opacity based on disabled state
+                    carouselPrev.style.opacity = carouselPrev.disabled ? '0.5' : '1';
+                    carouselNext.style.opacity = carouselNext.disabled ? '0.5' : '1';
+                }
+                
+                // Event listeners for next/prev buttons
+                carouselNext.addEventListener('click', () => {
+                    const maxIndex = window.innerWidth >= 768 ? totalSlides - 3 : totalSlides - 1;
+                    if (currentIndex < maxIndex) {
+                        currentIndex++;
+                        updateCarousel();
                     }
                 });
+                
+                carouselPrev.addEventListener('click', () => {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateCarousel();
+                    }
+                });
+                
+                // Click on indicators
+                indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => {
+                        currentIndex = index;
+                        updateCarousel();
+                    });
+                });
+                
+                // Handle window resize
+                window.addEventListener('resize', () => {
+                    // Reset position when screen size changes
+                    updateCarousel();
+                });
+                
+                // Touch support for mobile
+                let startX = 0;
+                let isDragging = false;
+                
+                carousel.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    isDragging = true;
+                });
+                
+                carousel.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    const currentX = e.touches[0].clientX;
+                    const diff = startX - currentX;
+                    
+                    // Prevent default only when swiping horizontally
+                    if (Math.abs(diff) > 5) {
+                        e.preventDefault();
+                    }
+                });
+                
+                carousel.addEventListener('touchend', (e) => {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    
+                    const endX = e.changedTouches[0].clientX;
+                    const diff = startX - endX;
+                    
+                    const maxIndex = window.innerWidth >= 768 ? totalSlides - 3 : totalSlides - 1;
+                    
+                    if (diff > 50 && currentIndex < maxIndex) {
+                        currentIndex++;
+                        updateCarousel();
+                    } else if (diff < -50 && currentIndex > 0) {
+                        currentIndex--;
+                        updateCarousel();
+                    }
+                });
+                
+                // Initialize carousel
+                updateCarousel();
             });
-        });
-
-        // Load More Functionality
-        const loadMoreButton = document.getElementById('load-more');
-        let productCount = 6; // Initial number of products
-        loadMoreButton.addEventListener('click', () => {
-            const productGrid = document.getElementById('product-grid');
-            const newProducts = [
-                { name: 'Rocket Ship Tee', price: '৳1,190', oldPrice: '৳1,490', colors: ['blue', 'white'], category: 'Space' },
-                { name: 'Butterfly Tee', price: '৳1,190', oldPrice: '৳1,490', colors: ['pink', 'yellow'], category: 'Nature' },
-                { name: 'Cartoon Robot Tee', price: '৳1,190', oldPrice: '৳1,490', colors: ['gray', 'black'], category: 'Cartoons' },
-            ];
-
-            newProducts.forEach(product => {
-                if (productCount < 9) { // Limit to 9 products for this example
-                    const productCard = document.createElement('div');
-                    productCard.className = 'relative bg-gray-50 p-4 rounded-lg text-center product-card';
-                    productCard.setAttribute('data-category', product.category);
-                    productCard.innerHTML = `
-                        <div class="discount-badge">20% OFF</div>
-                        <img src="https://via.placeholder.com/200?text=${product.name}" alt="${product.name}" class="mx-auto mb-4">
-                        <h4 class="text-lg font-semibold">${product.name}</h4>
-                        <p class="text-sm text-gray-600 line-through mb-1">${product.oldPrice}</p>
-                        <p class="text-lg font-semibold">${product.price}</p>
-                        <div class="flex justify-center space-x-2 mb-4">
-                            ${product.colors.map(color => `<span class="w-4 h-4 bg-${color}-500 rounded-full"></span>`).join('')}
-                        </div>
-                        <div class="flex justify-center space-x-2">
-                            <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-900">View</a>
-                            <button class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">Add to Cart</button>
-                        </div>
-                    `;
-                    productGrid.appendChild(productCard);
-                    productCount++;
-                }
-            });
-            if (productCount >= 9) loadMoreButton.style.display = 'none';
-        });
-
-        // Add to Cart Functionality
-        const addToCartButtons = document.querySelectorAll('.bg-yellow-400');
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                alert('Product added to cart!');
-            });
-        });
+        
     </script>
 </body>
 </html>
