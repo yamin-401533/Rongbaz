@@ -24,6 +24,391 @@
 </head>
 <body class="bg-white font-sans">
         <!-- Header Section - Enhanced Professional Version -->
+
+        <div class="fixed flex flex-col gap-3 right-4 top-1/2 transform -translate-y-1/2 z-40">
+            <!-- Help Button -->
+            <button
+                @click="showContactInfo()"
+                class="w-12 h-12 rounded-full bg-gray-800 shadow-lg flex items-center justify-center text-yellow-400 hover:bg-gray-700 transition-all hover:scale-110 hover-sound"
+                title="Need Help?"
+            >
+                <i class="fas fa-headset text-xl"></i>
+            </button>
+            
+            <!-- Share Button -->
+            <button
+                @click="shareOnWhatsApp()"
+                class="w-12 h-12 rounded-full bg-gray-800 shadow-lg flex items-center justify-center text-yellow-400 hover:bg-gray-700 transition-all hover:scale-110 hover-sound"
+                title="Share on WhatsApp"
+            >
+                <i class="fab fa-whatsapp text-xl"></i>
+            </button>
+            
+            <!-- Messenger Button -->
+            <button
+                @click="openMessenger()"
+                class="w-12 h-12 rounded-full bg-gray-800 shadow-lg flex items-center justify-center text-yellow-400 hover:bg-gray-700 transition-all hover:scale-110 hover-sound"
+                title="Chat with Ashabul Yamin on Messenger"
+            >
+                <i class="fab fa-facebook-messenger text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Contact Info Modal -->
+        <div id="contactModal" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 hidden fade-in">
+            <div class="bg-gray-800 rounded-xl p-6 max-w-md w-full shadow-2xl transform transition-all scale-animation">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-yellow-400">Contact BlazeJersey Support</h3>
+                    <button @click="hideContactModal()" class="text-gray-400 hover:text-gray-200">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 p-3 bg-gray-700 rounded-lg">
+                        <div class="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center">
+                            <i class="fab fa-whatsapp text-yellow-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400">WhatsApp</p>
+                            <p class="font-medium text-white">+880 1970915225</p>
+                        </div>
+                        <button @click="copyToClipboard('+880 1970915225')" class="ml-auto text-yellow-400 hover:text-yellow-300">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-gray-700 rounded-lg">
+                        <div class="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center">
+                            <i class="far fa-envelope text-yellow-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400">Email</p>
+                            <p class="font-medium text-white">support@Blaze.com</p>
+                        </div>
+                        <button @click="copyToClipboard('support@Blaze.com')" class="ml-auto text-yellow-400 hover:text-yellow-300">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <button @click="initiateChat()" class="w-full py-3 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black rounded-lg font-medium hover:shadow-lg transition-all">
+                        Start Chat Now
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Auto Greeting Toast Notification -->
+        <div id="greetingToast" class="fixed bottom-4 right-4 bg-gray-800 rounded-lg shadow-xl p-4 max-w-sm w-full z-50 hidden fade-in">
+            <div class="flex gap-3">
+                <div class="w-10 h-10 rounded-full bg-gray-600 flex-shrink-0 flex items-center justify-center">
+                    <i class="fas fa-user-astronaut text-yellow-400"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="font-medium text-white" id="greetingMessage">Welcome to BlazeJersey! How can we help you today?</p>
+                    <div class="flex gap-2 mt-2">
+                        <button @click="respondToGreeting('I want to see your latest collection')" class="text-xs bg-gray-700 hover:bg-gray-600 text-yellow-400 py-1 px-3 rounded-full">See latest collection</button>
+                        <button @click="respondToGreeting('I need help with sizing')" class="text-xs bg-gray-700 hover:bg-gray-600 text-yellow-400 py-1 px-3 rounded-full">Sizing help</button>
+                        <button @click="respondToGreeting('I have a question about shipping')" class="text-xs bg-gray-700 hover:bg-gray-600 text-yellow-400 py-1 px-3 rounded-full">Shipping</button>
+                    </div>
+                </div>
+                <button @click="hideGreetingToast()" class="text-gray-400 hover:text-gray-200">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        
+        <style>
+            /* Enhanced Animations */
+            @keyframes float {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-20px); }
+            }
+            
+            @keyframes twinkle {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.5; }
+            }
+            
+            @keyframes nebula {
+                0% { transform: rotate(0deg) scale(1); }
+                100% { transform: rotate(360deg) scale(1.5); }
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            @keyframes scaleIn {
+                from { transform: scale(0.9); opacity: 0; }
+                to { transform: scale(1); opacity: 1; }
+            }
+            
+            @keyframes slideInUp {
+                from { transform: translateY(20px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+            
+            @keyframes pulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+            }
+            
+            .hover-sound:active {
+                transform: scale(0.95);
+            }
+            
+            .fade-in {
+                animation: fadeIn 0.3s ease forwards;
+            }
+            
+            .scale-animation {
+                animation: scaleIn 0.3s ease forwards;
+            }
+            
+            .slide-up {
+                animation: slideInUp 0.4s ease forwards;
+            }
+            
+            .pulse-animation {
+                animation: pulse 2s infinite;
+            }
+            
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+            }
+            
+            .animate-twinkle {
+                animation: twinkle 2s ease-in-out infinite;
+            }
+            
+            .animate-heroTitle {
+                animation: slideInUp 1s ease-out forwards;
+            }
+            
+            .animate-heroText {
+                animation: fadeIn 1s ease-out 0.5s forwards;
+            }
+            
+            .animate-heroButtons {
+                animation: slideInUp 1s ease-out 1s forwards;
+            }
+            
+            .star-field {
+                position: absolute;
+                inset: 0;
+                background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+            }
+            
+            .nebula-effect {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(45deg, rgba(99,102,241,0.1) 0%, rgba(168,85,247,0.1) 100%);
+                animation: nebula 20s linear infinite;
+            }
+            
+            .floating-particles {
+                position: absolute;
+                inset: 0;
+                background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+                background-size: 50px 50px;
+            }
+            
+            .btn-primary {
+                @apply bg-gradient-to-r from-nebula-500 to-glow-500 text-white px-8 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl;
+            }
+            
+            .btn-secondary {
+                @apply bg-white/10 text-white px-8 py-4 rounded-full font-bold border-2 border-nebula-400/30 hover:border-nebula-400;
+            }
+        </style>
+        
+        <script>
+            // Store greeting state
+            let greetingSent = false;
+            let userMessaged = false;
+            let greetingTimeouts = [];
+            
+            // Greeting messages based on time of day
+            const getTimeBasedGreeting = () => {
+                const hour = new Date().getHours();
+                if (hour >= 5 && hour < 12) {
+                    return "Good morning! Welcome to BlazeJersey. How can we assist you today?";
+                } else if (hour >= 12 && hour < 17) {
+                    return "Good afternoon! Thanks for visiting BlazeJersey. What brings you here today?";
+                } else {
+                    return "Good evening! Welcome to BlazeJersey. Looking for something special tonight?";
+                }
+            };
+            
+            // Random greeting options
+            const greetingOptions = [
+                "Welcome to BlazeJersey! How can we help you find the perfect jersey today?",
+                "Hello there! Looking for premium quality jerseys? You're in the right place!",
+                "Hey jersey fan! Our latest collection just dropped. Want to take a look?",
+                "Welcome! Need any assistance with finding your team's jersey?",
+                "Hi there! Thanks for visiting BlazeJersey. What can we help you with today?"
+            ];
+            
+            // Function to show contact modal
+            function showContactInfo() {
+                document.getElementById('contactModal').classList.remove('hidden');
+                userMessaged = true;
+                checkAndSendGreeting();
+            }
+            
+            // Function to hide contact modal
+            function hideContactModal() {
+                document.getElementById('contactModal').classList.add('hidden');
+            }
+            
+            // Function to share on WhatsApp
+            function shareOnWhatsApp() {
+                const shareText = encodeURIComponent('Check out this awesome jersey collection at BlazeJersey! ' + window.location.href);
+                window.open(`https://wa.me/8801970915225?text=${shareText}`, '_blank');
+                userMessaged = true;
+                checkAndSendGreeting();
+            }
+            
+            // Function to open Messenger
+            function openMessenger() {
+                window.open('https://m.me/ashabulyamin', '_blank');
+                userMessaged = true;
+                checkAndSendGreeting();
+            }
+            
+            // Function to copy text to clipboard
+            function copyToClipboard(text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    // Show copied notification
+                    const notification = document.createElement('div');
+                    notification.className = 'fixed bottom-4 left-4 bg-nebula-500 text-white px-4 py-2 rounded-lg shadow-lg fade-in';
+                    notification.textContent = 'Copied to clipboard!';
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        setTimeout(() => {
+                            document.body.removeChild(notification);
+                        }, 300);
+                    }, 2000);
+                });
+            }
+            
+            // Function to initiate chat
+            function initiateChat() {
+                // You can connect this to your preferred chat system
+                window.open(`https://wa.me/8801970915225?text=${encodeURIComponent("Hello, I need assistance with BlazeJersey.")}`, '_blank');
+                hideContactModal();
+                userMessaged = true;
+                checkAndSendGreeting();
+            }
+            
+            // Function to show auto greeting toast
+            function showGreetingToast() {
+                if (greetingSent) return;
+                
+                const greeting = getRandomGreeting();
+                document.getElementById('greetingMessage').textContent = greeting;
+                document.getElementById('greetingToast').classList.remove('hidden');
+                document.getElementById('greetingToast').classList.add('slide-up');
+                
+                greetingSent = true;
+                
+                // Auto hide after 15 seconds
+                setTimeout(() => {
+                    hideGreetingToast();
+                }, 15000);
+            }
+            
+            // Function to hide greeting toast
+            function hideGreetingToast() {
+                const toast = document.getElementById('greetingToast');
+                toast.style.opacity = '0';
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                    toast.style.opacity = '1';
+                }, 300);
+            }
+            
+            // Function to respond to greeting
+            function respondToGreeting(response) {
+                // Here you can handle the user's response
+                // For example, redirect to a specific page or open chat with the selected topic
+                window.open(`https://wa.me/8801970915225?text=${encodeURIComponent(`Hello, ${response}`)}`, '_blank');
+                hideGreetingToast();
+            }
+            
+            // Get random greeting
+            function getRandomGreeting() {
+                const timeGreeting = getTimeBasedGreeting();
+                const randomGreeting = greetingOptions[Math.floor(Math.random() * greetingOptions.length)];
+                
+                // 50% chance to use time-based greeting
+                return Math.random() > 0.5 ? timeGreeting : randomGreeting;
+            }
+            
+            // Check and send greeting based on user interaction
+            function checkAndSendGreeting() {
+                if (userMessaged && !greetingSent) {
+                    // Delay greeting by 1-3 seconds after user interaction
+                    const delay = 1000 + Math.random() * 2000;
+                    const timeout = setTimeout(() => {
+                        showGreetingToast();
+                    }, delay);
+                    greetingTimeouts.push(timeout);
+                }
+            }
+            
+            // Auto greeting for returning visitors (using localStorage)
+            function checkReturningVisitor() {
+                const lastVisit = localStorage.getItem('blazeJerseyLastVisit');
+                const now = new Date().getTime();
+                
+                if (lastVisit) {
+                    const daysSinceLastVisit = (now - parseInt(lastVisit)) / (1000 * 60 * 60 * 24);
+                    
+                    // If user returns after more than 1 day
+                    if (daysSinceLastVisit > 1) {
+                        const timeout = setTimeout(() => {
+                            document.getElementById('greetingMessage').textContent = "Welcome back to BlazeJersey! We've added new items since your last visit.";
+                            showGreetingToast();
+                        }, 10000); // Show after 10 seconds of page load
+                        greetingTimeouts.push(timeout);
+                    }
+                }
+                
+                // Update last visit
+                localStorage.setItem('blazeJerseyLastVisit', now.toString());
+            }
+            
+            // Initialize the functionality when page loads
+            document.addEventListener('DOMContentLoaded', () => {
+                // User is likely reading content, set up a delayed greeting
+                const timeout = setTimeout(() => {
+                    // Only show greeting if user has spent some time on the page
+                    userMessaged = true;
+                    checkAndSendGreeting();
+                }, 20000); // 20 seconds
+                greetingTimeouts.push(timeout);
+                
+                // Check if they're a returning visitor
+                checkReturningVisitor();
+                
+                // Setup event listener for user messages
+                // This is a placeholder - you would need to connect to your actual messaging system
+                document.addEventListener('userSentMessage', () => {
+                    userMessaged = true;
+                    checkAndSendGreeting();
+                });
+            });
+            
+            // Clean up timeouts when page unloads
+            window.addEventListener('beforeunload', () => {
+                greetingTimeouts.forEach(timeout => clearTimeout(timeout));
+            });
+        </script>
+
+
+
     <header class="relative bg-gradient-to-r from-yellow-400 via-yellow-300 to-amber-500 sticky top-0 z-50">
         <!-- Top Notification Bar -->
         <div class="bg-gradient-to-r from-gray-900 via-black to-gray-900 text-center py-2 sm:py-3 px-2 sm:px-4 relative overflow-hidden">
